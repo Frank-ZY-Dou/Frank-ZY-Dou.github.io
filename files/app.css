@@ -1,0 +1,220 @@
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+body { }
+
+
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+#banner { }
+
+/* Fixed Topbar Navigation */
+body.top-navbar { padding-top: 60px; }
+body.admin-bar .navbar-fixed-top { top: 28px; }
+
+.navbar-inner,
+.navbar .btn-navbar {
+  background-color: #151515; /*#aa000000; /* fallback color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, #88000000, #cc000000);								/* FF3.6+ */
+  background-image: -ms-linear-gradient(top, #88000000, #cc000000);									/* IE10+ */
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#88000000), to(#cc000000));			/* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #88000000, #cc000000);								/* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, #88000000, #cc000000);									/* Opera 11.10+ */
+  background-image: linear-gradient(top, #88000000, #cc000000);										/* W3C */
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#88000000', endColorstr='#cc000000'), GradientType=0);
+}
+
+.navbar .nav .current-page-ancestor > a,
+.navbar .nav .current-page-ancestor > a:hover,
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+	background-color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+}
+
+.nav-collapse .nav > li > a:hover,
+.nav-collapse .dropdown-menu a:hover {
+	background-color: rgb(30, 30, 30);
+  	font-weight: bold;
+}
+
+.navbar .brand,
+.navbar .nav > li > a {
+    font-weight: bold;
+}
+
+.navbar .btn-navbar:hover,
+.navbar .btn-navbar:active,
+.navbar .btn-navbar.active,
+.navbar .btn-navbar.disabled,
+.navbar .btn-navbar[disabled] {
+	background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+#content { }
+
+.page-header h1 { text-align:center; }
+/* .home .page-header { display:none; } */
+
+.dropshadow {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =============================================================================
+   Primary Content
+   ========================================================================== */
+
+#main { }
+
+ul.inline { margin-left: 0; display: inline-block; }
+ul.inline li { display: inline; list-style-type: none; }
+p + ul.inline { position:relative; top:-9px; } /* no spacing to preceeding paragraph */
+
+ul.middot li:before { content: '\0020\00B7\0020'; }
+ul.middot li:first-child:before { content: ''; }
+
+div.work li { padding-top: 0.25em; padding-bottom: 0.25em; }
+div.work ol { margin-bottom:0; }
+div.work ol ol { list-style-type: lower-alpha; }
+.marks { color: #888; font-weight: normal; }
+
+
+/* =============================================================================
+   Sidebar
+   ========================================================================== */
+
+#sidebar { }
+
+.widget_twitter li { margin-bottom:0.75em; }
+.widget_twitter .entry-meta { display:block; text-transform: uppercase; font-size:0.8em; line-height:0.9em; }
+
+/* =============================================================================
+   Posts
+   ========================================================================== */
+
+.hentry header { }
+.hentry h2 a { text-decoration: none; }
+.hentry time { display: block; }
+.hentry p.byline { }
+.hentry footer { clear: both; }
+
+
+
+/* =============================================================================
+   Post Comments
+   ========================================================================== */
+
+#comments, #respond, #submit { clear: both; display: block; }
+ol.commentlist img.avatar { float: left; margin-right: 10px; }
+
+
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+#content-info {
+  margin-top: 45px;
+  padding: 30px 0 30px;
+  border-top: 1px solid #e5e5e5;
+}
+
+#content-info p small { font-size: 13px; }
+
+
+
+/* =============================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { margin: 0 20px 20px 0; float: left; }
+.alignright { margin: 0 0 20px 20px; float: right; }
+
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 979px) {
+  /* Fix top padding when using the responsive grid with the fixed topbar */
+  body.top-navbar {
+    padding-top: 0;
+  }
+}
+
+
+
+/* =============================================================================
+   Google code prettify
+   Mixture of <http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css>
+   and <http://code.google.com/p/google-code-prettify/source/browse/trunk/src/prettify.css>.
+   ========================================================================== */
+
+/* Pretty printing styles. Used with prettify.js. */
+
+/*
+
+Legend:
+  atn - markup attribute name
+  atv - markup attribute value
+  com - comment
+  dec - declaration
+  kwd - keyword
+  lit - literal value
+  pln - plain text
+  pun - punctuation
+  str - string content
+  tag - markup tag
+  typ - type name
+  var - variable name
+*/
+
+/* Visual Studio theme from <http://stackoverflow.com/a/2171410/72470>. */
+.com { color: #008000; }
+.str, .tag { color: #A31515; }
+.kwd, .atv { color: #0000FF; }
+.typ { color: #2B91AF; }
+.lit, .atn { color: #FF0000; }
+.pun, .pln { color: #000000; }
+.dec { color: purple; }
+
+/* match text colour */
+.pun, .pln, code { color: #333 }
+
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+     -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+          box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0 0 0 33px; /* IE indents via margin-left */
+}
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: 0 1px 0 #fff;
+}
