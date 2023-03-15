@@ -1,0 +1,347 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>TORE: Token Reduction for Efficient Human Mesh Recovery with Transformer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="TORE: Token Reduction for Efficient Human Mesh Recovery with Transformer">
+	<meta name="citation_author" content="Zhiyang Dou">
+	<meta name="citation_author" content="Qingxuan Wu">
+	<meta name="citation_author" content="Cheng Lin">
+	<meta name="citation_author" content="Zeyu Cao">
+	<meta name="citation_author" content="Qiangqiang Wu">
+	<meta name="citation_author" content="Weilin Wan">
+		<meta name="citation_author" content="Taku Komura">
+	<meta name="citation_author" content="Wenping Wang">
+	<meta name="citation_publication_date" content="2023">
+	<meta name="citation_conference_title" content="Arxiv">
+	<meta name="citation_pdf_url" content="https://arxiv.org/abs/2211.10705">
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="
+In this paper, we introduce a set of simple yet effective TOken REduction (TORE) strategies for Transformer-based Human Mesh Recovery from monocular images. Current SOTA performance is achieved by Transformer-based structures. However, they suffer from high model complexity and computation cost caused by redundant tokens. We propose token reduction strategies based on two important aspects, i.e., the 3D geometry structure and 2D image feature, where we hierarchically recover the mesh geometry with priors from body structure and conduct token clustering to pass fewer but more discriminative image feature tokens to the Transformer. Our method massively reduces the number of tokens involved in high-complexity interactions in the Transformer. This leads to a significantly reduced computational cost while still achieving competitive or even higher accuracy in shape recovery. Extensive experiments across a wide range of benchmarks validate the superior effectiveness of the proposed method. We further demonstrate the generalizability of our method on hand mesh recovery. Our code will be publicly available once the paper is published."
+	<link rel="author" href="" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="67" border="0"></a>
+				</td>
+				<a href="https://www.ox.ac.uk/" target="_blank"><IMG src="./logos/Oxford.png" height="66" border="0"></a></td>
+				<a href="http://www.tencent.com/" target="_blank"><IMG src="./logos/Logo_tencent.png" height="66"
+						border="0"></a> </td>
+				<a href="https://www.cam.ac.uk/" target="_blank"><IMG src="./logos/Cambridge.png" height="66" border="0"></a></td>
+				<a href="https://www.cityu.edu.hk/" target="_blank"><IMG src="./logos/cityu.png" height="55" border="0"></a></td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="0"></a></td>
+			</div>
+
+			<div class="section head">
+
+				<h1>TORE: Token Reduction for Efficient Human Mesh Recovery with Transformer</h1>
+
+				<div class="authors">
+					<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou</a><sup> †1</sup>&#160;&#160;
+					<a href="" target="_blank">Qingxuan Wu</a><sup> †2</sup>&#160;&#160;
+					<a href="https://clinplayer.github.io/" target="_blank">Cheng Lin</a><sup> ‡3</sup>&#160;&#160;
+					<a href="" target="_blank">Zeyu Cao</a><sup> ‡4</sup>&#160;&#160;
+					<a href="https://scholars.cityu.edu.hk/en/persons/qiangqiang-wu(3377e887-756c-431a-afa8-3f0a7145946b).html" target="_blank">Qiangqiang Wu</a><sup> 5</sup>&#160;&#160;
+					<a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/author/37086393196" target="_blank">Weilin Wan</a><sup> 1</sup>&#160;&#160;
+					<br>
+					<a href="https://i.cs.hku.hk/~taku/">Taku Komura</a><sup> 1</sup>&#160;&#160;
+					<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html">Wenping Wang</a><sup> 6</sup>&#160;&#160;
+				</div>
+
+
+
+				<div class="affiliations">
+					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.ox.ac.uk/" target="_blank">University of Oxford</a>&#160;&#160;
+					<sup>3</sup><a href="https://www.tencent.com/" target="_blank">Tencent Games</a>&#160;&#160;
+					<sup>4</sup><a href="https://www.cam.ac.uk/" target="_blank">University of Cambridge</a>&#160;&#160;
+					<br>
+					<sup>5</sup><a href="https://www.cityu.edu.hk/" target="_blank">City University of Hong Kong</a>&#160;&#160;
+					<sup>6</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+				</div>
+				<div class="venue"> Arxiv, 2023. </div>
+			</div>
+						<div class="section downloads">
+					<center>
+						<ul style="padding-left: 0">
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/abs/2211.10705"><img src="images/pdf.png"></a><br/>
+									<a href="https://arxiv.org/abs/2211.10705">Paper</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href=""><img src="images/data_ico.png"></a><br/>
+									<a href="">Code</a>
+
+								</div>
+							</li></ul>
+					</center>
+				</div>
+
+
+
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:88%; margin-bottom:20px">
+					</div>
+					<p>Overview of the proposed framework. Our goal is to reduce tokens for Transformer Encoder and Decoder which are critical modules in the whole pipeline. Image Token Pruner (ITP) and Neural Shape Regressor (NSR) are two lightweight components.</p>
+					</div>
+				</center>
+				<p>
+					In this paper, we introduce a set of simple yet effective TOken REduction (TORE) strategies for Transformer-based Human Mesh Recovery from monocular images. Current SOTA performance is achieved by Transformer-based structures. However, they suffer from high model complexity and computation cost caused by redundant tokens. We propose token reduction strategies based on two important aspects, i.e., the 3D geometry structure and 2D image feature, where we hierarchically recover the mesh geometry with priors from body structure and conduct token clustering to pass fewer but more discriminative image feature tokens to the Transformer. Our method massively reduces the number of tokens involved in high-complexity interactions in the Transformer. This leads to a significantly reduced computational cost while still achieving competitive or even higher accuracy in shape recovery. Extensive experiments across a wide range of benchmarks validate the superior effectiveness of the proposed method. We further demonstrate the generalizability of our method on hand mesh recovery. Our code will be publicly available once the paper is published.
+				</p>
+			</div>
+			<br>
+
+			<!--<div class="section abstract">
+				<h2>Full Video</h2><br>
+				<center>
+					<!-- <iframe width="640" height="360" src="data/video.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<!--<iframe width="640" height="360" src="https://www.youtube.com/embed/RFqPwH7QFEI" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>-->
+					<!--iframe src="./data/video.mp4" allow="autoplay; encrypted-media" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="560" height="315" frameborder="0"></iframe-->
+					<!--<p style="font-size:11px; text-align:center">
+					Download Video: <a href="data/video.mp4" target="_blank">HD</a> (MP4, 111 MB)
+				</p>
+				</center>
+			</div>-->
+
+			<div class="section abstract">
+				<h2>Introduction</h2>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_teasar.png" style="width:46%; margin-bottom:20px">
+					</div>
+					<p>Throughput v.s. Accuracy and GFLOPs v.s. Accuracy on Human3.6M. Our method dramatically saves GFLOPs and improves throughput while maintaining highly competitive accuracy. The x-axis of the bottom GFLOPs figure is reversed for demonstration. Eb0 and R50 represent EfficientNet-b0 and ResNet-50 backbones.</p>
+					</p>
+					</div>
+				</center>
+			<p> In this paper, we reveal the issues of token redundancy in the existing Transformer-based methods for Human Mesh Recovery (HMR).  We propose effective strategies for token reduction by incorporating the insights from the 3D geometry structure and 2D image feature into the Transformer design. Our method achieves SOTA performance on various benchmarks with less computation cost. For instance, for the Transformer Encoder structure (METRO) and the Transformer Encoder-Decoder structure (FastMETRO) with ResNet-50 as backbone, our method maintains competitive accuracy while saving 82.9%, 51.4% GFLOPs and improving 139.1%, 38.0% throughput, respectively.
+			</p>
+			</div>
+
+			<br>
+
+			<div class="section abstract">
+				<h2>Effectiveness of Geometry Token Reduction (GTR)</h2><br>
+				<p>
+				For 3D mesh recovery, instead of querying both vertices and joints with input features simultaneously,
+				we consider learning a small set of body tokens at the skeleton level for each body part.
+				To recover corresponding mesh vertices, we use an efficient Neural Shape Regressor (NSR) to infer the mesh from the body features encoded by these tokens.
+				This query process can also be interpreted as an attention matrix decomposition, by which we effectively leverage the geometric insights encoded at
+				the skeleton level to infer the mesh structure hierarchically.
+				</p>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_gtr.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>Qualitative results of GTR equipped Encoder-Decoder structure (H64) on Human3.6M and 3DPW.</p>
+					</div>
+					<br>
+
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_gtr_table1.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>Comparison with the Transformer Encoder structure METRO (M) on Human3.6M. We test with ResNet-50 (R50) and HRNet-W64 (H64) as backbones. GFLOPs^T is GFLOPs of the transformer.</p>
+					</div>
+					<br>
+
+
+						<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_gtr_table2.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>
+						Comparison with the Transformer Encoder-Decoder structure FastMETRO (FM) on Human3.6M. We test with EfficientNet-b0 (Eb0), ResNet-50 (R50) and HRNet-W64 (H64) as backbones. GFLOPs^T stand for GFLOPs for the transformer.
+					</p>	</div>
+
+
+				</center>
+			
+				
+			</div>
+
+			<br>
+
+				<div class="section abstract">
+				<h2>Effectiveness of Image Token Pruning (ITP)</h2><br>
+					<p>
+					For the input image feature, we introduce a learnable token pruner to prune the tokens of patch-based features extracted by a CNN. We employ a clustering-based strategy to identify discriminative features, which results in two appealing properties: 1) the end-to-end learning of the pruner is unsupervised, avoiding the need for additional data labeling; 2) it learns semantically consistent features across various images, thus further benefiting the geometry reasoning and enhancing the capability of generalizability. These token reduction strategies substantially reduce the number of query tokens involved in the computation without sacrificing the important information.
+					</p>
+					<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_tore_mesh.png" style="width:90%; margin-bottom:20px">
+					</div>
+					<p>Qualitative results of FastMETRO+GTP+ITP@$20% on Human3.6M and 3DPW.
+					</p>
+					</div>
+				<br>
+
+
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_tore_table.png" style="width:90%; margin-bottom:20px">
+					</div>
+					<p>
+						Statistics of all proposed components (GTR + ITP) for Encoder-Decoder structure FastMETRO (FM) on Human3.6M. The backbones are EfficientNet-b0 (Eb0) and ResNet-50 (R50). GFLOPs^T stands for GFLOPs of the Transformer.
+						</p>
+					</div>
+				</center>
+					<br>
+					<p> ITP helps improve the accuracy on the challenging in-the-wild 3DPW dataset, as shown below. Specifically, when further equipped with ITP, the model performance in MPVE, MPJPE and PAMPJPE are improved by 2.5mm, 1.2mm and 2.0mm, respectively. These results indicate that the ITP module learns more discriminative features and thus enhances the capability of generalization, allowing methods with ITP to achieve better performance in more challenging in-the-wild scenarios.
+					</p>
+					<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_itp_3dpw.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>
+					Influence of ITP for monocular 3D human mesh recovery on 3DPW. </p>
+					</div>
+					<br>
+
+				</center>
+				</div>
+
+				<div class="section abstract">
+				<h2>Generalization on Hand Mesh Recovery</h2>
+					<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_hand_mesh.png" style="width:88%; margin-bottom:20px">
+					</div>
+					<p>Qualitative results on FreiHAND by FastMETRO+H64+GTR+ITP@20% model.</p>
+					</div>
+				</center>
+				<br>
+
+				<h2>More results</h2>
+				<h3>Learned semantics by ITP</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_cluster_attn.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>Visualization of learned semantics by ITP. Note that
+the clustering results are consistent across different identities, i.e,
+different clusters correspond to different body joints.</p>
+					</div>
+				</center>
+				<br>
+					<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_projection.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>Visualization of learned semantics by Image Token
+Pruner. (a) projected joints. (b) projected mesh vertices. (c) mask
+supervision. (d) scores predicted by ITP.</p>
+					</div>
+				</center>
+					<br>
+
+				<h3>Vertex-Body Feature Interactions Modeled by GTR</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_joint_vertex_attn.png" style="width:50%; margin-bottom:20px">
+					</div>
+					<p>Visualization of cross-attention between joint and vertices. Samples are from Human3.6M and 3DPW.</p>
+					</div>
+
+				</center>
+				<center>
+					<br>
+									<h2 align="center">Check out our paper for more details.</h3>
+				</center>
+			
+				
+			</div>
+			
+			
+			
+
+			
+			<div class="section list">
+				<h2>Citation</h2>
+				<div class="section bibtex">
+					<pre>@article{dou2022tore,
+  title={TORE: Token Reduction for Efficient Human Mesh Recovery with Transformer},
+  author={Dou, Zhiyang and Wu, Qingxuan and Lin, Cheng and Cao, Zeyu and Wu, Qiangqiang and Wan, Weilin and Komura, Taku and Wang, Wenping},
+  journal={arXiv preprint arXiv:2211.10705},
+  year={2022}
+}</div>
+			</div>
+			
+		<!-- 	<div class="section list">
+				<h2>Related Links</h2>
+				<div class="row" style="margin-top:15px">
+				<li>Parts of <a href="https://github.com/Totoro97/NeuS" target="_blank">our PyTorch implementation</a> are taken from <a href="https://github.com/lioryariv/idr" target="_blank">IDR</a> and <a href="https://github.com/yenchenlin/nerf-pytorch" target="_blank">NeRF-pytorch</a>.
+				<li>Check the concurrent works of learning neural implicit surfaces: </br> 			
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2104.10078" target="_blank">UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction</a>, Oechsle et al. 2021 </br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2106.12052" target="_blank">Volume Rendering of Neural Implicit Surfaces</a>, Yariv et al. 2021 
+				<li>Also check other works about neural scene representations and neural rendering from our group: </br> 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://lingjie0206.github.io/papers/NSVF/" target="_blank">Neural Sparse Voxel Fields:</a>, Liu et al. 2020 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/" target="_blank">Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video</a>, Tretschk et al. 2021</br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://gvv.mpi-inf.mpg.de/projects/NeuralActor/" target="_blank">Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</a>, Liu et al. 2021 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://liuyuan-pal.github.io/NeuRay/" target="_blank">Neural Rays for Occlusion-aware Image-based Rendering</a>, Liu et al. 2021. </br> 	
+				</div>
+			</div>
+			
+			<div class="section list">
+				<h2>Acknowledgements</h2>
+				<div class="row" style="margin-top:15px">
+				<p>We thank Michael Oechsle for providing the results of UNISURF. Christian Theobalt was supported by ERC Consolidator Grant 770784. Lingjie Liu was supported by Lise Meitner Postdoctoral Fellowship.</p> 
+				</div>
+			</div> -->
+			
+			
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
