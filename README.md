@@ -25,3 +25,7 @@ Change width of the text box: Frank-ZY-Dou.github.io/files/bootstrap-responsive.
 export http_proxy=127.0.0.1:7890
 export https_proxy=127.0.0.1:7890
 ```
+```angular2html
+unset http_proxy
+unset https_proxy
+```
