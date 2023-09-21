@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>Coverage Axis: Inner Point Selection for 3D Shape Skeletonization</title>
+	<title>C·ASE: Learning Conditional Adversarial Skill Embeddings for Physics-based Characters</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<!-- Meta tags for Zotero grab citation -->
@@ -36,13 +36,11 @@
 	<div id="content">
 		<div id="content-inner">
 			<div class="section logos" style="text-align:center">
-				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="66" border="0"></a>
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="70" border="0"></a>
 				</td>
-				<a href="http://www.tencent.com/" target="_blank"><IMG src="./logos/Logo_tencent.png" height="66"
-						border="0"></a></td>
-				<a href="https://www.en.sdu.edu.cn/" target="_blank"><IMG src="./logos/Logo_SDU.png" height="66" border="0"></a></td>
-				
-				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="0"></a></td>
+				<a href="https://ai.tencent.com/ailab/en/about/" target="_blank"><IMG src="./logos/TecentAILAB.png" height="66"
+						border="4"></a></td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="4"></a></td>
 			</div>
 
 			<div class="section head">
@@ -70,26 +68,38 @@
 						<ul style="padding-left: 0">
 							<li class="grid">
 								<div class="griditem">
-									<a href="https://arxiv.org/abs/2110.00965"><img src="images/pdf.png"></a><br/>
-									<a href="https://arxiv.org/abs/2110.00965">Paper</a>
+									<a href="http://arxiv.org/abs/2309.11351"><img src="images/pdf.png"></a><br/>
+									<a href="http://arxiv.org/abs/2309.11351">Paper</a>
 								</div>
 							</li><li class="grid">
 								<div class="griditem">
-									<a href="https://github.com/Frank-ZY-Dou/Coverage_Axis"><img src="images/data_ico.png"></a><br/>
-									<a href="https://github.com/Frank-ZY-Dou/Coverage_Axis">Code</a>
+									<a href="https://youtu.be/Cgq6JbQ1VW4"><img src="images/video.png"></a><br/>
+									<a href="https://youtu.be/Cgq6JbQ1VW4">Video</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href=""><img src="images/data_ico.png"></a><br/>
+									<a href="">Code</a>
 
 								</div>
 							</li></ul>
 					</center>
 				</div>
 
+			<div class="section abstract">
+					<center>
+						<strong>Please check out our <a href="https://youtu.be/Cgq6JbQ1VW4">video</a> for more details.</strong>
+					</center>
+			</div>
 
 			<div class="section abstract">
 				<h2>Abstract</h2><br>
 				<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_teaser_zipped.jpg" style="width:100%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_teasar.png" style="width:100%; margin-bottom:20px">
+
 					</div>
+					<p>Our framework enables physically simulated characters to master highly varied and extensive skills with high efficiency and effectiveness.  Notably, it offers an explicit control handle for directly specifying the desired skill from a diverse and extensive set of skills.  Here, a character is instructed by the user to perform a sequence of skills, including kick, jump attack, sword bash, shield bash, and finally, roaring.</p>
 
 				</div>
 				<p>
@@ -113,7 +123,23 @@
 			</div>-->
 
 			<div class="section abstract">
-				<h2>Introduction</h2>
+				<h2>Framework</h2>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_intro.jpg" style="width:88%; margin-bottom:20px">
+					</div>
+					<p>Pipeline of inner point selection. (a) Input 3D model. (b) Inner point candidates. (c) Dilated inner balls. (d) Selected dilated balls based on surface point coverage. (e) Selected inner balls with original radius. (f) Selected inner points.
+					</p>
+					</div>
+				</center>
+			<p>We observe a medial sphere can be considered as an abstraction of local geometry, while the union of all the local geometries forms the entire shape. With this insight, our key idea is to formulate a Set Cover Problem, of which goal is to identify the smallest sub-collection of whose union equals the universe. Specifically, we aim to find the minimum number of dilated inner balls that cover sub-regions on the surface (i.e., sub-collection) to approximate the whole shape (i.e., universe).
+
+			This formulation inherently induces a compact and expressive representation that approximates the MAT. First, the coverage constraint enforces consistency with the shape structure. Second, selecting the fewest possible candidates for shape approximation not only gives a simplified representation, but also favors the interior points that dominate larger area, which corresponds to the definition of MAT, i.e., maximally inscribed spheres.
+			</p>
+
+
+
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
@@ -222,16 +248,13 @@
 			<div class="section list">
 				<h2>Citation</h2>
 				<div class="section bibtex">
-					<pre>@inproceedings{dou2022coverage,
-  title={Coverage Axis: Inner Point Selection for 3D Shape Skeletonization},
-  author={Dou, Zhiyang and Lin, Cheng and Xu, Rui and Yang, Lei and Xin, Shiqing and Komura, Taku and Wang, Wenping},
-  booktitle={Computer Graphics Forum},
-  volume={41},
-  number={2},
-  pages={419--432},
-  year={2022},
-  organization={Wiley Online Library}
-}</div>
+					<pre>@article{dou2022case,
+  title={C·ASE: Learning Conditional Adversarial Skill Embeddings for Physics-based Characters},
+  author={Zhiyang Dou and Xuelin Chen and Qingnan Fan and Taku Komura and Wenping Wang},
+  journal={arXiv preprint arXiv:2309.11351},
+  year={2023}
+}
+				</div>
 			</div>
 			
 		<!-- 	<div class="section list">
