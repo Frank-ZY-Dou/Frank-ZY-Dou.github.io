@@ -30,7 +30,23 @@
 	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
 	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
 	<script src="js/google-code-prettify/prettify.js"></script>
+
+
+
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+
+
 </head>
+
 
 <body>
 	<div id="content">
@@ -127,118 +143,129 @@
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_intro.jpg" style="width:88%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:50%; margin-bottom:20px">
 					</div>
-					<p>Pipeline of inner point selection. (a) Input 3D model. (b) Inner point candidates. (c) Dilated inner balls. (d) Selected dilated balls based on surface point coverage. (e) Selected inner balls with original radius. (f) Selected inner points.
+
+					</div>
+				</center>
+			<p>Our framework contains three stages: the pre-training, interactive controller training, and interactive character animation stages.
+During pre-training,  a low-level policy $\pi$ learns conditional adversarial skill embeddings from a diverse and extensive motion dataset,
+followed by more high-level policies $\pi$ trained to allow interactive control of the character.
+Last, during the interactive character animation stage, users can interactively animate the character in various manners, possibly with desired skills.
+			</p>
+
+			</div>
+			<br>
+
+			<div class="section abstract">
+				<h2>Low-level Conditional Policy</h2>
+				<h3>Conditional Skill Embeddings</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_llc.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>C·ASE enables the physically simulated character to perform skills specified by skill labels and transition latent codes.
 					</p>
 					</div>
 				</center>
-			<p>We observe a medial sphere can be considered as an abstraction of local geometry, while the union of all the local geometries forms the entire shape. With this insight, our key idea is to formulate a Set Cover Problem, of which goal is to identify the smallest sub-collection of whose union equals the universe. Specifically, we aim to find the minimum number of dilated inner balls that cover sub-regions on the surface (i.e., sub-collection) to approximate the whole shape (i.e., universe).
+			</div>
 
-			This formulation inherently induces a compact and expressive representation that approximates the MAT. First, the coverage constraint enforces consistency with the shape structure. Second, selecting the fewest possible candidates for shape approximation not only gives a simplified representation, but also favors the interior points that dominate larger area, which corresponds to the definition of MAT, i.e., maximally inscribed spheres.
-			</p>
-
-
+			<div class="section abstract">
+				<h3>Filtered Motion Coverage Rate</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_coverage_rate_vs_cut_off_rate.png" style="width:50%; margin-bottom:20px">
+					</div>
+						<p>Comparison of the motion coverage. The coverage rate of ASE and CALM falls dramatically with an increasing filtering rate, implying a serious imbalance of the coverage, whereas ours consistently produces high coverage rates.</p>
+					</div>
+				</center>
 
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_pipeline_1.jpg" style="width:88%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.0.png" style="width:50%; margin-bottom:20px">
+						<p> (a) No filtering.</p>
+						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.5.png" style="width:50%; margin-bottom:20px">
+						<p> (a)  Filtering rate $= 50\%$.</p>
 					</div>
-					<p>Pipeline of inner point selection. (a) Input 3D model. (b) Inner point candidates. (c) Dilated inner balls. (d) Selected dilated balls based on surface point coverage. (e) Selected inner balls with original radius. (f) Selected inner points. 
-					</p>
+						<p>Frequencies at which the low-level policy produces motions that match all 87 individual clips. We show distributions produced by the filtering rate of $0\%$ and $50\%$ here. Compared to ASE and CALM, our method produces diverse motions that much more evenly cover all reference clips.
+						</p>
 					</div>
 				</center>
-			<p>We observe a medial sphere can be considered as an abstraction of local geometry, while the union of all the local geometries forms the entire shape. With this insight, our key idea is to formulate a Set Cover Problem, of which goal is to identify the smallest sub-collection of whose union equals the universe. Specifically, we aim to find the minimum number of dilated inner balls that cover sub-regions on the surface (i.e., sub-collection) to approximate the whole shape (i.e., universe).
-
-			This formulation inherently induces a compact and expressive representation that approximates the MAT. First, the coverage constraint enforces consistency with the shape structure. Second, selecting the fewest possible candidates for shape approximation not only gives a simplified representation, but also favors the interior points that dominate larger area, which corresponds to the definition of MAT, i.e., maximally inscribed spheres. 
-			</p>
 			</div>
+
+
+			<div class="section abstract">
+				<h3>Motion Diversity</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_diversity_z_under_c.png" style="width:100%; margin-bottom:20px">
+					</div>
+						<p>Motion variations (three colored in red, blue, and green are shown) are shown for each skill category. We test with the Sword&Shield dataset.</p>
+					</div>
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h3>Skill Transition Coverage</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_transition_coverage.png" style="width:100%; margin-bottom:20px">
+					</div>
+						<p>Transition coverage and probability between different skills. We show all 87 motion clips in the Sword\&Shield dataset. Our model achieves a higher coverage rate and more even transition probability distribution compared with ASE and CALM.
+						</p>
+					</div>
+				</center>
+			</div>
+
 
 			<br>
 
 			<div class="section abstract">
-				<h2>Coverage Axis from Mesh Input</h2><br>
-
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_shape_recon.jpg" style="width:90%; margin-bottom:20px">
-					</div>
-					<p>Shape approximation results of Coverage Axis. First row: the input shapes. Second row: the output skeletal representations for MAT approximation. Third row: the reconstructed shapes by the skeletal representations. Fourth row: color coding of the reconstruction error between each point in the reconstruction and the input shape, defined relative to the diagonal length of the bounding box.
-					</p>
-					</div>
-
-				</center>
-			
-				
-			</div>
-
-			<br>
-
-				<div class="section abstract">
-				<h2>Coverage Axis from Point Cloud Input</h2><br>
+				<h2>Interactive Character Animation</h2><br>
+				<h3>Path-follower</h3>
 				<br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_pc.png" style="width:88%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_app_path_following_3.png" style="width:100%; margin-bottom:20px">
 					</div>
-					<p>Comparison with existing shape skeletonization methods for point clouds.
+					<p>Path-follower: the character faithfully follows user-specified paths (blue path) under various specified skills, including jog, march, walk, sidewalk, run, slow walk, open-armed walk, patrol, and confident strut; More results are presented in the supplementary video.
 					</p>
 					</div>
 				</center>
-			
-				
+
+
+				<h3>Directional Control</h3>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_app_directional_3.png" style="width:100%; margin-bottom:20px">
+					</div>
+					<p>Directional Control: the character faithfully follows user-specified local moving direction (blue arrow) under various specified skills, including walk, stooped run, stride, casual walk, hands-up walk, and march; See more results in the supplementary video.</p>
+					</div>
+				</center>
+
+				<h3>Character Re-locating</h3>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_app_location_3.png" style="width:100%; margin-bottom:20px">
+					</div>
+					<p>Character Re-locating: the character re-locates to a user-specified target location (visualized by the blue disks on the ground and arrows in the air) with different specified skills, including walk, limping, patrol, run, foot-sliding walk, and quick walk; More results can be found in the supplementary video.	</p>
+					</div>
+				</center>
+
+
 				</div>
-			<br>
-
-				<div class="section abstract">
-				<h2>More Results</h2>
-				<h3>Robustness to Surface Noise</h3><br>
 
 
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_robustness.png" style="width:88%; margin-bottom:20px">
-					</div>
-					<p>Comparison with Q-MAT on the robustness to surface noise. (a) Input model. (b)(c) and (d)(e) correspond to comparisons at different simplification levels.
-					</p>
-					</div>
-				</center>
-				<br>
-
-
-				<h3>Centrality and Random Initialization</h3><br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_random.jpg" style="width:45%; margin-bottom:20px">
-					</div>
-					<p>Skeletal point selection results from randomly sampled inner candidates. The blue points are candidate points generated by randomly sampling, while the orange points are selected points by our algorithm.
-					</p>
-					</div>
-				</center>
-				<br>
-
-				<h3>Divide and Conquer Strategy for Large Models</h3><br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_additional1.jpg" style="width:42%; margin-bottom:20px">
-					</div>
-					<p>Coverage Axis with divide and conquer strategy. The model is divided into 29 parts for solving the set coverage problem separately on each part. The average running time of inner point selection of each component is 1.04 s. However, it takes more than 15 min to solve for the entire model.
-					</p>
-					</div>
-
-				</center>
-				<center>
-					<br>
-									<h2 align="center">Check out our paper for more details.</h3>
-				</center>
-			
-				
 			</div>
 			
 			
