@@ -1,6 +1,7 @@
 # Notes
 
 Change width of left panel: Frank-ZY-Dou.github.io/files/bootstrap-responsive.css
+
 ```angular2html
 .span8{width:710px}
 ```
