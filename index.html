@@ -12,9 +12,9 @@
 
 	<style>
 		.bio_container {
-      display: flex;
+      /*display: flex;*/
 			/*flex-direction: row;*/
-			align-items: flex-start; /* 图片和文字顶部对齐 */
+			/*align-items: flex-start; !* 图片和文字顶部对齐 *!*/
 
       /*align-items: top;*/
     }
@@ -23,19 +23,22 @@
 		height: 220px;
       overflow: hidden;
       position: relative;
-		margin: 8px;
+		margin: 0px;
 		/*flex-shrink: 0;*/
-		  flex: 0 0 auto; /* 图片容器不会伸缩 */
+		/*  flex: 0 0 auto; !* 图片容器不会伸缩 *!*/
+		            float: left;
 
     }
 	 .slider-text {
       /*position: relative;*/
-		margin: 8px;
+		margin: 0px;
+		   /*float: left; !* 文字容器向左浮动 *!*/
 		 /*width: 1000px;*/
 		 /*height: 220px;*/
 		 /*height: 100%;*/
-		   flex: 1 1 auto; /* 文字容器伸缩填充剩余空间 */
+		 /*  flex: 1 1 auto; !* 文字容器伸缩填充剩余空间 *!*/
 
+		            /*float: left;*/
 
 
     }
@@ -183,9 +186,12 @@
 					<button onclick="nextSlide()">&gt</button>
 					</div>
 
+
 				</div>
+
 					<div class="slider-text">
-						<p>
+<!--									<div id="main" class="span8" role="main">-->
+			<p>
 					I am a fourth-year Ph.D. candidate in Computer Graphics and Computer Vision Group at <a href="https://www.hku.hk/">The University of Hong Kong</a>, supervised by <a href="https://www.cs.hku.hk/people/academic-staff/wenping">Prof. Wenping Wang</a> and <a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku">Prof. Taku Komura</a>. I received my B. Eng. degree with honors at <a href="https://www.en.sdu.edu.cn/">Shandong University</a>.	My undergraduate research advisor is <a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html">Prof. Shiqing Xin</a>.<br>
 					I am currently a visiting scholar in the Department of Computer and Information Science at the <a href="https://www.upenn.edu/">University of Pennsylvania</a>.
 					<br>
