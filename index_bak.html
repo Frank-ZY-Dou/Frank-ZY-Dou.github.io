@@ -7,61 +7,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-PYC1GJ7PZQ');
 </script>
-
-	<style>
-		.bio_container {
-      display: flex;
-      /*align-items: top;*/
-    }
-    .slider-container {
-      width: 580px;
-      /*height: 100%;*/
-		height: 200px;
-      overflow: hidden;
-      position: relative;
-		margin: 8px;
-    }
-	 .slider-text {
-      position: relative;
-		margin: 8px;
-    }
-    .slider {
-      display: flex;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      width: 100%;
-      flex-shrink: 0;
-    }
-
-    .slide img {
-      width: 98.5%;
-      height: 99%;
-    }
-
-    .slider-controls {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-    }
-
-    .slider-controls button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0px;
-      margin: 0 20px;
-		color: white;
-		font-weight: bold;
-
-    }
-  </style>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
@@ -144,29 +92,9 @@
 <!--						<img class="size-medium wp-image-712" style="margin-bottom: 5px;" src="./files/my_name.png" alt="Homepage" width="100" />-->
 <!--					</h1>-->
 				</div>
-				<div class="bio_container">
-				<div class="slider-container">
-					<div class="slider">
-					  <div class="slide">
-						  <img class="wp-image-697 alignleft dropshadow" style="margin: 0 -1.5em -1em 0; border: 1px solid #222;" src="./files/Frank_avatar3.png"
-							   alt="Slide 1" width="200" height="200">
+				<p>
+					<img class=" wp-image-697 alignleft dropshadow" style="margin: 0 1.5em 1em 0; border: 1px solid #222;" src="./files/Frank_avatar3.png" alt="Portrait photo of Frank" width="192" height="203">
 
-					  </div>
-
-					  <div class="slide">
-							<img class=" wp-image-697 alignleft dropshadow" style="margin: 0 1.5em 1em 0; border: 1px solid #222;" src="./files/Frank_avatar_style.png"
-							   alt="Slide 2" width="200" height="200">
-					  </div>
-
-					</div>
-					<div class="slider-controls">
-					<button onclick="prevSlide()">Previous</button>
-					<button onclick="nextSlide()">Next</button>
-					</div>
-
-				</div>
-					<div class="slider-text">
-						<p>
 					I am a fourth-year Ph.D. candidate in Computer Graphics and Computer Vision Group at <a href="https://www.hku.hk/">The University of Hong Kong</a>, supervised by <a href="https://www.cs.hku.hk/people/academic-staff/wenping">Prof. Wenping Wang</a> and <a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku">Prof. Taku Komura</a>. I received my B. Eng. degree with honors at <a href="https://www.en.sdu.edu.cn/">Shandong University</a>.	My undergraduate research advisor is <a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html">Prof. Shiqing Xin</a>.<br>
 					I am currently a visiting scholar in the Department of Computer and Information Science at the <a href="https://www.upenn.edu/">University of Pennsylvania</a>.
 					<br>
@@ -174,54 +102,6 @@
 					Research interests: Character Animation, Geometric Modeling and Processing, Computer Graphics, Human Behavior Analysis.
 					<br>
 				</p>
-					</div>
-
-
-				</div>
-
-
-<!--					<img class=" wp-image-697 alignleft dropshadow" style="margin: 0 1.5em 1em 0; border: 1px solid #222;" src="./files/Frank_avatar3.png" alt="Portrait photo of Frank" width="192" height="203">-->
-
-
-<!--				<p>-->
-<!--				I am a fourth-year Ph.D. candidate in Computer Graphics and Computer Vision Group at <a href="https://www.hku.hk/">The University of Hong Kong</a>, supervised by <a href="https://www.cs.hku.hk/people/academic-staff/wenping">Prof. Wenping Wang</a> and <a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku">Prof. Taku Komura</a>. I received my B. Eng. degree with honors at <a href="https://www.en.sdu.edu.cn/">Shandong University</a>.	My undergraduate research advisor is <a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html">Prof. Shiqing Xin</a>.<br>-->
-<!--					I am currently a visiting scholar in the Department of Computer and Information Science at the <a href="https://www.upenn.edu/">University of Pennsylvania</a>.-->
-<!--					<br>-->
-<!--					<br>-->
-<!--					Research interests: Character Animation, Geometric Modeling and Processing, Computer Graphics, Human Behavior Analysis.-->
-<!--					<br>-->
-<!--				</p>-->
-
-
-
-
-  <script>
-    var slideIndex = 0;
-    var slider = document.querySelector('.slider');
-    var slides = document.querySelectorAll('.slide');
-
-    function showSlide() {
-      slider.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-
-    function prevSlide() {
-      slideIndex--;
-      if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-      }
-      showSlide();
-    }
-
-    function nextSlide() {
-      slideIndex++;
-      if (slideIndex >= slides.length) {
-        slideIndex = 0;
-      }
-      showSlide();
-    }
-  </script>
-
-
 				<div class="alignbottom visible-desktop">
 					<p>
 						<a href="https://www.en.sdu.edu.cn/">
