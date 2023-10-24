@@ -13,7 +13,9 @@
 	<style>
 		.bio_container {
       display: flex;
-			flex-direction: row;
+			/*flex-direction: row;*/
+			align-items: flex-start; /* 图片和文字顶部对齐 */
+
       /*align-items: top;*/
     }
     .slider-container {
@@ -22,7 +24,9 @@
       overflow: hidden;
       position: relative;
 		margin: 8px;
-		flex-shrink: 0;
+		/*flex-shrink: 0;*/
+		  flex: 0 0 auto; /* 图片容器不会伸缩 */
+
     }
 	 .slider-text {
       /*position: relative;*/
@@ -30,6 +34,10 @@
 		 /*width: 1000px;*/
 		 /*height: 220px;*/
 		 /*height: 100%;*/
+		   flex: 1 1 auto; /* 文字容器伸缩填充剩余空间 */
+
+
+
     }
     .slider {
       	display: flex;
@@ -65,7 +73,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 1px;
+      padding: 10px;
       margin: 0 60px;
 		color: darkgrey;
 		font-weight: bold;
