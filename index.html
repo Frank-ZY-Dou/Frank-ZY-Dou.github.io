@@ -397,6 +397,132 @@
 					<div class="row">
 						<div class="span2" style="margin-bottom: 0em;">
 							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_TLControl.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>TLControl: Trajectory and Language Control for Human Motion Synthesis</strong>
+							</a>
+							<br>Weilin Wan, <strong>Zhiyang Dou</strong>, Taku Komura, Wenping Wang, Dinesh Jayaraman, Lingjie Liu.<br>
+							<em> <b>Arxiv 2023.</b></em>
+							<br>
+
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://tlcontrol.weilinwl.com/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=thN1sQwP8R4&ab_channel=William">video</a></li>
+								<li><em class="fa fa-file"></em> <a href="">code(cs)</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(tlcontrol);">abstract</a>
+									<pre id="tlcontrol" class="invisible_text">Controllable human motion synthesis is essential for applications in AR/VR, gaming, movies, and embodied AI. Existing methods often focus solely on either language or full trajectory control, lacking precision in synthesizing motions aligned with user-specified trajectories, especially for multi-joint control. To address these issues, we present TLControl, a new method for realistic human motion synthesis, incorporating both low-level trajectory and high-level language semantics controls. Specifically, we first train a VQ-VAE to learn a compact latent motion space organized by body parts. We then propose a Masked Trajectories Transformer to make coarse initial predictions of full trajectories of joints based on the learned latent motion space, with user-specified partial trajectories and text descriptions as conditioning. Finally, we introduce an efficient test-time optimization to refine these coarse predictions for accurate trajectory control. Experiments demonstrate that TLControl outperforms the state-of-the-art in trajectory accuracy and time efficiency, making it practical for interactive and high-quality animation generation.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+<!--						<br>-->
+					</div>
+
+					<br>
+
+
+
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_EMDM.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>EMDM: Efficient Motion Diffusion Model for Fast, High-Quality Human Motion Generation</strong>
+							</a>
+							<br>Wenyang Zhou, <strong>Zhiyang Dou</strong>†, Zeyu Cao, Zhouyingcheng Liao, Jingbo Wang, Wenjia Wang, Yuan Liu, Taku Komura, Wenping Wang, Lingjie Liu.<br>
+							<em> <b>Arxiv 2023.</b></em>
+							<br>
+							† Project Lead.
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://frank-zy-dou.github.io/projects/EMDM/index.html">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://youtu.be/1SyCXbnol_g?si=ExYgmuM1eXB0-Yjj">video</a></li>
+								<li><em class="fa fa-file"></em> <a href="">code(cs)</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(emdm);">abstract</a>
+									<pre id="emdm" class="invisible_text">We introduce Efficient Motion Diffusion Model (EMDM) for fast and high-quality human motion generation. While current state-of-the-art generative diffusion models produce impressive results in human motion generation, they struggle to achieve fast motion generation while maintaining high-quality human motion. Previous works for efficient motion generation, such as motion latent diffusion, conduct latent diffusion within a motion latent space. However, learning such a latent space can be a non-trivial effort. Meanwhile, accelerating motion sampling by increasing the sampling step size, e.g., DDIM, typically leads to a decline in motion quality due to the inapproximation of complex data distributions when naively increasing the step size. To tackle these issues, we propose EMDM that captures the complex distribution during multiple sampling steps in the diffusion model, allowing for fewer sample steps for fast generation. Specifically, we develop a Conditional Denoising Diffusion GAN to capture multimodal data distributions conditioned on both control signals, i.e., textual description and denoising time step. By modeling the complex distribution of multiple steps, a larger step size and fewer sampling steps are achieved during motion synthesis, significantly accelerating the generation process. To effectively capture the human dynamics and reduce undesired artifacts, such as jitters, we employ motion geometric loss during network learning, which further improves the motion quality and training efficiency. As a result, compared to the SOTA motion diffusion models, EMDM achieves a remarkable speed-up at the generation stage while maintaining high-quality human motion generation in terms of fidelity and diversity.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+<!--						<br>-->
+					</div>
+
+
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_Dist_Human.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Disentangled Clothed Avatar Generation from Text Descriptions</strong>
+							</a>
+							<br>Jionghao Wang, Yuan Liu, <strong>Zhiyang Dou</strong>, Zhengming Yu, Yongqing Liang, Xin Li, Wenping Wang, Rong Xie, Li Song<br>
+							<em> <b>Arxiv 2023.</b></em>
+							<br>
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="">project page(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">video(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">code(cs)</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(dist_human);">abstract</a>
+									<pre id="dist_human" class="invisible_text">In this paper, we introduced a novel text-to-avatar generation method that separately generates the human body and the clothes and allows high-quality animation on the generated avatar. While recent advancements in text-to-avatar generation have yielded diverse human avatars from text prompts, these methods typically combine all elements—clothes, hair, and body—into a single 3D representation. Such an entangled approach poses challenges for downstream tasks like editing or animation. To overcome these limitations, we propose a novel disentangled 3D avatar representation named Sequentially Offset-SMPL (SO-SMPL), building upon the SMPL model. SO-SMPL represents the human body and clothes with two separate meshes, but associates them with offsets to ensure the physical alignment between the body and the clothes. Then, we design an Score Distillation Sampling(SDS)-based distillation framework to generate the proposed SO-SMPL representation from text prompts. In comparison with existing text-to-avatar methods, our approach not only achieves higher exture and geometry quality and better semantic alignment with text prompts, but also significantly improves the visual quality of character animation, virtual try-on, and avatar editing.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<br>
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_SurfD.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Surf-D: High-Quality Surface Generation for Arbitrary Topologies using Diffusion Models</strong>
+							</a>
+							<br>Zhengming Yu*, <strong>Zhiyang Dou</strong>*, Xiaoxiao Long, Cheng Lin, Zekun Li, Yuan Liu, Norman Müller, Taku Komura, Marc Habermann, Christian Theobalt, Xin Li, Wenping Wang<br>
+							<em> <b>Arxiv 2023.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="">project page(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper(cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">code(cs)</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(SurfD);">abstract</a>
+									<pre id="SurfD" class="invisible_text">In this paper, we present Surf-D, a novel method for generating high-quality 3D shapes as Surface with arbitrary topologies using Diffusion models. Specifically, we adopt Unsigned Distance Field (UDF) as the surface representation, as it excels in handling arbitrary topologies, enabling the generation of complex shapes. While the prior methods explored shape generation with different representations, they suffer from limited topologies and geometry details. Moreover, it's non-trivial to directly extend prior diffusion models to UDF because they lack spatial continuity due to the discrete volume structure. However, UDF requires accurate gradients for mesh extraction and learning. To tackle the issues, we first leverage a point-based auto-encoder to learn a compact latent space, which supports gradient querying for any input point through differentiation to effectively capture intricate geometry at a high resolution. Since the learning difficulty for various shapes can differ, a curriculum learning strategy is employed to efficiently embed various surfaces, enhancing the whole embedding process. With pretrained shape latent space, we employ a latent diffusion model to acquire the distribution of various shapes. Our approach demonstrates superior performance in shape generation across multiple modalities and conducts extensive experiments in unconditional generation, category conditional generation, 3D reconstruction from images, and text-to-shape tasks. Our code will be publicly available upon paper publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+<!--						<br>-->
+					</div>
+<!--					<br>-->
+
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
 								<img class="dropshadow pull-right" alt="" src="./figures/23_wonder3D_.png" width="200" height="120">
 							</a>
 						</div>
