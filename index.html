@@ -88,6 +88,27 @@
       line-height: 10em; /* 0.5 times the font size */
     }
   </style>
+	 <style>
+    /* 添加 CSS 过渡效果 */
+    body {
+      scroll-behavior: smooth;
+    }
+	#vis_rl {
+      font-weight: normal;
+      transition: font-weight 1s ease; /* 添加过渡效果 */
+    }
+
+    /* 闪烁效果 */
+    @keyframes highlight {
+      0% { background-color: yellow; }
+      50% { background-color: transparent; }
+      100% { background-color: yellow; }
+    }
+
+    .highlighted {
+      animation: highlight 3s infinite; /* 3秒的闪烁效果，infinite 表示无限循环 */
+    }
+  </style>
 
 
 
@@ -102,6 +123,11 @@
 
 	<script src="./files/jquery.min.js.download"></script>
 	<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+
+
+
 
 	<script src="./files/spamspan.min.js.download"></script>
 	<script src="./files/prettify.js.download"></script>
@@ -206,7 +232,7 @@
 					I am a member of AnySyn3D, where we create and build a realistic virtual world 🌎.
 					<br>
 					<br>
-					 <i> Research Interests: Character Animation, Geometric Modeling and Processing, Computer Graphics, Human Behavior Analysis (Capture, Modeling and Simulation).</i>
+				 Research Interests (<a href="#hiddenSection" onclick="scrollToHiddenSection()">Visualization</a>): Character Animation, Geometric Modeling and Processing, Computer Graphics, Human Behavior Analysis (Capture, Modeling and Simulation).
 					<br>
 				</p>
 
@@ -1093,12 +1119,40 @@
 			<aside id="sidebar" class="span4" role="complementary">
 				<div class="well">
 					<section id="text-2" class="widget-1 widget-first widget widget_text">
+						  <div id="hiddenSection" class="hidden-anchor"></div>
+							<script>
+								// JavaScript 函数实现平滑滚动
+								function scrollToHiddenSection() {
+								  var element = document.getElementById('hiddenSection');
+
+								  // 使用 block: 'start' 和 inline: 'nearest' 确保目标元素稍微偏离顶部
+								  element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+								  var anotherText = document.getElementById('anotherText');
+
+									  // 切换加粗效果
+									  element.classList.toggle('bold');
+
+									  // 使另一个地方的文字闪烁
+									  anotherText.classList.add('highlighted');
+
+									  // 3秒后移除闪烁效果
+									  setTimeout(function () {
+										anotherText.classList.remove('highlighted');
+									  }, 1000);
+								}
+							  </script>
+
+
 						<div class="widget-inner">
-							<h3>Research Interests</h3>
+							<h3>Visualization of Research Interests</h3>
 							<br>
   							<img src="files/fig_roadmap.png" alt="透明图片">
-							<br>
-							<br>
+							<center>
+								<p id="anotherText">A visualization of my research.</p>
+							</center>
+
+
 							<h3>Contact info</h3>
 							<div class="textwidget"><h6>Email</h6>
 								<a class="email" href="mailto:zhiyang0@connect.hku.hk">zhiyang0@connect.hku.hk</a>
