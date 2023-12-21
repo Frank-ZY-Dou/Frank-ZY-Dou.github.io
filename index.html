@@ -415,6 +415,14 @@
 					-->
 				</ul>
 				</dl>
+
+					<h4>Collaboration</h4>
+									<div style="height: 0.6em;"><br></div>
+				<p>I host remote interns (2024-2025) focusing on:
+					<em>i. Motion Generation (both kinematics-based and physics-based).</em>
+				<em>ii. Motion Capture from Videos and Images.</em>
+				<em>iii. Shape Generation (both implicit and explicit).</em> Feel free to reach out via my <a href="#hiddenSection2" onclick="scrollToHiddenSection2()">email</a> with your CV.</p>
+
 				<!--- Selected Publications -->
 				<hr style="clear: both;">
 				<!-- <h2>Selected Publications (<a href="https://frank-zy-d.github.io/publication.html">Full List</a>)</h2> -->
@@ -1098,6 +1106,7 @@
 
 
 				<hr style="clear: both;">
+
 				<h2>Services</h2>
 				<dl>
 				<ul>
@@ -1133,24 +1142,37 @@
 
 					</li>
 
+					<li>
+						<p>
+							<strong> Invited Talks:</strong>
+						</p>
 
+						<dl>
+								<ul>
+									<li>
+										<p>Nov. 2023: Geometric Computing - Medial Axis Transformation and Normal Orientation for Point Clouds, <a href="https://www.shanghaitech.edu.cn/eng/">ShanghaiTech</a>.</p>
+									</li>
+									<li>
+										<p>Oct. 2023: Scalable Skill Embeddings for Physics-based Characters, <a href="https://twitter.com/TencentGames">Tencent Games</a>.</p>
+									</li>
+									<li>
+										<p>Jun. 2023: Robust and Efficient Vision Systems for Close Contact Behavior Analysis, <a href="https://english.bjut.edu.cn/">BJUT</a>.</p>
+									</li>
+								</ul>
+						</dl>
 
-
+					</li>
 				</ul>
 				</dl>
 
-
 			</div><!-- /#main -->
-
-
-
-
 
 
 			<aside id="sidebar" class="span4" role="complementary">
 				<div class="well">
 					<section id="text-2" class="widget-1 widget-first widget widget_text">
 						  <div id="hiddenSection" class="hidden-anchor"></div>
+						  <div id="hiddenSection2" class="hidden-anchor"></div>
 							<script>
 								// JavaScript 函数实现平滑滚动
 								function scrollToHiddenSection() {
@@ -1160,6 +1182,29 @@
 								  element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
 								  var anotherText = document.getElementById('anotherText');
+
+									  // 切换加粗效果
+									  element.classList.toggle('bold');
+
+									  // 使另一个地方的文字闪烁
+									  anotherText.classList.add('highlighted');
+
+									  // 3秒后移除闪烁效果
+									  setTimeout(function () {
+										anotherText.classList.remove('highlighted');
+									  }, 1000);
+								}
+							</script>
+
+							<script>
+								// JavaScript 函数实现平滑滚动
+								function scrollToHiddenSection2() {
+								  var element = document.getElementById('hiddenSection2');
+
+								  // 使用 block: 'start' 和 inline: 'nearest' 确保目标元素稍微偏离顶部
+								  element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+								  var anotherText = document.getElementById('anotherText2');
 
 									  // 切换加粗效果
 									  element.classList.toggle('bold');
@@ -1184,9 +1229,10 @@
 							</center>
 
 
+
 							<h3>Contact info</h3>
-							<div class="textwidget"><h6>Email</h6>
-								<a class="email" href="mailto:zhiyang0@connect.hku.hk">zhiyang0@connect.hku.hk</a>
+							<div class="textwidget"><h6 id="anotherText2">Email</h6>
+								<a class="email" href="mailto:zhiyang0@connect.hku.hk" >zhiyang0@connect.hku.hk</a>
 								<br>
 								<a class="email" href="mailto:zydou@seas.upenn.edu">zydou@seas.upenn.edu</a>
 								<br>
@@ -1200,6 +1246,8 @@
 								&#x2022; Rm 475, Levine Hall, 3330 Walnut Street, Philadelphia, PA 19104-6389, U.S.A.
 								<br>
 								&#x2022; Rm 416, CYC Bldg, The University of Hong Kong, Pokfulam Road, Hong Kong SAR, China.
+
+
 
 							</div>
 						</div>
