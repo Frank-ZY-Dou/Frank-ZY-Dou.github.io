@@ -451,7 +451,7 @@
 							<br> Zimeng Wang*, <strong>Zhiyang Dou</strong>*, Rui Xu, Cheng Lin, Yuan Liu, Xiaoxiao Long, Lingjie Liu, Taku Komura, Wenping Wang.<br>
 							<em> <b>Arxiv 2023.</b></em>
 							<br>
-
+							Prev. Work: <a href="https://frank-zy-dou.github.io/projects/CoverageAxis/index.html"><strong>Coverage Axis</strong></a>.
 							<br>
 							<ul class="inline middot">
 								<li><em class="fa fa-file"></em> <a href="">project page (cs)</a></li>
@@ -765,6 +765,7 @@
 					</div>
 				</div>
 					<br>
+<!--					<div id="hiddenSection3" class="hidden-anchor"></div>-->
 					<div class="row">
 						<div class="span2" style="margin-bottom: 0em;">
 							<a href="https://frank-zy-dou.github.io/publication.html">
@@ -772,7 +773,8 @@
 							</a>
 						</div>
 						<div class="span6">
-							<a href="">
+<!--							<a href=""  class="textwidget" id="anotherText3" >-->
+							<a href="" >
 								<strong>Coverage Axis: Inner Point Selection for 3D Shape Skeletonization</strong>
 							</a>
 							<br><strong>Zhiyang Dou</strong>, Cheng Lin, Rui Xu, Lei Yang, Shiqing Xin, Taku Komura, Wenping Wang.<br>
@@ -1211,7 +1213,6 @@
 						  <div id="hiddenSection" class="hidden-anchor"></div>
 						  <div id="hiddenSection2" class="hidden-anchor"></div>
 							<script>
-								// JavaScript 函数实现平滑滚动
 								function scrollToHiddenSection() {
 								  var element = document.getElementById('hiddenSection');
 
@@ -1234,13 +1235,9 @@
 							</script>
 
 							<script>
-								// JavaScript 函数实现平滑滚动
 								function scrollToHiddenSection2() {
 								  var element = document.getElementById('hiddenSection2');
-
-								  // 使用 block: 'start' 和 inline: 'nearest' 确保目标元素稍微偏离顶部
 								  element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-
 								  var anotherText = document.getElementById('anotherText2');
 
 									  // 切换加粗效果
@@ -1249,6 +1246,22 @@
 									  // 使另一个地方的文字闪烁
 									  anotherText.classList.add('highlighted');
 
+									  // 3秒后移除闪烁效果
+									  setTimeout(function () {
+										anotherText.classList.remove('highlighted');
+									  }, 1000);
+								}
+							  </script>
+
+							  <script>
+								function scrollToHiddenSection3() {
+								  var element = document.getElementById('hiddenSection3');
+								  element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+								  var anotherText = document.getElementById('anotherText3');
+									  // 切换加粗效果
+									  element.classList.toggle('bold');
+									  // 使另一个地方的文字闪烁
+									  anotherText.classList.add('highlighted');
 									  // 3秒后移除闪烁效果
 									  setTimeout(function () {
 										anotherText.classList.remove('highlighted');
