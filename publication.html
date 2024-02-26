@@ -123,7 +123,38 @@
 <!--							</ul>-->
 <!--						</div>-->
 <!--				</div>-->
+<div class="row" style="margin-bottom: 1em;">
+					<div class="span2 offset2">
+						<a href="http://Frank-ZY-Dou.github.io/publication.html">
+							<img class="dropshadow pull-right" alt="" src="./figures/23_wonder3D_.png" width="200" height="120">
+						</a>
+					</div>
+					<div class="span6">
+							<a href="">
+								<strong>Wonder3D: Single Image to 3D using Cross-Domain Diffusion</strong>
+							</a>
+							<br>Xiaoxiao Long*, Yuanchen Guo*, Cheng Lin, Yuan Liu, <strong>Zhiyang Dou</strong>, Lingjie Liu, Yuexin Ma, Song-Hai Zhang, Marc Habermann, Christian Theobalt, Wenping Wang.<br>
+							<em> <b>CVPR 2023.</b></em>
+							<br>
 
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://www.xxlong.site/Wonder3D/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2310.15008">paper</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://youtu.be/Cgq6JbQ1VW4">video</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="https://github.com/xxlong0/Wonder3D">code</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://huggingface.co/spaces/flamehaze1115/Wonder3D-demo">Hugging Face Demo</a></li>
+								<!-- <li><em class="fa fa-file"></em> <a href="https://diglib.eg.org/bitstream/handle/10.1111/cgf14484/paper1026_1.pdf?sequence=2&isAllowed=y">suppl.</a></li> -->
+								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(wonder3d);">abstract</a>
+									<pre id="wonder3d" class="invisible_text">In this work, we introduce Wonder3D, a novel method for efficiently generating high-fidelity textured meshes from single-view images.Recent methods based on Score Distillation Sampling (SDS) have shown the potential to recover 3D geometry from 2D diffusion priors, but they typically suffer from time-consuming per-shape optimization and inconsistent geometry. In contrast, certain works directly produce 3D information via fast network inferences, but their results are often of low quality and lack geometric details. To holistically improve the quality, consistency, and efficiency of image-to-3D tasks, we propose a cross-domain diffusion model that generates multi-view normal maps and the corresponding color images. To ensure consistency, we employ a multi-view cross-domain attention mechanism that facilitates information exchange across views and modalities. Lastly, we introduce a geometry-aware normal fusion algorithm that extracts high-quality surfaces from the multi-view 2D representations. Our extensive evaluations demonstrate that our method achieves high-quality reconstruction results, robust generalization, and reasonably good efficiency compared to prior works.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+				</div>
 				<div class="row" style="margin-bottom: 1em;">
 					<div class="span2 offset2" style="margin-bottom: 0em;">
 							<a href="https://frank-zy-dou.github.io/publication.html">
@@ -242,42 +273,6 @@
 						</div>
 <!--						<br>-->
 					</div>
-
-				<div class="row" style="margin-bottom: 1em;">
-					<div class="span2 offset2">
-						<a href="http://Frank-ZY-Dou.github.io/publication.html">
-							<img class="dropshadow pull-right" alt="" src="./figures/23_wonder3D_.png" width="200" height="120">
-						</a>
-					</div>
-					<div class="span6">
-							<a href="">
-								<strong>Wonder3D: Single Image to 3D using Cross-Domain Diffusion</strong>
-							</a>
-							<br>Xiaoxiao Long*, Yuanchen Guo*, Cheng Lin, Yuan Liu, <strong>Zhiyang Dou</strong>, Lingjie Liu, Yuexin Ma, Song-Hai Zhang, Marc Habermann, Christian Theobalt, Wenping Wang.<br>
-							<em> <b>Arxiv 2023.</b></em>
-							<br>
-
-							<br>
-							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://www.xxlong.site/Wonder3D/">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2310.15008">paper</a></li>
-<!--								<li><em class="fa fa-file"></em> <a href="https://youtu.be/Cgq6JbQ1VW4">video</a></li>-->
-								<li><em class="fa fa-file"></em> <a href="https://github.com/xxlong0/Wonder3D">code</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://huggingface.co/spaces/flamehaze1115/Wonder3D-demo">Hugging Face Demo</a></li>
-								<!-- <li><em class="fa fa-file"></em> <a href="https://diglib.eg.org/bitstream/handle/10.1111/cgf14484/paper1026_1.pdf?sequence=2&isAllowed=y">suppl.</a></li> -->
-								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
-								<li>
-									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(wonder3d);">abstract</a>
-									<pre id="wonder3d" class="invisible_text">In this work, we introduce Wonder3D, a novel method for efficiently generating high-fidelity textured meshes from single-view images.Recent methods based on Score Distillation Sampling (SDS) have shown the potential to recover 3D geometry from 2D diffusion priors, but they typically suffer from time-consuming per-shape optimization and inconsistent geometry. In contrast, certain works directly produce 3D information via fast network inferences, but their results are often of low quality and lack geometric details. To holistically improve the quality, consistency, and efficiency of image-to-3D tasks, we propose a cross-domain diffusion model that generates multi-view normal maps and the corresponding color images. To ensure consistency, we employ a multi-view cross-domain attention mechanism that facilitates information exchange across views and modalities. Lastly, we introduce a geometry-aware normal fusion algorithm that extracts high-quality surfaces from the multi-view 2D representations. Our extensive evaluations demonstrate that our method achieves high-quality reconstruction results, robust generalization, and reasonably good efficiency compared to prior works.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
-								</li>
-							</ul>
-
-						</div>
-				</div>
-		<br>
-
-
 		<div class="row" style="margin-bottom: 1em;">
 					<div class="span2 offset2">
 						<a href="http://Frank-ZY-Dou.github.io/publication.html">
@@ -321,7 +316,7 @@
 							<strong>TORE: Token Reduction for Efficient Human Mesh Recovery with Transformer</strong>
 						</a>
 						<br><strong>Zhiyang Dou</strong>*, Qingxuan Wu*, Cheng Lin, Zeyu Cao, Qiangqiang Wu, Weilin Wan, Taku Komura, Wenping Wang.<br>
-						<em> <b> IEEE International Conference on Computer Vision (ICCV) 2023.</b></em>
+						<em> <b> ICCV 2023.</b></em>
 						<br>
 						<!-- <em>"a learnable implicit representation for modeling both closed and open surfaces"</em> -->
 						<br>
