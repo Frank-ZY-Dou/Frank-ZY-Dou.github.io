@@ -122,13 +122,15 @@ MathJax.Hub.Config({
 
 			<div class="section abstract">
 				<h2>Abstract</h2><br>
-				<p>We introduce Efficient Motion Diffusion Model (EMDM) for fast and high-quality human motion generation. Although previous motion diffusion models have shown impressive results, they struggle to achieve fast generation while maintaining high-quality human motions. Motion latent diffusion has been proposed for efficient motion generation. However, effectively learning a latent space can be non-trivial in such a two-stage manner. Meanwhile, accelerating motion sampling by increasing the step size, e.g., DDIM, typically leads to a decline in motion quality due to the inapproximation of complex data distributions when naively increasing the step size. In this paper, we propose EMDM that allows for much fewer sample steps for fast motion generation by modeling the complex denoising distribution during multiple sampling steps. Specifically, we develop a Conditional Denoising Diffusion GAN to capture multimodal data distributions conditioned on both control signals, i.e., textual description and denoising time step. By modeling the complex data distribution, a larger sampling step size and fewer steps are achieved during motion synthesis, significantly accelerating the generation process. To effectively capture the human dynamics and reduce undesired artifacts, we employ motion geometric loss during network training, which improves the motion quality and training efficiency. As a result, EMDM achieves a remarkable speed-up at the generation stage while maintaining high-quality motion generation in terms of fidelity and diversity.</p>
+				<p>We introduce Efficient Motion Diffusion Model (EMDM) for fast and high-quality human motion generation. Current state-of-the-art generative diffusion models have produced impressive results but struggle to achieve fast generation without sacrificing quality. On the one hand, previous works, like motion latent diffusion, conduct diffusion within a latent space for efficiency, but learning such a latent space can be a non-trivial effort. On the other hand, accelerating generation by naively increasing the sampling step size, e.g., DDIM, often leads to quality degradation as it fails to approximate the complex denoising distribution. To address these issues, we propose EMDM, which captures the complex distribution during multiple sampling steps in the diffusion model, allowing for much fewer sampling steps and significant acceleration in generation. This is achieved by a conditional denoising diffusion GAN to capture multimodal data distributions among arbitrary (and potentially larger) step sizes conditioned on control signals, enabling fewer-step motion sampling with high fidelity and diversity. To minimize undesired motion artifacts, geometric losses are imposed during network learning. As a result, EMDM achieves real-time motion generation and significantly improves the efficiency of motion diffusion models compared to existing methods while achieving high-quality motion generation. Our code will be publicly available upon publication.</p>
 				<br>
 				<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_teaser.png" style="width:60%; margin-bottom:8px">
+						<img class="thumbnail" src="figs/fig_teaser.png" style="width:80%; margin-bottom:8px">
 					</div>
-					<p>EMDM efficiently produces high-quality human motion aligned with input conditions in a short runtime. The average running time for EMDM in action-to-motion and text-to-motion tasks is 0.02s and 0.05s per sequence, respectively. For reference, the corresponding times for MDM are 2.5s and 12.3s. For visualization purposes, we set the color of the character to deepen w.r.t. the time step.</p>
+					<p>
+						EMDM produces high-quality human motion aligned with input conditions in a short runtime. The average run time of EMDM in (a) action-to-motion and (b) text-to-motion tasks is 0.02s and 0.05s per sequence, respectively. For reference, the corresponding times for MDM are 2.5s and 12.3s. We deepen the color of the character with respect to the time step of the sequence. (c) Overall comparison of the inference time costs on the HumanML3D, KIT, and HumanAct12 datasets. For ease of illustration, the Running Time is plotted with a log scale. We compare the running time per frame vs. the FID of SOTA methods.
+					</p>
 				</div>
 
 			</div>
@@ -151,19 +153,7 @@ MathJax.Hub.Config({
 			</div>
 			<br>
 
-			<div class="section abstract">
-				<h2>Inference Time Costs</h2>
-				<br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_timecost.png" style="width:50%; margin-bottom:20px">
-					</div>
-
-					</div>
-				</center>
-				<p>Overall comparison of the inference time costs on HumanML3D, KIT and HumanAct12. We compare the running time per frame v.s. the FID of four SOTA  methods.</p>
-			</div>
+<!--	-->
 
 
 
@@ -174,7 +164,7 @@ MathJax.Hub.Config({
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_t2m_humanml3d_tab.png" style="width:90%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_t2m_humanml3d_tab.png" style="width:88%; margin-bottom:20px">
 					</div>
 						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
 					</div>
