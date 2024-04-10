@@ -1,0 +1,338 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Coverage Axis: Inner Point Selection for 3D Shape Skeletonization</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="Coverage Axis: Inner Point Selection for 3D Shape Skeletonization">
+
+	<meta name="citation_author" content="Zimeng Wang">
+	<meta name="citation_author" content="Zhiyang Dou">
+	<meta name="citation_author" content="Rui Xu">
+	<meta name="citation_author" content="Cheng Lin">
+	<meta name="citation_author" content="Yuan Liu">
+	<meta name="citation_author" content="Xiaoxiao Long">
+	<meta name="citation_author" content="Shiqing Xin">
+	<meta name="citation_author" content="Lingjie Liu">
+	<meta name="citation_author" content="Taku Komura">
+	<meta name="citation_author" content="Xiaomeng Yuan">
+	<meta name="citation_author" content="Wenping Wang">
+	<meta name="citation_publication_date" content="2022">
+	<meta name="citation_conference_title" content="EG">
+	<meta name="citation_pdf_url" content="https://arxiv.org/abs/2110.00965">
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="">
+	<link rel="author" href="" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="66" border="0"></a>
+				</td>
+				<a href="https://www.en.sdu.edu.cn/" target="_blank"><IMG src="./logos/Logo_SDU.png" height="66" border="0"></a></td>
+				<a href="https://www.en.sdu.edu.cn/" target="_blank"><IMG src="./logos/Logo_Penn.png" height="66" border="0"></a></td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="0"></a></td>
+			</div>
+
+			<div class="section head">
+
+				<h1>Coverage Axis++: Efficient Inner Point Selection for 3D Shape Skeletonization</h1>
+
+				<div class="authors">
+					<a href="" target="_blank">Zimeng Wang*</a><sup> 1</sup>&#160;&#160;
+					<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou*</a><sup> 1</sup>&#160;&#160;
+					<a href="https://ruixu.me/" target="_blank">Rui Xu</a><sup> 2</sup>&#160;&#160;
+					<a href="https://clinplayer.github.io/" target="_blank">Cheng Lin</a><sup> 1</sup>&#160;&#160;
+					<a href="https://liuyuan-pal.github.io/" target="_blank">Yuan Liu</a><sup> 1</sup>&#160;&#160;
+					<a href="https://www.xxlong.site/" target="_blank">Xiaoxiao Long</a><sup> 1</sup>&#160;&#160;
+					<a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html" target="_blank">Shiqing Xin</a><sup> 2</sup>&#160;&#160;
+					<br>
+					<a href="https://lingjie0206.github.io/">Lingjie Liu</a><sup> 3</sup>&#160;&#160;
+					<a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku">Taku Komura</a><sup> 1</sup>&#160;&#160;
+					<a href="https://hkumath.hku.hk/MathWWW/people.php?faculty.xmyuan">Xiaoming Yuan†</a><sup> 1</sup>&#160;&#160;
+					<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html">Wenping Wang†</a><sup> 4</sup>&#160;&#160;
+				</div>
+
+				<div class="affiliations">
+					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.en.sdu.edu.cn/" target="_blank">Shandong University</a>&#160;&#160;
+					<sup>3</sup><a href="https://www.en.sdu.edu.cn/" target="_blank">University of Pennsylvania</a>&#160;&#160;
+					<sup>4</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+				</div>
+				<div class="venue"> *Equal Contributions; †Equal Advising. </div>
+				<div class="venue"> Arxiv 2023. </div>
+			</div>
+						<div class="section downloads">
+					<center>
+						<ul style="padding-left: 0">
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/pdf/2401.12946.pdf"><img src="images/pdf.png"></a><br/>
+									<a href="https://arxiv.org/pdf/2401.12946.pdf">Paper</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href="https://github.com/Frank-ZY-Dou/Coverage_Axis"><img src="images/data_ico.png"></a><br/>
+									<a href="https://github.com/Frank-ZY-Dou/Coverage_Axis">Code</a>
+
+								</div>
+							</li></ul>
+					</center>
+				</div>
+
+
+				
+
+
+
+
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_teaser_zipped.png" style="width:85%; margin-bottom:20px">
+					</div>
+
+				</div>
+				<p>
+  We introduce Coverage Axis++, a novel and efficient approach to 3D shape skeletonization. The current state-of-the-art approaches for this task often rely on the watertightness of the input or suffer from substantial computational costs, thereby limiting their practicality. To address this challenge, Coverage Axis++ proposes a heuristic algorithm to select skeletal points, offering a high-accuracy approximation of the Medial Axis Transform (MAT) while significantly mitigating computational intensity for various shape representations. We introduce a simple yet effective strategy that considers shape coverage, uniformity, and centrality to derive skeletal points. The selection procedure enforces consistency with the shape structure while favoring the dominant medial balls, which thus introduces a compact underlying shape representation in terms of MAT. As a result, Coverage Axis++ allows for skeletonization for various shape representations (e.g., water-tight meshes, triangle soups, point clouds), specification of the number of skeletal points, few hyperparameters, and highly efficient computation with improved reconstruction accuracy. Extensive experiments across a wide range of 3D shapes validate the efficiency and effectiveness of Coverage Axis++. The code will be publicly available once the paper is published.
+				</p>
+			</div>
+			<br>
+
+			<!--<div class="section abstract">
+				<h2>Full Video</h2><br>
+				<center>
+					<!-- <iframe width="640" height="360" src="data/video.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<!--<iframe width="640" height="360" src="https://www.youtube.com/embed/RFqPwH7QFEI" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>-->
+					<!--iframe src="./data/video.mp4" allow="autoplay; encrypted-media" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="560" height="315" frameborder="0"></iframe-->
+					<!--<p style="font-size:11px; text-align:center">
+					Download Video: <a href="data/video.mp4" target="_blank">HD</a> (MP4, 111 MB)
+				</p>
+				</center>
+			</div>-->
+
+			<div class="section abstract">
+				<h2>Introduction</h2>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pipeline_1.png" style="width:85%; margin-bottom:20px">
+					</div>
+					<p>The pipeline of Coverage Axis++. (a) Input point cloud. (b) Inner point candidates. (c) Candidate inner balls with original radius.
+(d) Selected inner balls with original radius. (e) Selected inner points. (f) Skeletonization result.
+					</p>
+					</div>
+				</center>
+<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_alg.png" style="width:40%; margin-bottom:1px">
+					</div>
+					<p>More details can be found in the paper.
+					</p>
+					</div>
+				</center>
+			<p>
+				We develop a simple yet more efficient skeletonization method for shapes represented as meshes or point clouds. We take centrality and uniformity into consideration and develop a heuristic algorithm to achieve representative skeletal point selection with high efficiency. Specifically, we present a scoring scheme that assigns a score to each inner point as a quantification of its skeletal representation ability. The scoring consists of the <strong>coverage</strong>, <strong>uniformity</strong> and <strong>centrality</strong> scores. The coverage score is determined by evaluating the number of surface samples that can be covered within the dilated ball associated with the candidate to ensure coverage inspired by Coverage Axis. The coverage score ensures consistency with the shape structure by favoring interior points that dominate a larger area, aligning with the definition of the Medial Axis Transform (MAT) as the set of centers of maximally inscribed spheres. On the other hand, uniformity is one of the key desired features of compact skeletonization to suppress redundant structures, for which we introduce the uniformity score. The score is calculated by measuring the distance between the candidate and the nearest point in the set of selected inner points. This achieves a uniformly distributed skeletonization result by preventing the selected points from clustering together. Moreover, the centrality score is employed to encourage those central points to receive higher scores to promote centrality further. The skeletal points are derived by running a priority queue defined by an integration of these scores.
+	</p>
+				<p>
+				To summarize, our method enjoys the following features:
+					<ul>
+  <li>Skeletonization for various shape representations including water-tight meshes, triangle soups, and point clouds.</li>
+  <li>Specifying the number of skeletal points, which is a desirable feature for learning-based methods as a fixed number of points are typically required.</li>
+  <li>Highly efficient computation while achieving better or more competitive reconstruction accuracy.</li>
+  <li>Few hyperparameters.</li>
+  <li>Randomly generated candidates inside the volume as it selects the most expressive ones from overfilled inner point candidates.</li>
+</ul>
+
+</p>
+			</div>
+
+			<br>
+
+			<div class="section abstract">
+				<h2>Coverage Axis++ from Mesh Input</h2><br>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_shape_recon.png" style="width:84%; margin-bottom:5px">
+					</div>
+					<p>Qualitative comparisons. (a-c) SAT. (d) Coverage Axis. (e) Coverage Axis++.</p>
+					</div>
+
+				</center>
+			
+				
+			</div>
+
+			<br>
+
+				<div class="section abstract">
+				<h2>Coverage Axis from Point Cloud Input</h2><br>
+				<br><center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_PCgallery.png" style="width:85%; margin-bottom:5px">
+					</div>
+					<p>A gallery of skeletonization results of point clouds using Coverage Axis++.
+					</p>
+					</div>
+				</center>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pc.png" style="width:85%; margin-bottom:5px">
+					</div>
+					<p>Comparison with existing shape skeletonization methods for point clouds.
+					</p>
+					</div>
+				</center>
+			
+				
+				</div>
+			<br>
+
+				<div class="section abstract">
+				<h2>More Experimental Results</h2>
+				<h3>Influence of Skeletal Point Number</h3><br>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_num_points.png" style="width:46%; margin-bottom:20px">
+					</div>
+					<p>Influence of target numbers |V|. We test our model with the target numbers being 30, 50 and 70.</p>
+					</div>
+				</center>
+				<br>
+
+
+				<h3>Influence of Dilation Offset</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_dilation2.png" style="width:46%; margin-bottom:20px">
+					</div>
+					<p>Skeletonization results using different dilation offsets.</p>
+					</div>
+				</center>
+				<br>
+
+				<h3>Running Time</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_running_time_P.png" style="width:42%; margin-bottom:20px">
+					</div>
+											<p>Running time w.r.t. candidate skeletal point numbers |P| with |V| = 100, |S| = 2000.</p>
+
+					</div>
+
+				</center>
+					<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_running_time_S.png" style="width:42%; margin-bottom:20px">
+					</div>
+					<p>Running time w.r.t. surface sample numbers |S| with |V| = 100, |P| = 10000.</p>
+					</div>
+
+				</center>
+					<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_running_time_V.png" style="width:42%; margin-bottom:20px">
+					</div>
+											<p>Running time w.r.t. target skeletal point numbers |V| with |S| = 2000, |P| = 10000.</p>
+
+					</div>
+
+				</center>
+				<center>
+					<br>
+									<h2 align="center">Check out our paper for more details.</h3>
+				</center>
+			
+				
+			</div>
+			
+			
+			
+
+			
+			<div class="section list">
+				<h2>Citation</h2>
+				<div class="section bibtex">
+					<pre>@inproceedings{dou2022coverage,
+  title={Coverage Axis: Inner Point Selection for 3D Shape Skeletonization},
+  author={Dou, Zhiyang and Lin, Cheng and Xu, Rui and Yang, Lei and Xin, Shiqing and Komura, Taku and Wang, Wenping},
+  booktitle={Computer Graphics Forum},
+  volume={41},
+  number={2},
+  pages={419--432},
+  year={2022},
+  organization={Wiley Online Library}
+}</div>
+			</div>
+			
+		<!-- 	<div class="section list">
+				<h2>Related Links</h2>
+				<div class="row" style="margin-top:15px">
+				<li>Parts of <a href="https://github.com/Totoro97/NeuS" target="_blank">our PyTorch implementation</a> are taken from <a href="https://github.com/lioryariv/idr" target="_blank">IDR</a> and <a href="https://github.com/yenchenlin/nerf-pytorch" target="_blank">NeRF-pytorch</a>.
+				<li>Check the concurrent works of learning neural implicit surfaces: </br> 			
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2104.10078" target="_blank">UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction</a>, Oechsle et al. 2021 </br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2106.12052" target="_blank">Volume Rendering of Neural Implicit Surfaces</a>, Yariv et al. 2021 
+				<li>Also check other works about neural scene representations and neural rendering from our group: </br> 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://lingjie0206.github.io/papers/NSVF/" target="_blank">Neural Sparse Voxel Fields:</a>, Liu et al. 2020 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/" target="_blank">Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video</a>, Tretschk et al. 2021</br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://gvv.mpi-inf.mpg.de/projects/NeuralActor/" target="_blank">Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</a>, Liu et al. 2021 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://liuyuan-pal.github.io/NeuRay/" target="_blank">Neural Rays for Occlusion-aware Image-based Rendering</a>, Liu et al. 2021. </br> 	
+				</div>
+			</div>
+			
+			<div class="section list">
+				<h2>Acknowledgements</h2>
+				<div class="row" style="margin-top:15px">
+				<p>We thank Michael Oechsle for providing the results of UNISURF. Christian Theobalt was supported by ERC Consolidator Grant 770784. Lingjie Liu was supported by Lise Meitner Postdoctoral Fellowship.</p> 
+				</div>
+			</div> -->
+			
+			
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
