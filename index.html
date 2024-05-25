@@ -466,40 +466,63 @@
 <!--&lt;!&ndash;						<br>&ndash;&gt;-->
 <!--					</div>-->
 
-<div class="row">
+					<div class="row">
 						<div class="span2" style="margin-bottom: 0em;">
 							<a href="https://frank-zy-dou.github.io/publication.html">
-								<img class="dropshadow pull-right" alt="" src="./figures/23_wonder3D_.png" width="200" height="120">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_24_dice.png" width="200" height="120">
 							</a>
 						</div>
 						<div class="span6">
 							<a href="">
-								<strong>Wonder3D: Single Image to 3D using Cross-Domain Diffusion</strong>
+								<strong>DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image</strong>
 							</a>
-							<br>Xiaoxiao Long*, Yuanchen Guo*, Cheng Lin, Yuan Liu, <strong>Zhiyang Dou</strong>, Lingjie Liu, Yuexin Ma, Song-Hai Zhang, Marc Habermann, Christian Theobalt, Wenping Wang.<br>
-							<em> <b>CVPR 2024.</b></em>
+							<br>Qingxuan Wu, <strong>Zhiyang Dou</strong>, Sirui Xu, Soshi Shimada, Chen Wang, Zhengming Yu, Yuan Liu, Cheng Lin, Zeyu Cao, Taku Komura, Vladislav Golyanik, Christian Theobalt, Wenping Wang, Lingjie Liu.
 							<br>
-
+							<em> <b>Arxiv 2023.</b></em>
 							<br>
+<!--							<br>-->
 							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://www.xxlong.site/Wonder3D/">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2310.15008">paper</a></li>
-<!--								<li><em class="fa fa-file"></em> <a href="https://youtu.be/Cgq6JbQ1VW4">video</a></li>-->
-								<li><em class="fa fa-file"></em> <a href="https://github.com/xxlong0/Wonder3D">code</a></li>
-								 <li><em class="fa fa-file"></em> <a href="https://huggingface.co/spaces/flamehaze1115/Wonder3D-demo">Hugging Face Demo</a></li>
-								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
+								<li><em class="fa fa-file"></em> <a href="">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper</a></li>
+								<li><em class="fa fa-file"></em> <a href="">code</a></li>
 								<li>
 									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(wonder3d);">abstract</a>
-									<pre id="wonder3d" class="invisible_text">In this work, we introduce Wonder3D, a novel method for efficiently generating high-fidelity textured meshes from single-view images.Recent methods based on Score Distillation Sampling (SDS) have shown the potential to recover 3D geometry from 2D diffusion priors, but they typically suffer from time-consuming per-shape optimization and inconsistent geometry. In contrast, certain works directly produce 3D information via fast network inferences, but their results are often of low quality and lack geometric details. To holistically improve the quality, consistency, and efficiency of image-to-3D tasks, we propose a cross-domain diffusion model that generates multi-view normal maps and the corresponding color images. To ensure consistency, we employ a multi-view cross-domain attention mechanism that facilitates information exchange across views and modalities. Lastly, we introduce a geometry-aware normal fusion algorithm that extracts high-quality surfaces from the multi-view 2D representations. Our extensive evaluations demonstrate that our method achieves high-quality reconstruction results, robust generalization, and reasonably good efficiency compared to prior works.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+									<a class="toggle_text_link" onclick="javascript:toggle(dice);">abstract</a>
+									<pre id="dice" class="invisible_text">Reconstructing 3D hand-face interactions with deformations from a single image is a challenging yet crucial task with broad applications in AR, VR, and gaming. The challenges stem from self-occlusions during single-view hand-face interactions, diverse spatial relationships between hands and face, complex deformations, and the ambiguity of the single-view setting. The first and only method for hand-face interaction recovery, Decaf, introduces a global fitting optimization guided by contact and deformation estimation networks trained on studio-collected data with 3D annotations. However, Decaf suffers from a time-consuming optimization process and limited generalization capability due to its reliance on 3D annotations of hand-face interaction data. To address these issues, we present DICE, the first end-to-end method for Deformation-aware hand-face Interaction reCovEry from a single image. DICE estimates the poses of hands and faces, contacts, and deformations simultaneously using a Transformer-based architecture. It features disentangling the regression of local deformation fields and global mesh vertex locations into two network branches, enhancing deformation and contact estimation for precise and robust hand-face mesh recovery. To improve generalizability, we propose a weakly-supervised training approach that augments the training set using in-the-wild images without 3D ground-truth annotations, employing the depths of 2D keypoints estimated by off-the-shelf models and adversarial priors of poses for supervision. Our experiments demonstrate that DICE achieves state-of-the-art performance on a standard benchmark and in-the-wild data in terms of accuracy and physical plausibility. Additionally, our method operates at an interactive rate (20 fps) on an Nvidia 4090 GPU, whereas Decaf requires more than 15 seconds for a single image. Our code will be publicly available upon publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
 								</li>
 							</ul>
 
 						</div>
-<!--						<br>-->
 					</div>
 
-					<br>
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_SurfD.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Surf-D: High-Quality Surface Generation for Arbitrary Topologies using Diffusion Models</strong>
+							</a>
+							<br>Zhengming Yu*, <strong>Zhiyang Dou</strong>*, Xiaoxiao Long, Cheng Lin, Zekun Li, Yuan Liu, Norman Müller, Taku Komura, Marc Habermann, Christian Theobalt, Xin Li, Wenping Wang.
+							<br>
+							<em> <b>Arxiv 2024.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://yzmblog.github.io/projects/SurfD/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2311.17050">paper</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://github.com/Yzmblog/SurfD">code</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(SurfD);">abstract</a>
+									<pre id="SurfD" class="invisible_text">In this paper, we present Surf-D, a novel method for generating high-quality 3D shapes as Surface with arbitrary topologies using Diffusion models. Specifically, we adopt Unsigned Distance Field (UDF) as the surface representation, as it excels in handling arbitrary topologies, enabling the generation of complex shapes. While the prior methods explored shape generation with different representations, they suffer from limited topologies and geometry details. Moreover, it's non-trivial to directly extend prior diffusion models to UDF because they lack spatial continuity due to the discrete volume structure. However, UDF requires accurate gradients for mesh extraction and learning. To tackle the issues, we first leverage a point-based auto-encoder to learn a compact latent space, which supports gradient querying for any input point through differentiation to effectively capture intricate geometry at a high resolution. Since the learning difficulty for various shapes can differ, a curriculum learning strategy is employed to efficiently embed various surfaces, enhancing the whole embedding process. With pretrained shape latent space, we employ a latent diffusion model to acquire the distribution of various shapes. Our approach demonstrates superior performance in shape generation across multiple modalities and conducts extensive experiments in unconditional generation, category conditional generation, 3D reconstruction from images, and text-to-shape tasks. Our code will be publicly available upon paper publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+					</div>
 
 					<div class="row">
 						<div class="span2" style="margin-bottom: 0em;">
@@ -577,7 +600,7 @@
 							<a href="">
 								<strong>Disentangled Clothed Avatar Generation from Text Descriptions</strong>
 							</a>
-							<br>Jionghao Wang, Yuan Liu, <strong>Zhiyang Dou</strong>, Zhengming Yu, Yongqing Liang, Xin Li, Wenping Wang, Rong Xie, Li Song<br>
+							<br>Jionghao Wang, Yuan Liu, <strong>Zhiyang Dou</strong>, Zhengming Yu, Yongqing Liang, Xin Li, Wenping Wang, Rong Xie, Li Song.<br>
 							<em> <b>Arxiv 2023.</b></em>
 							<br>
 							<br>
@@ -596,33 +619,6 @@
 
 					<br>
 
-					<div class="row">
-						<div class="span2" style="margin-bottom: 0em;">
-							<a href="https://frank-zy-dou.github.io/publication.html">
-								<img class="dropshadow pull-right" alt="" src="./figures/23_SurfD.png" width="200" height="120">
-							</a>
-						</div>
-						<div class="span6">
-							<a href="">
-								<strong>Surf-D: High-Quality Surface Generation for Arbitrary Topologies using Diffusion Models</strong>
-							</a>
-							<br>Zhengming Yu*, <strong>Zhiyang Dou</strong>*, Xiaoxiao Long, Cheng Lin, Zekun Li, Yuan Liu, Norman Müller, Taku Komura, Marc Habermann, Christian Theobalt, Xin Li, Wenping Wang<br>
-							<em> <b>Arxiv 2023.</b></em>
-							<br>
-<!--							<br>-->
-							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://yzmblog.github.io/projects/SurfD/">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2311.17050">paper</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://github.com/Yzmblog/SurfD">code</a></li>
-								<li>
-									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(SurfD);">abstract</a>
-									<pre id="SurfD" class="invisible_text">In this paper, we present Surf-D, a novel method for generating high-quality 3D shapes as Surface with arbitrary topologies using Diffusion models. Specifically, we adopt Unsigned Distance Field (UDF) as the surface representation, as it excels in handling arbitrary topologies, enabling the generation of complex shapes. While the prior methods explored shape generation with different representations, they suffer from limited topologies and geometry details. Moreover, it's non-trivial to directly extend prior diffusion models to UDF because they lack spatial continuity due to the discrete volume structure. However, UDF requires accurate gradients for mesh extraction and learning. To tackle the issues, we first leverage a point-based auto-encoder to learn a compact latent space, which supports gradient querying for any input point through differentiation to effectively capture intricate geometry at a high resolution. Since the learning difficulty for various shapes can differ, a curriculum learning strategy is employed to efficiently embed various surfaces, enhancing the whole embedding process. With pretrained shape latent space, we employ a latent diffusion model to acquire the distribution of various shapes. Our approach demonstrates superior performance in shape generation across multiple modalities and conducts extensive experiments in unconditional generation, category conditional generation, 3D reconstruction from images, and text-to-shape tasks. Our code will be publicly available upon paper publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
-								</li>
-							</ul>
-
-						</div>
-					</div>
 
 
 					<div class="row">
@@ -655,6 +651,74 @@ We introduce Coverage Axis++, a novel and efficient approach to 3D shape skeleto
 						</div>
 <!--						<br>-->
 					</div>
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_sig24_part123.jpg" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Part123: Part-aware 3D Reconstruction from a Single-view Image</strong>
+							</a>
+							<br>Anran Liu*, Cheng Lin* , Yuan Liu, Xiaoxiao Long, <strong>Zhiyang Dou</strong>, Haoxiang Guo, Ping Luo, Wenping Wang.
+							<br>
+							<em> <b>SIGGRAPH 2024.</b></em>
+							<br>
+
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="">project page (cs)</a></li>
+								<li><em class="fa fa-file"></em> <a href="">paper (cs)</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://youtu.be/Cgq6JbQ1VW4">video</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="">code (cd)</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(part123);">abstract</a>
+									<pre id="part123" class="invisible_text">Recently, the emergence of diffusion models has opened up new opportunities for single-view reconstruction. However, all the existing methods represent the target object as a closed mesh devoid of any structural information, thus neglecting the part-based structure, which is crucial for many downstream applications, of the reconstructed shape. Moreover, the generated meshes usually suffer from large noises, unsmooth surfaces, and blurry textures, making it challenging to obtain satisfactory part segments using 3D segmentation techniques. In this paper, we present Part123, a novel framework for part-aware 3D reconstruction from a single-view image. We first use diffusion models to generate multiview-consistent images from a given image, and then leverage Segment Anything Model (SAM), which demonstrates powerful generalization ability on arbitrary objects, to generate multiview segmentation masks. To effectively incorporate 2D part-based information into 3D reconstruction and handle inconsistency, we introduce contrastive learning into a neural rendering framework to learn a part-aware feature space based on the multiview segmentation masks. A clustering-based algorithm is also developed to automatically derive 3D part segmentation results from the reconstructed models. Experiments show that our method can generate 3D models with high-quality segmented parts on various objects. Compared to existing unstructured reconstruction methods, the part-aware 3D models from our method benefit some important applications, including feature-preserving reconstruction, primitive fitting, and 3D shape editing.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+<!--						<br>-->
+					</div>
+					<br>
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/publication.html">
+								<img class="dropshadow pull-right" alt="" src="./figures/23_wonder3D_.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>Wonder3D: Single Image to 3D using Cross-Domain Diffusion</strong>
+							</a>
+							<br>Xiaoxiao Long*, Yuanchen Guo*, Cheng Lin, Yuan Liu, <strong>Zhiyang Dou</strong>, Lingjie Liu, Yuexin Ma, Song-Hai Zhang, Marc Habermann, Christian Theobalt, Wenping Wang.<br>
+							<em> <b>CVPR 2024.</b></em>
+							<br>
+
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://www.xxlong.site/Wonder3D/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2310.15008">paper</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://youtu.be/Cgq6JbQ1VW4">video</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="https://github.com/xxlong0/Wonder3D">code</a></li>
+								 <li><em class="fa fa-file"></em> <a href="https://huggingface.co/spaces/flamehaze1115/Wonder3D-demo">Hugging Face Demo</a></li>
+								<!--<li><em class="fa fa-file"></em> <a href="https://www.youtube.com/watch?v=xjTVECIqZfc&feature=youtu.be">video</a></li> -->
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(wonder3d);">abstract</a>
+									<pre id="wonder3d" class="invisible_text">In this work, we introduce Wonder3D, a novel method for efficiently generating high-fidelity textured meshes from single-view images.Recent methods based on Score Distillation Sampling (SDS) have shown the potential to recover 3D geometry from 2D diffusion priors, but they typically suffer from time-consuming per-shape optimization and inconsistent geometry. In contrast, certain works directly produce 3D information via fast network inferences, but their results are often of low quality and lack geometric details. To holistically improve the quality, consistency, and efficiency of image-to-3D tasks, we propose a cross-domain diffusion model that generates multi-view normal maps and the corresponding color images. To ensure consistency, we employ a multi-view cross-domain attention mechanism that facilitates information exchange across views and modalities. Lastly, we introduce a geometry-aware normal fusion algorithm that extracts high-quality surfaces from the multi-view 2D representations. Our extensive evaluations demonstrate that our method achieves high-quality reconstruction results, robust generalization, and reasonably good efficiency compared to prior works.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+<!--						<br>-->
+					</div>
+
+					<br>
+
+
 
 
 <!--					<div style="height: 0.6em;"><br></div>-->
