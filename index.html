@@ -2,6 +2,24 @@
 <html class="js no-flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths gr_weikaichen_github_io" lang="en"><!--<![endif]-->
 <head>
 	<!-- Google tag (gtag.js) -->
+
+	<style>
+  .custom-list li {
+    margin-bottom: 4px; /* 控制上下间距 */
+    margin-right: 3px;  /* 控制左右间距 */
+  }
+  .li_data {
+    display: inline-block;
+    width: 70px; /* 固定日期部分的宽度 */
+    font-weight: bold;
+  }
+  .li_content {
+    display: inline-block;
+    width: calc(100% - 70px); /* 剩余部分用于内容 */
+  }
+
+</style>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYC1GJ7PZQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -338,95 +356,35 @@
 				<hr style="clear: both;">
 				<h2>News</h2>
 				<dl>
-
-				<ul>
-<!--					<li>-->
-<!--						<p>-->
-<!--							<strong>Aug. 2022</strong>: Started an Internship at <a href="https://twitter.com/TencentGames">Tencent Games</a>.-->
-<!--						</p>-->
-<!--					</li>-->
-
-					<li>
-						<p>
-							<strong>May. 2024</strong>: One paper conditionally accepted to EUROGRAPHICS SGP 2024.
-						</p>
-					</li>
-
-
-					<li>
-						<p>
-							<strong>Mar. 2024</strong>: One paper accepted to SIGGRAPH 2024.
-						</p>
-					</li>
-
-					<li>
-						<p>
-							<strong>Feb. 2024</strong>: One paper accepted to CVPR 2024.
-						</p>
-					</li>
-					<li>
-						<p>
-							<strong>Aug. 2023</strong>: One paper accepted to SIGGRAPH Asia 2023.
-						</p>
-					</li>
-					<li>
-						<p>
-							<strong>Jul. &ensp;2023</strong>: One paper accepted to ICCV 2023.
-						</p>
-					</li>
-
-					<li>
-						<p>
-							<strong>Mar. 2023</strong>: One paper accepted to SIGGRAPH 2023. We won <a href="https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/">SIGGRAPH 2023 Best Paper Award</a>.
-						</p>
-					</li>
-
-					<li>
-						<p>
-							<strong>Mar. 2023</strong>: One paper accepted to PNAS Nexus 2023. <a href="https://www.eurekalert.org/news-releases/989780">Press release</a>  by <a href="https://archive.eurekalert.org/aboutus.php">EurekAlert!</a>.
-						</p>
-					</li>
-
-					<li>
-						<p>
-							<strong>Aug. 2022</strong>: One paper accepted to SIGGRAPH Asia 2022.
-						</p>
-					</li>
-
-					<li>
-						<p>
-							<strong>Feb. 2022</strong>: One paper accepted to EUROGRAPHICS 2022.
-						</p>
-					</li>
-
-<!--					<li> <h4> Collaboration</h4>-->
-<!--									<div style="height: 0.6em;"><br></div>-->
-<!--						<p>Hosting remote interns (2024-2025) focusing on:-->
-<!--					<em>i. Motion Generation (both kinematics-based and physics-based).</em>-->
-<!--				<em>ii. Motion Capture from Videos and Images.</em>-->
-<!--				<em>iii. Shape Generation (both implicit and explicit).</em> Feel free to reach out via my <a href="#hiddenSection2" onclick="scrollToHiddenSection2()">email</a> with your CV.</p>-->
-<!--					</li>-->
-
-
-				<!-- 	<li>
-						<p>
-							<strong>01/2022</strong>: Received the <strong>"Outstanding Contributor"</strong> award (the best performance rating, top 5%) from Tencent.</strong></a>
-						</p>
-					</li>
- -->
-					<!--
-					<li>
-						<p>
-							<strong>11/2019</strong>: Gave an invited talk at <a href="https://games-cn.org/">GAMES</a> web seminar. Slides can be found <a href="https://slides.games-cn.org/pdf/Games2019121%E9%99%88%E4%BC%9F%E5%87%AF.pdf">here.</a>
-						</p>
-					</li>
-					<li>
-						<p>
-							<strong>10/2019</strong>: Our work <font color="#FF0000"><strong><a href="https://github.com/ShichenLiu/SoftRas">SoftRas</a> is officially incorporated into <a href="https://pytorch3d.org/">Pytorch3D</a></strong></font> as the basis of differentiable rendering! Check <a href="https://pytorch3d.org/docs/renderer">this</a> out!</a>
-						</p>
-					</li>
-					-->
-				</ul>
+				<ul class="custom-list">
+					  <li>
+						<span class="li_data">May. 2024:</span><span class="li_content">One paper conditionally accepted to EUROGRAPHICS SGP 2024.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Mar. 2024:</span><span class="li_content">One paper accepted to SIGGRAPH 2024.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Feb. 2024:</span><span class="li_content">One paper accepted to CVPR 2024.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Aug. 2023:</span><span class="li_content">One paper accepted to SIGGRAPH Asia 2023.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Jul. &ensp;2023:</span><span class="li_content">One paper accepted to ICCV 2023.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Mar. 2023:</span><span class="li_content">One paper accepted to SIGGRAPH 2023. We won <a href="https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/">SIGGRAPH 2023 Best Paper Award</a>.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Mar. 2023:</span><span class="li_content">One paper accepted to PNAS Nexus 2023. <a href="https://www.eurekalert.org/news-releases/989780">Press release</a> by <a href="https://archive.eurekalert.org/aboutus.php">EurekAlert!</a>.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Aug. 2022:</span><span class="li_content">One paper accepted to SIGGRAPH Asia 2022.</span>
+					  </li>
+					  <li>
+						<span class="li_data">Feb. 2022:</span><span class="li_content">One paper accepted to EUROGRAPHICS 2022.</span>
+					  </li>
+					</ul>
 				</dl>
 
 
@@ -639,7 +597,7 @@
 								<strong>Coverage Axis++: Efficient Skeletal Points Selection for 3D Shape Skeletonization</strong>
 							</a>
 							<br> Zimeng Wang*, <strong>Zhiyang Dou</strong>*, Rui Xu, Cheng Lin, Yuan Liu, Xiaoxiao Long, Shiqing Xin, Taku Komura, Xiaoming Yuan, Wenping Wang.<br>
-							<em> <b>EUROGRAPHICS Symposium on Geometry Processing (SGP).</b></em>
+							<em> <b>EUROGRAPHICS Symposium on Geometry Processing (SGP) 2024.</b></em>
 							<br>
 							Conditionally Accepted; A follow-up of  <a href="https://frank-zy-dou.github.io/projects/CoverageAxis/index.html">Coverage Axis</a>.
 
