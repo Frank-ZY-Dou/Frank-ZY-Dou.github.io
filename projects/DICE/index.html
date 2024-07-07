@@ -118,9 +118,11 @@ MathJax.Hub.Config({
 
 			<div class="section downloads">
 				<center>
-						<iframe width="799" height="450" src="https://www.youtube.com/watch?v=4ZuZveSElWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<iframe width="799" height="450" src="https://www.youtube.com/embed/4ZuZveSElWE?si=JQTh7bjtQ0fiS_mT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				</center>
 			</div>
+
+
 
 			<div class="section abstract">
 				<h2>Abstract</h2><br>
@@ -160,49 +162,26 @@ MathJax.Hub.Config({
 
 			</div>
 			<div class="section abstract">
-				<h2></h2><br>
+				<h2>Hand-Face Interaction, Deformation, and Contact Recovery</h2><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_recon_contact.png" style="width:88%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_recon_contact.png" style="width:84%; margin-bottom:20px">
 					</div>
-						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
-					</div>
-				</center>
-				<br>
-				<br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_t2m_kit_tab.png" style="width:90%; margin-bottom:20px">
-					</div>
-						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
+						<p>Qualitative results of hand-face interaction, deformation, and contact recovery by DICE on Decaf and in-the-wild images. In contact visualizations, a deeper color indicates a higher contact probability.</p>
 					</div>
 				</center>
 				<br>
-				<br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_t2m.png" style="width:95%; margin-bottom:20px">
-					</div>
-						<p>Qualitative comparison of the state-of-the-art methods in text-to-motion task. We visualize motion results and real references from six text prompts. EMDM achieves the fastest motion generation while delivering high-quality motions that closely align with the text inputs.</p>
-
-					</div>
-				</center>
-
-
-
 			</div>
 
 		<div class="section abstract">
-				<h2>Comparisons on action-to-motione</h2><br>
+				<h2>Comparisons with Previous Methods</h2><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_a2m_tab.png" style="width:90%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_comp.png" style="width:85%; margin-bottom:20px">
 					</div>
-						<p>Comparison of action-to-motion task on HumanAct12: FID_train indicating the evaluated splits. Accuracy (ACC) for action recognition. Diversity (DIV) and MModality (MM) for generated motion diversity w.r.t each action label.</p></div>
+						<p>Qualitative comparsion of DICE, Decaf, PIXIE, METRO* on Decaf validation set and in-the-wild images. Our method achieves superior reconstruction accuracy and plausibility in the Decaf dataset, while generalizing well to difficult in-the-wild actions unseen in Decaf.</p></div>
 				</center>
 				<br>
 				<br>
