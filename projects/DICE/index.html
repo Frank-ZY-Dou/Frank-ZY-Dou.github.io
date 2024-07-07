@@ -1,0 +1,312 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>EMDM: Efficient Motion Diffusion Model for Fast, High-Quality Human Motion Generation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image">
+	<meta name="citation_publication_date" content="2023">
+	<meta name="citation_conference_title" content="Arxiv 2023">
+	<meta name="citation_pdf_url" content="">
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image">
+	<link rel="author" href="" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+
+
+
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+					<a href="https://www.upenn.edu/" target="_blank"><IMG src="./logos/penn.png" height="66"
+						border="4"></a></td>
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="68" border="0"></a>
+				</td>
+				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/Logo_UIUC.png" height="60" border="0"></a>
+				</td>
+				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/Logo_mpii.png" height="60" border="0"></a>
+				</td>
+				<a href="https://www.cam.ac.uk/" target="_blank"><IMG src="./logos/Cambridge.png" height="66" border="0"></a>
+				</td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="62" border="4"></a></td>
+
+
+			</div>
+
+			<div class="section head">
+
+				<h1>DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image</h1>
+				<div class="authors">
+					<a href="https://www.linkedin.com/in/qingxuan-wu">Qingxuan Wu</a><sup> 1</sup>&#160;
+					<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou</a><sup># 1,2</sup>&#160;
+					<a href="" target="_blank">Sirui Xu</a><sup> 1</sup>&#160;
+					<a href="" target="_blank">Soshi Shimada</a><sup> 1</sup>&#160;
+					<a href="https://zycliao.com/" target="_blank">Chen Wang</a><sup> 2</sup>&#160;
+					<a href="https://scholar.google.co.uk/citations?user=GStTsxAAAAAJ&hl=zh-CN" target="_blank"> Zhengming Yu</a><sup> 3</sup>&#160;<br>
+					<a href="https://liuyuan-pal.github.io/" target="_blank">Yuan Liu</a><sup> 2</sup>&#160;
+					<a href="https://liuyuan-pal.github.io/" target="_blank">Cheng Lin</a><sup> 2</sup>&#160;
+					<a href="https://liuyuan-pal.github.io/" target="_blank">Zeyu Cao</a><sup> 2</sup>&#160;
+					<a href="https://i.cs.hku.hk/~taku/" target="_blank">Taku Komura</a><sup> 2</sup>&#160;
+					<a href="https://i.cs.hku.hk/~taku/" target="_blank">Vladislav Golyanik</a><sup> 2</sup>&#160;<br>
+					<a href="https://i.cs.hku.hk/~taku/" target="_blank">Christian Theobalt</a><sup> 2</sup>&#160;
+					<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Wenping Wang</a><sup> 4</sup>&#160;
+					<a href="https://lingjie0206.github.io/" target="_blank">Lingjie Liu</a><sup># 1</sup>&#160;
+				</div>
+
+<!--				<br>-->
+				<div class="affiliations">
+					<sup>1</sup><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a>&#160;&#160;
+					<sup>3</sup><a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>&#160;&#160;<br>
+					<sup>4</sup><a href="https://www.mpi-inf.mpg.de/departments/visual-computing-and-artificial-intelligence" target="_blank">Max Planck Institute for Informatics</a>&#160;&#160;
+					<sup>5</sup><a href="https://www.cam.ac.uk/" target="_blank">University of Cambridge</a>&#160;&#160;
+					<sup>6</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+				</div>
+
+								<div class="authors"> #Corresponding Authors.</div>
+
+				<div class="venue"> Arxiv 2024. </div>
+			</div>
+						<div class="section downloads">
+					<center>
+						<ul style="padding-left: 0">
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/abs/2406.17988"><img src="images/pdf.png"></a><br/>
+									<a href="https://arxiv.org/abs/2406.17988">Paper</a>
+								</div>
+							</li>
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://www.youtube.com/watch?v=4ZuZveSElWE"><img src="images/video.png"></a><br/>
+									<a href="https://www.youtube.com/watch?v=4ZuZveSElWE">Video</a>
+								</div>
+							</li>
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://github.com/Qingxuan-Wu/DICE"><img src="images/data_ico.png"></a><br/>
+									<a href="https://github.com/Qingxuan-Wu/DICE">Code</a>
+								</div>
+							</li>
+						</ul>
+					</center>
+				</div>
+
+
+			<div class="section downloads">
+				<center>
+						<iframe width="799" height="450" src="https://www.youtube.com/watch?v=4ZuZveSElWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+				<p>Reconstructing 3D hand-face interactions with deformations from a single image is a challenging yet crucial task with broad applications in AR, VR, and gaming. The challenges stem from self-occlusions during single-view hand-face interactions, diverse spatial relationships between hands and face, complex deformations, and the ambiguity of the single-view setting. The first and only method for hand-face interaction recovery, Decaf, introduces a global fitting optimization guided by contact and deformation estimation networks trained on studio-collected data with 3D annotations. However, Decaf suffers from a time-consuming optimization process and limited generalization capability due to its reliance on 3D annotations of hand-face interaction data. To address these issues, we present DICE, the first end-to-end method for Deformation-aware hand-face Interaction reCovEry from a single image. DICE estimates the poses of hands and faces, contacts, and deformations simultaneously using a Transformer-based architecture. It features disentangling the regression of local deformation fields and global mesh vertex locations into two network branches, enhancing deformation and contact estimation for precise and robust hand-face mesh recovery. To improve generalizability, we propose a weakly-supervised training approach that augments the training set using in-the-wild images without 3D ground-truth annotations, employing the depths of 2D keypoints estimated by off-the-shelf models and adversarial priors of poses for supervision. Our experiments demonstrate that DICE achieves state-of-the-art performance on a standard benchmark and in-the-wild data in terms of accuracy and physical plausibility. Additionally, our method operates at an interactive rate (20 fps) on an Nvidia 4090 GPU, whereas Decaf requires more than 15 seconds for a single image. Our code will be publicly available upon publication.</p>
+				<br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_teaser.png" style="width:80%; margin-bottom:8px">
+					</div>
+					<p>
+					Our method, DICE, is the first end-to-end approach that captures hand-face interaction and deformation from a monocular image. (a) Decaf validation dataset. (b) In-the-wild images. (c) Use-cases in VR.					</p>
+				</div>
+
+			</div>
+<!--			<br>-->
+
+
+			<div class="section abstract">
+				<h2>Framework</h2>
+								<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:90%; margin-bottom:20px">
+					</div>
+
+					</div>
+				</center>
+			<p>Overview of the proposed DICE framework. The input image is first fed to a CNN to extract a  feature map, which is then passed to the Transformer-based encoders for mesh and interaction, i.e., MeshNet and InteractionNet. The MeshNet extracts hand and face mesh features, which is then used by the Inverse Kinematics  models (IKNets) to predict pose and shape parameters that drive FLAME and MANO models. The InteractionNet predicts per-vertex hand-face contact probabilities and face deform fields from the feature map, the latter is applied to the face mesh output by the FLAME model. To improve the generalization capability, we introduce a Weakly-Supervised Training Scheme using off-the-shelf 2D keypoint detection models and depth estimation models to provide depth supervision on keypoints. In addition, we use head and hand discriminators to constrain the distribution of parameters regressed by IKNets.</p>
+			</div>
+			<br>
+
+<!--	-->
+
+
+
+
+			</div>
+			<div class="section abstract">
+				<h2>Comparisons on text-to-motion</h2><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m_humanml3d_tab.png" style="width:88%; margin-bottom:20px">
+					</div>
+						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
+					</div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m_kit_tab.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
+					</div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m.png" style="width:95%; margin-bottom:20px">
+					</div>
+						<p>Qualitative comparison of the state-of-the-art methods in text-to-motion task. We visualize motion results and real references from six text prompts. EMDM achieves the fastest motion generation while delivering high-quality motions that closely align with the text inputs.</p>
+
+					</div>
+				</center>
+
+
+
+			</div>
+
+		<div class="section abstract">
+				<h2>Comparisons on action-to-motione</h2><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_a2m_tab.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>Comparison of action-to-motion task on HumanAct12: FID_train indicating the evaluated splits. Accuracy (ACC) for action recognition. Diversity (DIV) and MModality (MM) for generated motion diversity w.r.t each action label.</p></div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_a2m.png" style="width:50%; margin-bottom:20px">
+					</div>
+						<p>Qualitative comparison of the state-of-the-art methods on action-to-motion task.</p>
+					</div>
+				</center>
+
+		</div>
+
+		<div class="section abstract">
+
+			<h2>More Results</h2><br>
+			<h3>Text-to-Motion</h3>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_supp_more_t2m.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>More qualitative results of EMDM on the task of text-to-motion.</p></div>
+				</center>
+
+			<h3>Action-to-Motion</h3>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_supp_more_a2m.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>More qualitative results of EMDM on the task of action-to-motion.</p>
+					</div>
+				</center>
+		</div>
+
+
+		<div class="section abstract">
+
+
+
+
+
+			<br>
+
+			<center>
+					<br>
+									<h2 align="center">Check out our paper for more details.</h3>
+				</center>
+			</div>
+			<div class="section list">
+				<h2>Citation</h2>
+				<div class="section bibtex">
+					<pre>@article{zhou2023emdm,
+  title={EMDM: Efficient Motion Diffusion Model for Fast, High-Quality Motion Generation},
+  author={Zhou, Wenyang and Dou, Zhiyang and Cao, Zeyu and Liao, Zhouyingcheng and Wang, Jingbo and Wang, Wenjia and Liu, Yuan and Komura, Taku and Wang, Wenping and Liu, Lingjie},
+  journal={arXiv preprint arXiv:2312.02256},
+  year={2023}
+}</pre>
+				</div>
+			</div>
+			
+		<!-- 	<div class="section list">
+				<h2>Related Links</h2>
+				<div class="row" style="margin-top:15px">
+				<li>Parts of <a href="https://github.com/Totoro97/NeuS" target="_blank">our PyTorch implementation</a> are taken from <a href="https://github.com/lioryariv/idr" target="_blank">IDR</a> and <a href="https://github.com/yenchenlin/nerf-pytorch" target="_blank">NeRF-pytorch</a>.
+				<li>Check the concurrent works of learning neural implicit surfaces: </br> 			
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2104.10078" target="_blank">UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction</a>, Oechsle et al. 2021 </br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2106.12052" target="_blank">Volume Rendering of Neural Implicit Surfaces</a>, Yariv et al. 2021 
+				<li>Also check other works about neural scene representations and neural rendering from our group: </br> 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://lingjie0206.github.io/papers/NSVF/" target="_blank">Neural Sparse Voxel Fields:</a>, Liu et al. 2020 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/" target="_blank">Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video</a>, Tretschk et al. 2021</br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://gvv.mpi-inf.mpg.de/projects/NeuralActor/" target="_blank">Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</a>, Liu et al. 2021 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://liuyuan-pal.github.io/NeuRay/" target="_blank">Neural Rays for Occlusion-aware Image-based Rendering</a>, Liu et al. 2021. </br> 	
+				</div>
+			</div>
+			
+			<div class="section list">
+				<h2>Acknowledgements</h2>
+				<div class="row" style="margin-top:15px">
+				<p>We thank Michael Oechsle for providing the results of UNISURF. Christian Theobalt was supported by ERC Consolidator Grant 770784. Lingjie Liu was supported by Lise Meitner Postdoctoral Fellowship.</p> 
+				</div>
+			</div> -->
+			
+			
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
