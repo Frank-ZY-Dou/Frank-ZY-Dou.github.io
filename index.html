@@ -5,19 +5,30 @@
 
 	<style>
   .custom-list li {
-    margin-bottom: 5.2px; /* 控制上下间距 */
-    margin-right: 3px;  /* 控制左右间距 */
+    margin-bottom: 5.2px;
+    margin-right: 3px;
   }
   .li_data {
     display: inline-block;
-    width: 70px; /* 固定日期部分的宽度 */
+    width: 70px;
     font-weight: bold;
-	      vertical-align: top; /* 垂直居上 */
+	      vertical-align: top;
   }
   .li_content {
     display: inline-block;
-    width: calc(100% - 70px); /* 剩余部分用于内容 */
-	      vertical-align: top; /* 垂直居上 */
+    width: calc(100% - 70px);
+	      vertical-align: top;
+  }
+  .li_data_short {
+    display: inline-block;
+    width: 40px;
+    font-weight: bold;
+	      vertical-align: top;
+  }
+  .li_content_short {
+    display: inline-block;
+    width: calc(100% - 40px);
+	      vertical-align: top;
   }
 
 </style>
@@ -363,8 +374,8 @@
 <!--					<li>-->
 <!--						<span class="li_data">Jun. 2024:</span><span class="li_content">This June, I will be attending CVPR2024 in Seattle and SGP2024 in Boston. Can't wait to see you there.</span>-->
 <!--					</li>-->
-<li>
-						<span class="li_data">July. 2024:</span><span class="li_content">Five papers accepted to ECCV 2024.</span>
+					  <li>
+						<span class="li_data">Jul. 2024:</span><span class="li_content">Five papers accepted to ECCV 2024.</span>
 					  </li>
 					  <li>
 						<span class="li_data">May. 2024:</span><span class="li_content">One paper accepted to SGP 2024.</span>
@@ -1255,138 +1266,117 @@ We introduce Coverage Axis++, a novel and efficient approach to 3D shape skeleto
 				<hr style="clear: both;">
 
 				<h2>Services</h2>
-				<dl>
-				<ul>
-					<li>
+				<br>
+<!--				<dl>-->
+<!--				<ul>-->
+<!--					<li>-->
 						<p>
-							<strong> Reviewer: SIGGRAPH; SIGGRAPH ASIA; TVCG; ICCV; CVPR; ECCV; CVPRW; ECCVW; PG; GM; CAD (CADJ); TIP; GMP; CGI; Graphics Replicability Stamp; ICONIP; FSDM; MLIS; Scientific (BrainSTEM@HKU). </strong>
+							<strong> Reviewer: SIGGRAPH; SIGGRAPH ASIA; TVCG; ICCV; CVPR; ECCV; CVPRW; ECCVW; PG; EG (P); GM; CAD (CADJ); TIP; GMP; CGI; Graphics Replicability Stamp; ICONIP; FSDM; MLIS; Scientific (BrainSTEM@HKU). </strong>
 						</p>
-					</li>
+<!--					</li>-->
 
-					<li>
-						<p>
+<!--					<li>-->
+<!--						<p>-->
 							<strong> Teaching Assistant:</strong>
-						</p>
+<!--						</p>-->
 
 <!--							-->
 											<dl>
-								<ul>
+					<ul class="custom-list">
 									<li>
-										<p>2023 COMP3271 Computer Graphics. Worked with <a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku"> Prof. Taku Komura</a>.</p>
+										<span class="li_data_short">2023:</span><span class="li_content_short">COMP3271 Computer Graphics. Worked with <a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku"> Prof. Taku Komura</a>.</span>
 									</li>
 									<li>
-										<p>2022 COMP3362 Hands-on AI: Experimentation and Applications. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King Choi</a>.</p>
+										<span class="li_data_short">2022:</span><span class="li_content_short">COMP3362 Hands-on AI: Experimentation and Applications. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King Choi</a>.</span>
 									</li>
 									<li>
-										<p>2021 COMP3362 Hands-on AI: Experimentation and Applications. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King Choi</a>.</p>
+										<span class="li_data_short">2021:</span><span class="li_content_short">COMP3362 Hands-on AI: Experimentation and Applications. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/ykchoi">Dr. Yi-King Choi</a>.</span>
 									</li>
 									<li>
-										<p>2020 COMP2120 Computer Organization. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/kpchan">Prof. Kwok-Ping Chan</a>.</p>
+										<span class="li_data_short">2020:</span><span class="li_content_short">COMP2120 Computer Organization. Worked with <a href="https://www.cs.hku.hk/people/academic-staff/kpchan">Prof. Kwok-Ping Chan</a>.</span>
 									</li>
-
 
 								</ul>
 								</dl>
 
-					</li>
+<!--					</li>-->
 
-					<li>
+<!--					<li>-->
 						<p>
 							<strong> Invited Talks:</strong>
 						</p>
 
 						<dl>
-								<ul>
+					<ul class="custom-list">
 									<li>
-										<p>Apr. 2024: On the Readily Deployable System for Detecting Close Contact Behaviors, <a href="http://www.boeing.cn/">Boeing</a>.</p>
+										<span class="li_data">Apr. 2024:</span><span class="li_content">On the Readily Deployable System for Detecting Close Contact Behaviors, <a href="http://www.boeing.cn/">Boeing</a>.</span>
 									</li>
 									<li>
-										<p>Nov. 2023: Geometric Computing - Medial Axis Transform and Normal Orientation for Point Clouds, <a href="https://www.shanghaitech.edu.cn/eng/">ShanghaiTech University</a>.</p>
+										<span class="li_data">Nov. 2023:</span><span class="li_content">Geometric Computing - Medial Axis Transform and Normal Orientation for Point Clouds, <a href="https://www.shanghaitech.edu.cn/eng/">ShanghaiTech University</a>.</span>
 									</li>
 									<li>
-										<p>Oct. 2023: Scalable Skill Embeddings for Physics-based Characters, <a href="https://twitter.com/TencentGames">Tencent Games</a>.</p>
+										<span class="li_data">Oct. 2023:</span><span class="li_content">Scalable Skill Embeddings for Physics-based Characters, <a href="https://twitter.com/TencentGames">Tencent Games</a>.</span>
 									</li>
 									<li>
-										<p>Jun. 2023: Robust and Efficient Vision Systems for Close Contact Behavior Analysis, <a href="https://english.bjut.edu.cn/">Beijing University of Technology</a>.</p>
+										<span class="li_data">Jun. 2023:</span><span class="li_content">Robust and Efficient Vision Systems for Close Contact Behavior Analysis, <a href="https://english.bjut.edu.cn/">Beijing University of Technology</a>.</span>
 									</li>
 									<li>
-										<p>Feb. 2023: Scalable Skill Embeddings for Physics-based Characters, <a href="https://www.en.sdu.edu.cn/">Shandong University</a>.</p>
+										<span class="li_data">Feb. 2023:</span><span class="li_content">Scalable Skill Embeddings for Physics-based Characters, <a href="https://www.en.sdu.edu.cn/">Shandong University</a>.</span>
 									</li>
 									<li>
-										<p>Oct. 2022: On Efficient Hand-to-Surface Contact Estimation, <a href="http://www.boeing.cn/">Boeing</a>.</p>
+										<span class="li_data">Oct. 2022:</span><span class="li_content">On Efficient Hand-to-Surface Contact Estimation, <a href="http://www.boeing.cn/">Boeing</a>.</span>
 									</li>
 								</ul>
 						</dl>
 
-					</li>
-				</ul>
-				</dl>
+<!--					</li>-->
+<!--				</ul>-->
+<!--				</dl>-->
 			<hr style="clear: both;">
 				<h2>Awards and Scholarships</h2>
 				<dl>
-					<ul>
+					<ul class="custom-list">
 						<li>
-							<p>
-								<strong>Oct. 2023</strong>: The Best Paper Award, SIGGRAPH 2023.
-							</p>
-						</li>
-						<li>
-							<p>
-								<strong>Oct. 2020</strong>: Postgraduate Scholarship.
-							</p>
-						</li>
+							<span class="li_data">Jul. 2024:</span><span class="li_content">HKU Foundation First Year Excellent PhD Award 2023/24.</span>
+							</li>
+							<li>
+								<span class="li_data">Oct. 2023:</span><span class="li_content">The Best Paper Award, SIGGRAPH 2023.</span>
+							</li>
+							<li>
+								<span class="li_data">Oct. 2020:</span><span class="li_content">Postgraduate Scholarship.</span>
+							</li>
+							<li>
+								<span class="li_data">Oct. 2019:</span><span class="li_content">National Scholarship.</span>
+							</li>
+							<li>
+								<span class="li_data">Dec. 2019:</span><span class="li_content">Presidential Scholarship.</span>
+							</li>
+							<li>
+								<span class="li_data">Oct. 2018:</span><span class="li_content">National Scholarship.</span>
+							</li>
 
-						<li>
-							<p>
-								<strong>Oct. 2019</strong>: National Scholarship.
-							</p>
-						</li>
-						<li>
-							<p>
-								<strong>Dec. 2019</strong>: Presidential Scholarship.
-							</p>
-						</li>
-						<li>
-							<p>
-								<strong>Oct. 2018</strong>: National Scholarship.
-							</p>
-						</li>
+
 					</ul>
 				</dl>
 				<h2>Competitions</h2>
 				<dl>
-					<ul>
+					<ul class="custom-list">
 						<li>
-														<p>
-															<strong>2019</strong>: National First Prize, National Mathematical Modeling Contest.
-														</p>
+							<span class="li_data_short">2019:</span><span class="li_content_short">National First Prize, National Mathematical Modeling Contest.</span>
 						</li>
 						<li>
-																					<p>
-
-								<strong>2019</strong>: Meritorious Winner, International Mathematical Modeling Contest: The Mathematical Contest in Modeling (MCM).
-																					</p>
-						</li>
-
-						<li>
-							<p>
-
-								<strong>2018</strong>: National First Prize, The Best Paper Award (8/38573), National Mathematical Modeling Contest.
-
-							</p>
-
-						</li>
-
-						<li>
-								<p>
-								<strong>2018</strong>: Meritorious Winner, International Mathematical Modeling Contest: The Interdisciplinary Contest in Modeling (ICM).
-								</p>
+							<span class="li_data_short">2019:</span><span class="li_content_short">Meritorious Winner, International Mathematical Modeling Contest: The Mathematical Contest in Modeling (MCM).</span>
 						</li>
 						<li>
-							<p>
-								<strong>2018</strong>: National Grand Prize (1st), Most Commercially Valuable Award, Most Popular Award; <br> The 11th National University Student Software Innovation Contest.
-							</p>
+							<span class="li_data_short">2018:</span><span class="li_content_short">National First Prize, The Best Paper Award (8/38573), National Mathematical Modeling Contest.</span>
 						</li>
+						<li>
+							<span class="li_data_short">2018:</span><span class="li_content_short">Meritorious Winner, International Mathematical Modeling Contest: The Interdisciplinary Contest in Modeling (ICM).</span>
+						</li>
+						<li>
+							<span class="li_data_short">2018:</span><span class="li_content_short">National Grand Prize (1st), Most Commercially Valuable Award, Most Popular Award; The 11th National University Student Software Innovation Contest.</span>
+						</li>
+
 					</ul>
 				</dl>
 
