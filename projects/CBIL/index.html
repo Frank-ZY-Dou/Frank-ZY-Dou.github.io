@@ -1,0 +1,369 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>CBIL: Collective Behavior Imitation Learning for Fish from Real Videos.</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<!--
+	Yifan Wu* [1,2],
+Zhiyang Dou* [1,3],
+Yuko Ishiwaka [4],
+Shun Ogawa [4],
+Yuke Lou [1],
+Wenping Wang [5],
+Lingjie Liu [3],
+Taku Komura [1].
+
+(* Equal Contribution)
+
+	-->
+	<!-- Meta tags for Zotero grab citation -->
+
+
+	<meta name="citation_title" content="CBIL: Collective Behavior Imitation Learning for Fish from Real Videos.">
+	<meta name="citation_author" content="Yifan Wu">
+	<meta name="citation_author" content="Zhiyang Dou">
+	<meta name="citation_author" content="Yuko Ishiwaka">
+	<meta name="citation_author" content="Shun Ogawa">
+	<meta name="citation_author" content="Yuke Lou">
+	<meta name="citation_author" content="Wenping Wang">
+	<meta name="citation_author" content="Lingjie Liu">
+	<meta name="citation_author" content="Taku Komura">
+	<meta name="citation_publication_date" content="2024">
+	<meta name="citation_conference_title" content="SIGA 2024">
+	<meta name="citation_pdf_url" content="">
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="
+		Reproducing realistic collective behaviors presents a captivating yet formidable challenge. Traditional rule-based methods rely on hand-crafted principles, limiting motion diversity and realism in generated collective behaviors. Recent imitation learning methods learn from data but often require ground truth motion trajectories and struggle with authenticity, especially in high-density groups with erratic movements. In this paper, we present a scalable approach, Collective Behavior Imitation Learning~(CBIL), for learning fish schooling behavior directly from videos, without relying on captured motion trajectories. Our method first leverages Video Representation Learning, where a Masked Video AutoEncoder~(MVAE) extracts implicit states from video inputs in a self-supervised manner. The MVAE effectively maps 2D observations to implicit states that are compact and expressive for following the imitation learning stage. Then, we propose a novel adversarial imitation learning method to effectively capture complex movements of the schools of fish, allowing for efficient imitation of the distribution for motion patterns measured in the latent space. It also incorporates bio-inspired rewards alongside priors to regularize and stabilize training. Once trained, \name can be used for various animation tasks with the learned collective motion priors. We further show its effectiveness across different species. Finally, we demonstrate the application of our system in detecting abnormal fish behavior from in-the-wild videos.">
+	<link rel="author" href="" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+
+
+
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="66" border="0"></a>
+				</td>
+				<a href="https://ai.tencent.com/ailab/en/about/" target="_blank"><IMG src="./logos/TecentAILAB.png" height="64"
+						border="4"></a></td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="4"></a></td>
+			</div>
+
+			<div class="section head">
+
+				<h1>CBIL: Collective Behavior Imitation Learning for Fish from Real Videos.</h1>
+
+
+	<!--
+	Yifan Wu* [1,2],
+Zhiyang Dou* [1,3],
+Yuko Ishiwaka [4],
+Shun Ogawa [4],
+Yuke Lou [1],
+Wenping Wang [5],
+Lingjie Liu [3],
+Taku Komura [1].
+
+(* Equal Contribution)
+
+	-->
+
+			<div class="authors">
+				<a href="" target="_blank">Yifan Wu*</a><sup> 1,2</sup>&#160;&#160;
+				<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou*</a><sup> 1,3</sup>&#160;&#160;
+				<a href="https://scholar.google.com/citations?user=ECBWZwIAAAAJ&hl=ja" target="_blank">Yuko Ishiwaka</a><sup> 4</sup>&#160;&#160;
+				<a href="https://scholar.google.it/citations?user=ZNKi4b4AAAAJ&hl=en" target="_blank">Shun Ogawa</a><sup> 4</sup>&#160;&#160;
+				<a href="https://thorin666.github.io/" target="_blank">Yuke Lou</a><sup> 1</sup>&#160;&#160; <br>
+				<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Wenping Wang</a><sup> 5</sup>&#160;&#160;
+				<a href="https://lingjie0206.github.io/" target="_blank">Lingjie Liu</a><sup> 3</sup>&#160;&#160;
+				<a href="https://i.cs.hku.hk/~taku/" target="_blank">Taku Komura</a><sup> 1</sup>&#160;&#160;
+			</div>
+
+
+				<div class="affiliations">
+					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.bu.edu/" target="_blank">Boston University</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.softbank.jp/en//" target="_blank">SoftBank</a>&#160;&#160;
+					<sup>3</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+				</div>
+				<div class="venue">SIGGRAPH ASIA 2024.</div>
+				<div class="venue">ACM Transactions on Graphics.</div>
+				<div class="venue"> * Equal Contribution.</div>
+			</div>
+						<div class="section downloads">
+					<center>
+						<ul style="padding-left: 0">
+							<li class="grid">
+								<div class="griditem">
+									<a href="http://arxiv.org/abs/"><img src="images/pdf.png"></a><br/>
+									<a href="http://arxiv.org/abs/">Paper</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href="https://youtu.be/"><img src="images/video.png"></a><br/>
+									<a href="https://youtu.be/">Video</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href="https://github.com/Frank-ZY-Dou/CASE"><img src="images/data_ico.png"></a><br/>
+									<a href="https://github.com/Frank-ZY-Dou/CASE">Code</a>
+
+								</div>
+							</li></ul>
+					</center>
+				</div>
+
+			<div class="section abstract">
+					<center>
+						<strong>Please check out our <a href="https://youtu.be/">video</a> for more details.</strong>
+					</center>
+			</div>
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_teasar.png" style="width:100%; margin-bottom:20px">
+
+					</div>
+					<p>Our framework enables physically simulated characters to master highly varied and extensive skills with high efficiency and effectiveness.  Notably, it offers an explicit control handle for directly specifying the desired skill from a diverse and extensive set of skills.  Here, a character is instructed by the user to perform a sequence of skills, including kick, jump attack, sword bash, shield bash, and finally, roaring.</p>
+
+				</div>
+				<p>
+					We present C·ASE, an efficient and effective framework that learns conditional Adversarial Skill Embeddings for physics-based characters. Our physically simulated character can learn a diverse repertoire of skills while providing controllability in the form of direct manipulation of the skills to be performed. C·ASE divides the heterogeneous skill motions into distinct subsets containing homogeneous samples for training a low-level conditional model to learn conditional behavior distribution. The skill-conditioned imitation learning naturally offers explicit control over the character's skills after training. The training course incorporates the focal skill sampling, skeletal residual forces, and element-wise feature masking to balance diverse skills of varying complexities, mitigate dynamics mismatch to master agile motions and capture more general behavior characteristics, respectively. Once trained, the conditional model can produce highly diverse and realistic skills, outperforming state-of-the-art models, and can be repurposed in various downstream tasks. In particular, the explicit skill control handle allows a high-level policy or user to direct the character with desired skill specifications, which we demonstrate is advantageous for interactive character animation.
+				</p>
+			</div>
+			<br>
+
+			<!--<div class="section abstract">
+				<h2>Full Video</h2><br>
+				<center>
+					<!-- <iframe width="640" height="360" src="data/video.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+					<!--<iframe width="640" height="360" src="https://www.youtube.com/embed/RFqPwH7QFEI" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>-->
+					<!--iframe src="./data/video.mp4" allow="autoplay; encrypted-media" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="560" height="315" frameborder="0"></iframe-->
+					<!--<p style="font-size:11px; text-align:center">
+					Download Video: <a href="data/video.mp4" target="_blank">HD</a> (MP4, 111 MB)
+				</p>
+				</center>
+			</div>-->
+
+			<div class="section abstract">
+				<h2>Framework</h2>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:50%; margin-bottom:20px">
+					</div>
+
+					</div>
+				</center>
+			<p>Our framework contains three stages: the pre-training, interactive controller training, and interactive character animation stages.
+During pre-training,  a low-level policy $\pi$ learns conditional adversarial skill embeddings from a diverse and extensive motion dataset,
+followed by more high-level policies $\pi$ trained to allow interactive control of the character.
+Last, during the interactive character animation stage, users can interactively animate the character in various manners, possibly with desired skills.
+			</p>
+
+			</div>
+			<br>
+
+			<div class="section abstract">
+				<h2>Low-level Conditional Policy</h2>
+				<br>
+				<p>C·ASE is an efficient and effective framework for learning Conditional Adversarial Skill Embedding for physics-based characters. By dividing the repertoire into homogeneous sub-sets and conquering them for learning conditional behavior distribution, CASE outperforms state-of-the-art methods, enabling characters to master diverse motor skills efficiently.
+				Notably, skill-conditioned imitation learning naturally offers explicit control over the embedded skills.</p>
+
+				<h3>Conditional Skill Embeddings</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_llc.png" style="width:100%; margin-bottom:20px">
+					</div>
+						<p>C·ASE enables the physically simulated character to perform skills specified by skill labels and transition latent codes.
+					</p>
+					</div>
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h3>Filtered Motion Coverage Rate</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_coverage_rate_vs_cut_off_rate.png" style="width:50%; margin-bottom:20px">
+					</div>
+						<p>Comparison of the motion coverage. The coverage rate of ASE and CALM falls dramatically with an increasing filtering rate, implying a serious imbalance of the coverage, whereas ours consistently produces high coverage rates.</p>
+					</div>
+				</center>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.0.png" style="width:50%; margin-bottom:20px">
+						<p> (a) No filtering.</p>
+						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.5.png" style="width:50%; margin-bottom:20px">
+						<p> (a)  Filtering rate $= 50\%$.</p>
+					</div>
+						<p>Frequencies at which the low-level policy produces motions that match all 87 individual clips. We show distributions produced by the filtering rate of $0\%$ and $50\%$ here. Compared to ASE and CALM, our method produces diverse motions that much more evenly cover all reference clips.
+						</p>
+					</div>
+				</center>
+			</div>
+
+
+			<div class="section abstract">
+				<h3>Motion Diversity</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_diversity_z_under_c.png" style="width:100%; margin-bottom:20px">
+					</div>
+						<p>Motion variations (three colored in red, blue, and green are shown) are shown for each skill category. We test with the Sword&Shield dataset.</p>
+					</div>
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h3>Skill Transition Coverage</h3><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_transition_coverage.png" style="width:100%; margin-bottom:20px">
+					</div>
+						<p>Transition coverage and probability between different skills. We show all 87 motion clips in the Sword\&Shield dataset. Our model achieves a higher coverage rate and more even transition probability distribution compared with ASE and CALM.
+						</p>
+					</div>
+				</center>
+			</div>
+
+
+			<br>
+
+			<div class="section abstract">
+				<h2>Interactive Character Animation</h2>
+				<br>
+				<p>The learned low-level conditional model can capture extensive and diverse skills and provides explicit control over the character skills. Moreover, we train additional deepRL-based high-level policies to support interactively animation of the character in various ways.</p>
+				<h3>Path-follower</h3>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_app_path_following_3.png" style="width:100%; margin-bottom:20px">
+					</div>
+					<p>Path-follower: the character faithfully follows user-specified paths (blue path) under various specified skills, including jog, march, walk, sidewalk, run, slow walk, open-armed walk, patrol, and confident strut; More results are presented in the supplementary video.
+					</p>
+					</div>
+				</center>
+
+
+				<h3>Directional Control</h3>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_app_directional_3.png" style="width:100%; margin-bottom:20px">
+					</div>
+					<p>Directional Control: the character faithfully follows user-specified local moving direction (blue arrow) under various specified skills, including walk, stooped run, stride, casual walk, hands-up walk, and march; See more results in the supplementary video.</p>
+					</div>
+				</center>
+
+				<h3>Character Re-locating</h3>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_app_location_3.png" style="width:100%; margin-bottom:20px">
+					</div>
+					<p>Character Re-locating: the character re-locates to a user-specified target location (visualized by the blue disks on the ground and arrows in the air) with different specified skills, including walk, limping, patrol, run, foot-sliding walk, and quick walk; More results can be found in the supplementary video.	</p>
+					</div>
+				</center>
+
+
+				</div>
+			<center>
+					<br>
+									<h2 align="center">Check out our paper for more details.</h3>
+				</center>
+			</div>
+			<div class="section list">
+				<h2>Citation</h2>
+				<div class="section bibtex">
+					<pre>@article{dou2022case,
+  title={C·ASE: Learning Conditional Adversarial Skill Embeddings for Physics-based Characters},
+  author={Zhiyang Dou and Xuelin Chen and Qingnan Fan and Taku Komura and Wenping Wang},
+  journal={arXiv preprint arXiv:2309.11351},
+  year={2023}
+}
+				</div>
+			</div>
+			
+		<!-- 	<div class="section list">
+				<h2>Related Links</h2>
+				<div class="row" style="margin-top:15px">
+				<li>Parts of <a href="https://github.com/Totoro97/NeuS" target="_blank">our PyTorch implementation</a> are taken from <a href="https://github.com/lioryariv/idr" target="_blank">IDR</a> and <a href="https://github.com/yenchenlin/nerf-pytorch" target="_blank">NeRF-pytorch</a>.
+				<li>Check the concurrent works of learning neural implicit surfaces: </br> 			
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2104.10078" target="_blank">UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction</a>, Oechsle et al. 2021 </br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2106.12052" target="_blank">Volume Rendering of Neural Implicit Surfaces</a>, Yariv et al. 2021 
+				<li>Also check other works about neural scene representations and neural rendering from our group: </br> 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://lingjie0206.github.io/papers/NSVF/" target="_blank">Neural Sparse Voxel Fields:</a>, Liu et al. 2020 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/" target="_blank">Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video</a>, Tretschk et al. 2021</br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://gvv.mpi-inf.mpg.de/projects/NeuralActor/" target="_blank">Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</a>, Liu et al. 2021 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://liuyuan-pal.github.io/NeuRay/" target="_blank">Neural Rays for Occlusion-aware Image-based Rendering</a>, Liu et al. 2021. </br> 	
+				</div>
+			</div>
+			
+			<div class="section list">
+				<h2>Acknowledgements</h2>
+				<div class="row" style="margin-top:15px">
+				<p>We thank Michael Oechsle for providing the results of UNISURF. Christian Theobalt was supported by ERC Consolidator Grant 770784. Lingjie Liu was supported by Lise Meitner Postdoctoral Fellowship.</p> 
+				</div>
+			</div> -->
+			
+			
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
