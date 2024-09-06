@@ -96,18 +96,19 @@ Taku Komura [1].
 (* Equal Contribution)
 
 	-->
+<span style="display: block; margin-bottom: 2.4%;"></span>
 
 			<div class="authors">
 				<a href="" target="_blank">Yifan Wu*</a><sup> 1,2</sup>&#160;&#160;
 				<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou*</a><sup> 1,3</sup>&#160;&#160;
 				<a href="https://scholar.google.com/citations?user=ECBWZwIAAAAJ&hl=ja" target="_blank">Yuko Ishiwaka</a><sup> 4</sup>&#160;&#160;
 				<a href="https://scholar.google.it/citations?user=ZNKi4b4AAAAJ&hl=en" target="_blank">Shun Ogawa</a><sup> 4</sup>&#160;&#160;
-				<a href="https://thorin666.github.io/" target="_blank">Yuke Lou</a><sup> 1</sup>&#160;&#160; <br><span style="display: block; margin-bottom: 1.4%;"></span>
+				<a href="https://thorin666.github.io/" target="_blank">Yuke Lou</a><sup> 1</sup>&#160;&#160; <br><span style="display: block; margin-bottom: 0.75%;"></span>
 				<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Wenping Wang</a><sup> 5</sup>&#160;&#160;
 				<a href="https://lingjie0206.github.io/" target="_blank">Lingjie Liu</a><sup> 3</sup>&#160;&#160;
 				<a href="https://i.cs.hku.hk/~taku/" target="_blank">Taku Komura</a><sup> 1</sup>&#160;&#160;
 			</div>
-<span style="display: block; margin-bottom: 2.4%;"></span>
+<span style="display: block; margin-bottom: 2%;"></span>
 
 				<div class="affiliations">
 					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a>&#160;&#160;
@@ -116,8 +117,8 @@ Taku Komura [1].
 					<sup>2</sup><a href="https://www.softbank.jp/en//" target="_blank">SoftBank</a>&#160;&#160;
 					<sup>3</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
 				</div>
-				<div class="venue">SIGGRAPH ASIA 2024.</div>
-				<div class="venue">ACM Transactions on Graphics.</div>
+				<div class="venue">SIGGRAPH ASIA 2024.<span style="display: block; margin-bottom: 0.5%;"></span>
+					ACM Transactions on Graphics.</div>
 				<div class="venue"> * Equal Contribution.</div>
 			</div>
 						<div class="section downloads">
@@ -133,34 +134,34 @@ Taku Komura [1].
 									<a href="https://youtu.be/"><img src="images/video.png"></a><br/>
 									<a href="https://youtu.be/">Video</a>
 								</div>
-							</li><li class="grid">
-								<div class="griditem">
-									<a href="https://github.com/Frank-ZY-Dou/CASE"><img src="images/data_ico.png"></a><br/>
-									<a href="https://github.com/Frank-ZY-Dou/CASE">Code</a>
+							</li>
+<!--							<li class="grid">-->
+<!--								<div class="griditem">-->
+<!--									<a href="https://github.com/Frank-ZY-Dou/CASE"><img src="images/data_ico.png"></a><br/>-->
+<!--									<a href="https://github.com/Frank-ZY-Dou/CASE">Code</a>-->
 
-								</div>
-							</li></ul>
+<!--								</div>-->
+<!--							</li>-->
+						</ul>
 					</center>
 				</div>
 
-			<div class="section abstract">
-					<center>
-						<strong>Please check out our <a href="https://youtu.be/">video</a> for more details.</strong>
-					</center>
-			</div>
+<!--			<div class="section abstract">-->
+<!--					<center>-->
+<!--						<strong>Please check out our <a href="https://youtu.be/">video</a> for more details.</strong>-->
+<!--					</center>-->
+<!--			</div>-->
 
 			<div class="section abstract">
 				<h2>Abstract</h2><br>
-				<div class="row" style="margin-bottom:5px">
+				<div class="row" style="margin-bottom:20px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/Teaser.png" style="width:100%; margin-bottom:20px">
-
+						<img class="thumbnail" src="figs/Teaser.png" style="width:100%; margin-bottom:5px">
 					</div>
-					<p>Our framework enables physically simulated characters to master highly varied and extensive skills with high efficiency and effectiveness.  Notably, it offers an explicit control handle for directly specifying the desired skill from a diverse and extensive set of skills.  Here, a character is instructed by the user to perform a sequence of skills, including kick, jump attack, sword bash, shield bash, and finally, roaring.</p>
-
+					<p>CBIL learns diverse collective behaviors of simulated fish from video inputs directly, enabling real-time synthesis of diverse collective motions. (a) reference video clips; (b) simulating varied behaviors of fish schools such as circling, alignment, cohesion, and aggregation; (c) fish schools responding to external changes and interactions; (d) motion control across different species, e.g., birds.</p>
 				</div>
 				<p>
-					We present C·ASE, an efficient and effective framework that learns conditional Adversarial Skill Embeddings for physics-based characters. Our physically simulated character can learn a diverse repertoire of skills while providing controllability in the form of direct manipulation of the skills to be performed. C·ASE divides the heterogeneous skill motions into distinct subsets containing homogeneous samples for training a low-level conditional model to learn conditional behavior distribution. The skill-conditioned imitation learning naturally offers explicit control over the character's skills after training. The training course incorporates the focal skill sampling, skeletal residual forces, and element-wise feature masking to balance diverse skills of varying complexities, mitigate dynamics mismatch to master agile motions and capture more general behavior characteristics, respectively. Once trained, the conditional model can produce highly diverse and realistic skills, outperforming state-of-the-art models, and can be repurposed in various downstream tasks. In particular, the explicit skill control handle allows a high-level policy or user to direct the character with desired skill specifications, which we demonstrate is advantageous for interactive character animation.
+Reproducing realistic collective behaviors presents a captivating yet formidable challenge. Traditional rule-based methods rely on hand-crafted principles, limiting motion diversity and realism in generated collective behaviors. Recent imitation learning methods learn from data but often require ground truth motion trajectories and struggle with authenticity, especially in high-density groups with erratic movements. In this paper, we present a scalable approach, Collective Behavior Imitation Learning (CBIL), for learning fish schooling behavior directly from videos, without relying on captured motion trajectories. Our method first leverages Video Representation Learning, where a Masked Video AutoEncoder (MVAE) extracts implicit states from video inputs in a self-supervised manner. The MVAE effectively maps 2D observations to implicit states that are compact and expressive for following the imitation learning stage. Then, we propose a novel adversarial imitation learning method to effectively capture complex movements of the schools of fish, allowing for efficient imitation of the distribution for motion patterns measured in the latent space. It also incorporates bio-inspired rewards alongside priors to regularize and stabilize training. Once trained, CBIL can be used for various animation tasks with the learned collective motion priors. We further show its effectiveness across different species. Finally, we demonstrate the application of our system in detecting abnormal fish behavior from in-the-wild videos.
 				</p>
 			</div>
 			<br>
@@ -181,64 +182,47 @@ Taku Komura [1].
 
 			<div class="section abstract">
 				<h2>Framework</h2>
+				<br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:50%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:50%; margin-bottom:5px">
 					</div>
 
 					</div>
 				</center>
-			<p>Our framework contains three stages: the pre-training, interactive controller training, and interactive character animation stages.
-During pre-training,  a low-level policy $\pi$ learns conditional adversarial skill embeddings from a diverse and extensive motion dataset,
-followed by more high-level policies $\pi$ trained to allow interactive control of the character.
-Last, during the interactive character animation stage, users can interactively animate the character in various manners, possibly with desired skills.
-			</p>
+			<p>An overview of CBIL. Our framework has three stages: the visual representation learning stage, the collective behavior imitation learning stage, and the crowd animation stage for various animation tasks. In the first stage, we train the MVAE that learns mappings from video inputs to latent states. The latent states are later used in our collective behavior imitation learning. In the second stage, we employ both data-driven motion prior learned from videos and bio-inspired motion prior for imitation learning. Finally, we demonstrate that CBIL is applicable to diverse fish school animations such as circling, alignment, and aggregation.</p>
 
 			</div>
 			<br>
 
 			<div class="section abstract">
-				<h2>Low-level Conditional Policy</h2>
+				<h2>Collective Motion Synthesis</h2>
 				<br>
-				<p>C·ASE is an efficient and effective framework for learning Conditional Adversarial Skill Embedding for physics-based characters. By dividing the repertoire into homogeneous sub-sets and conquering them for learning conditional behavior distribution, CASE outperforms state-of-the-art methods, enabling characters to master diverse motor skills efficiently.
-				Notably, skill-conditioned imitation learning naturally offers explicit control over the embedded skills.</p>
 
-				<h3>Conditional Skill Embeddings</h3><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_llc.png" style="width:100%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_gallery.png" style="width:75%; margin-bottom:8px">
 					</div>
-						<p>C·ASE enables the physically simulated character to perform skills specified by skill labels and transition latent codes.
-					</p>
+						<p>A gallery showcasing fish school animations reproduced using our method, highlighting its effectiveness across various fish species for reproducing diverse behaviors.
+						</p>
 					</div>
 				</center>
 			</div>
 
 			<div class="section abstract">
-				<h3>Filtered Motion Coverage Rate</h3><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_coverage_rate_vs_cut_off_rate.png" style="width:50%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_mainResult.png" style="width:75%; margin-bottom:8px">
 					</div>
-						<p>Comparison of the motion coverage. The coverage rate of ASE and CALM falls dramatically with an increasing filtering rate, implying a serious imbalance of the coverage, whereas ours consistently produces high coverage rates.</p>
-					</div>
+						<p>
+We showcase multiple animations of schools of fish with various movement patterns. (a) Tuna clockwise circling with 50, 100, and 300 fish counts; (b) Shark counterclockwise circling; (c) Emperor Angel Fish alignment with 50 fish counts; (d) Sardines aggregation pattern.
+						</p>
 				</center>
 
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.0.png" style="width:50%; margin-bottom:20px">
-						<p> (a) No filtering.</p>
-						<img class="thumbnail" src="figs/fig_cutoff_comparison_three_sub_10000_0.5.png" style="width:50%; margin-bottom:20px">
-						<p> (a)  Filtering rate $= 50\%$.</p>
-					</div>
-						<p>Frequencies at which the low-level policy produces motions that match all 87 individual clips. We show distributions produced by the filtering rate of $0\%$ and $50\%$ here. Compared to ASE and CALM, our method produces diverse motions that much more evenly cover all reference clips.
-						</p>
-					</div>
-				</center>
+
 			</div>
 
 
