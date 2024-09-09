@@ -24,8 +24,8 @@ Taku Komura [1].
 
 
 	<meta name="citation_title" content="CBIL: Collective Behavior Imitation Learning for Fish from Real Videos.">
-	<meta name="citation_author" content="Yifan Wu">
-	<meta name="citation_author" content="Zhiyang Dou">
+	<meta name="citation_author" content="Yifan Wu*">
+	<meta name="citation_author" content="Zhiyang Dou*">
 	<meta name="citation_author" content="Yuko Ishiwaka">
 	<meta name="citation_author" content="Shun Ogawa">
 	<meta name="citation_author" content="Yuke Lou">
@@ -71,10 +71,13 @@ MathJax.Hub.Config({
 	<div id="content">
 		<div id="content-inner">
 			<div class="section logos" style="text-align:center">
-				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="66" border="0"></a>
-				</td>
-				<a href="https://ai.tencent.com/ailab/en/about/" target="_blank"><IMG src="./logos/TecentAILAB.png" height="64"
-						border="4"></a></td>
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="67" border="0"></a></td>
+				<a href="https://www.bu.edu/" target="_blank"><IMG src="./logos/BU.png" height="65"
+						border="0"></a></td>
+				<a href="https://www.upenn.edu/" target="_blank"><IMG src="./logos/penn.png" height="64"
+						border="0"></a></td>
+				<a href="https://www.softbank.jp/en/" target="_blank"><IMG src="./logos/SB.png" height="64"
+						border="0"></a></td>
 				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="66" border="4"></a></td>
 			</div>
 
@@ -99,7 +102,7 @@ Taku Komura [1].
 <span style="display: block; margin-bottom: 2.4%;"></span>
 
 			<div class="authors">
-				<a href="" target="_blank">Yifan Wu*</a><sup> 1,2</sup>&#160;&#160;
+				<a href="https://www.linkedin.com/in/yifan-wu-37a58a258" target="_blank">Yifan Wu*</a><sup> 1,2</sup>&#160;&#160;
 				<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou*</a><sup> 1,3</sup>&#160;&#160;
 				<a href="https://scholar.google.com/citations?user=ECBWZwIAAAAJ&hl=ja" target="_blank">Yuko Ishiwaka</a><sup> 4</sup>&#160;&#160;
 				<a href="https://scholar.google.it/citations?user=ZNKi4b4AAAAJ&hl=en" target="_blank">Shun Ogawa</a><sup> 4</sup>&#160;&#160;
@@ -113,9 +116,9 @@ Taku Komura [1].
 				<div class="affiliations">
 					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">University of Hong Kong</a>&#160;&#160;
 					<sup>2</sup><a href="https://www.bu.edu/" target="_blank">Boston University</a>&#160;&#160;
-					<sup>2</sup><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a>&#160;&#160;<br>
-					<sup>2</sup><a href="https://www.softbank.jp/en//" target="_blank">SoftBank</a>&#160;&#160;
-					<sup>3</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+					<sup>3</sup><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a>&#160;&#160;<br>
+					<sup>4</sup><a href="https://www.softbank.jp/en/" target="_blank">SoftBank</a>&#160;&#160;
+					<sup>5</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
 				</div>
 				<div class="venue">SIGGRAPH ASIA 2024.<span style="display: block; margin-bottom: 0.5%;"></span>
 					ACM Transactions on Graphics.</div>
@@ -126,13 +129,13 @@ Taku Komura [1].
 						<ul style="padding-left: 0">
 							<li class="grid">
 								<div class="griditem">
-									<a href="http://arxiv.org/abs/"><img src="images/pdf.png"></a><br/>
-									<a href="http://arxiv.org/abs/">Paper</a>
+									<a href=""><img src="images/pdf.png"></a><br/>
+									<a href="">Paper</a>
 								</div>
 							</li><li class="grid">
 								<div class="griditem">
-									<a href="https://youtu.be/"><img src="images/video.png"></a><br/>
-									<a href="https://youtu.be/">Video</a>
+									<a href=""><img src="images/video.png"></a><br/>
+									<a href="">Video</a>
 								</div>
 							</li>
 <!--							<li class="grid">-->
@@ -227,74 +230,83 @@ We showcase multiple animations of schools of fish with various movement pattern
 
 
 			<div class="section abstract">
-				<h3>Motion Diversity</h3><br>
+				<h3>More Collective Behavior Patterns</h3><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_diversity_z_under_c.png" style="width:100%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_feeding.png" style="width:55%; margin-bottom:8px">
+<!--						<img class="thumbnail" src="figs/fig_chasing.png" style="width:48.9%; margin-bottom:20px">-->
 					</div>
-						<p>Motion variations (three colored in red, blue, and green are shown) are shown for each skill category. We test with the Sword&Shield dataset.</p>
-					</div>
-				</center>
-			</div>
-
-			<div class="section abstract">
-				<h3>Skill Transition Coverage</h3><br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_transition_coverage.png" style="width:100%; margin-bottom:20px">
-					</div>
-						<p>Transition coverage and probability between different skills. We show all 87 motion clips in the Sword\&Shield dataset. Our model achieves a higher coverage rate and more even transition probability distribution compared with ASE and CALM.
-						</p>
+						<p>Validation of Motion Prior Effectiveness in Fish Feeding Task. Our method (bottom row), trained with video-based motion priors, produces a more realistic animation of the school of fish compared to the pure rule-based approach trained without motion priors (top row). In the simulation, food is randomly generated and disappears once the closest fish agent remains within its sensor range for 3 seconds.</p>
 					</div>
 				</center>
-			</div>
-
-
 			<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+<!--						<img class="thumbnail" src="figs/fig_feeding.png" style="width:49%; margin-bottom:20px">-->
+						<img class="thumbnail" src="figs/fig_chasing.png" style="width:55%; margin-bottom:8px">
+					</div>
+						<p>Chasing in Circles. The school of fish transitions from chasing behavior to a consistent circling pattern, with the dominant fish (in red) chasing the subordinate fish (in yellow).</p>				</div>
+				</center>
+
+			</div>
+
 
 			<div class="section abstract">
-				<h2>Interactive Character Animation</h2>
-				<br>
-				<p>The learned low-level conditional model can capture extensive and diverse skills and provides explicit control over the character skills. Moreover, we train additional deepRL-based high-level policies to support interactively animation of the character in various ways.</p>
-				<h3>Path-follower</h3>
-				<br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_app_path_following_3.png" style="width:100%; margin-bottom:20px">
-					</div>
-					<p>Path-follower: the character faithfully follows user-specified paths (blue path) under various specified skills, including jog, march, walk, sidewalk, run, slow walk, open-armed walk, patrol, and confident strut; More results are presented in the supplementary video.
-					</p>
-					</div>
-				</center>
+				<h3>Fish Abnomral Behavior Detection</h3><br>
 
-
-				<h3>Directional Control</h3>
+				Real-world data on fish behavior, particularly abnormal behavior indicative of environmental stress or disease, is not only scarce but also exceedingly difficult to capture due to the vastness and inaccessibility of aquatic environments. This motivates us to train a detection model using synthetic data that simulates abnormal behaviors, supplemented with a small amount of expert-annotated real-world data.
+				<br>
+				<br>
 				<br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_app_directional_3.png" style="width:100%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_distribution_bbox.png" style="width:49%; margin-bottom:8px">
+<!--						<img class="thumbnail" src="figs/fig_Ab_RS.png" style="width:48.9%; margin-bottom:20px">-->
 					</div>
-					<p>Directional Control: the character faithfully follows user-specified local moving direction (blue arrow) under various specified skills, including walk, stooped run, stride, casual walk, hands-up walk, and march; See more results in the supplementary video.</p>
+						<p>A total of 2901 fish are annotated in our training data, comprising synthetic and real images. We present the distribution of the bounding box locations and sizes, normalized by image size.</p></div>
+
+				</center>
+				<br>
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+<!--						<img class="thumbnail" src="figs/fig_distribution_bbox.png" style="width:49%; margin-bottom:20px">-->
+						<img class="thumbnail" src="figs/fig_Ab_RS.png" style="width:48.9%; margin-bottom:8px">
 					</div>
+						<p>Samples of fish abnormal behavior detection from synthetic images and real images. The yellow box denotes normal fish while the red box denotes detected abnormal behaviors.</p>
 				</center>
 
-				<h3>Character Re-locating</h3>
+
+
+			</div>
+
+
+			<div class="section abstract">
+				<h3>Generalization to Other Species</h3>
 				<br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_app_location_3.png" style="width:100%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_Bird.png" style="width:75%; margin-bottom:8px">
+<!--						<img class="thumbnail" src="figs/fig_chasing.png" style="width:48.9%; margin-bottom:20px">-->
 					</div>
-					<p>Character Re-locating: the character re-locates to a user-specified target location (visualized by the blue disks on the ground and arrows in the air) with different specified skills, including walk, limping, patrol, run, foot-sliding walk, and quick walk; More results can be found in the supplementary video.	</p>
-					</div>
+						<p>CBIL allows for crowd animation for different species. Here, we demonstrate the effectiveness of our method in simulating the flock of birds. Our framework reproduces a variety of behaviors learned from the reference videos.</p>	</div>
 				</center>
 
 
-				</div>
+
+			</div>
+
+
+
+
+
+
+
 			<center>
 					<br>
 									<h2 align="center">Check out our paper for more details.</h3>
@@ -303,12 +315,7 @@ We showcase multiple animations of schools of fish with various movement pattern
 			<div class="section list">
 				<h2>Citation</h2>
 				<div class="section bibtex">
-					<pre>@article{dou2022case,
-  title={C·ASE: Learning Conditional Adversarial Skill Embeddings for Physics-based Characters},
-  author={Zhiyang Dou and Xuelin Chen and Qingnan Fan and Taku Komura and Wenping Wang},
-  journal={arXiv preprint arXiv:2309.11351},
-  year={2023}
-}
+					<pre>
 				</div>
 			</div>
 			
