@@ -12,23 +12,50 @@
     display: inline-block;
     width: 70px;
     font-weight: bold;
+	      vertical-align: middle;
+  }
+
+    .li_data2 {
+    margin-top: 3px;
+    display: inline-block;
+    width: 70px;
+    font-weight: bold;
+	      vertical-align: middle;
+  }
+  .li_content2 {
+      margin-top: 3px;
+    display: inline-block;
+    width: calc(100% - 70px);
+	      vertical-align: middle;
+	              margin-bottom: -1px;
+
+  }
+
+  .li_data_show_more {
+      display: inline-block;
+    	margin-left: -12px; /* 通过负的 margin-left 向左移动 */
+        margin-bottom: -3px;
+    width: 200px;
+<!--        font-weight: bold;-->
 	      vertical-align: top;
   }
   .li_content {
     display: inline-block;
     width: calc(100% - 70px);
-	      vertical-align: top;
+	      vertical-align: middle;
+	              margin-bottom: -1px;
+
   }
   .li_data_short {
     display: inline-block;
     width: 40px;
     font-weight: bold;
-	      vertical-align: top;
+	      vertical-align: middle;
   }
   .li_content_short {
     display: inline-block;
     width: calc(100% - 40px);
-	      vertical-align: top;
+	      vertical-align: middle;
   }
 
         .half-br {
@@ -36,6 +63,7 @@
             height: 50vh; /* 50% of the viewport height */
             content: "";
         }
+
 
 </style>
 
@@ -414,16 +442,27 @@
 					  <li>
 						<span class="li_data">Mar. 2023:</span><span class="li_content">One paper was accepted to PNAS Nexus 2023. <a href="https://www.eurekalert.org/news-releases/989780">Press release</a> by <a href="https://archive.eurekalert.org/aboutus.php">EurekAlert!</a>.</span>
 					  </li>
-					  <li>
-						<span class="li_data">Aug. 2022:</span><span class="li_content">One paper was accepted to SIGGRAPH Asia 2022.</span>
-					  </li>
-					  <li>
-						<span class="li_data">Feb. 2022:</span><span class="li_content">One paper was accepted to EUROGRAPHICS 2022.</span>
-					  </li>
+
+<details id="more-details">
+            <summary class="li_data_show_more">[Show More]</summary>
+                <li>
+                    <span class="li_data2">Aug. 2022:</span><span class="li_content2">One paper was accepted to SIGGRAPH Asia 2022.</span>
+                </li>
+                <li>
+                    <span class="li_data">Feb. 2022:</span><span class="li_content">One paper was accepted to EUROGRAPHICS 2022.</span>
+                </li>
+            <!-- "Show Less" 按钮 -->
+            <button id="show-less-button" style="display:none;" onclick="toggleDetails()">[Show Less]</button>
+        </details>
 					</ul>
 				</dl>
 
+<dl>
 
+				<ul class="custom-list">
+
+	</ul>
+</dl>
 				<!--- Selected Publications -->
 				<hr style="clear: both;">
 				<!-- <h2>Selected Publications (<a href="https://frank-zy-d.github.io/publication.html">Full List</a>)</h2> -->
