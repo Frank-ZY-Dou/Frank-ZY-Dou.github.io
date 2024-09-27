@@ -4,42 +4,43 @@
 	<!-- Google tag (gtag.js) -->
 
 	<style>
-
-
-		  li {
-
-            list-style-type: none; /* 去掉黑点 */
-            margin-left: -12px; /* 通过负的 margin-left 向左移动 */
-
-<!--            padding: 0;-->
-<!--            margin: 0;-->
-        }
-  .custom-list li {
+ li{
+     list-style-type: none
+}
+ .custom-list li {
     margin-bottom: 5.2px;
     margin-right: 3px;
+  }
+
+   .custom-list_news2 li {
+    margin-bottom: 5.2px;
+    margin-right: 3px;
+    margin-left: -12px;
   }
   .li_data {
     display: inline-block;
     width: 70px;
     font-weight: bold;
 	      vertical-align: top;
+
   }
 
     .li_data2 {
-<!--    margin-top: 3px;-->
+    margin-top: 3px;
     display: inline-block;
     width: 70px;
     font-weight: bold;
 	      vertical-align: top;
   }
   .li_content2 {
-<!--      margin-top: 3px;-->
+      margin-top: 3px;
     display: inline-block;
     width: calc(100% - 70px);
 	      vertical-align: top;
 	              margin-bottom: -1px;
 
   }
+
 
   .li_data_show_more {
       display: inline-block;
@@ -52,7 +53,8 @@
   .li_content {
     display: inline-block;
     width: calc(100% - 70px);
-	      vertical-align: middle;
+	      	      vertical-align: top;
+
 	              margin-bottom: -1px;
 
   }
@@ -60,12 +62,13 @@
     display: inline-block;
     width: 40px;
     font-weight: bold;
-	      vertical-align: middle;
+	      vertical-align: top;
+
   }
   .li_content_short {
     display: inline-block;
     width: calc(100% - 40px);
-	      vertical-align: middle;
+	      vertical-align: top;
   }
 
         .half-br {
@@ -415,7 +418,7 @@
 				<hr style="clear: both;">
 				<h2>News</h2>
 				<dl>
-				<ul class="custom-list">
+				<ul class="custom-list_news2">
 <!--					<li>-->
 <!--						<span class="li_data">Jul. 2024:</span><span class="li_content">Coverage Axis is recognized at Top Cited Article in CGF 2022-2023.</span>-->
 <!--					</li>-->
