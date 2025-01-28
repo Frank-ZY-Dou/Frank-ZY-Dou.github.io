@@ -129,6 +129,38 @@
 
 		<div class="row" style="margin-bottom: 1em;">
 					<div class="span2 offset2">
+							<a href="https://frank-zy-dou.github.io/figures/fig_24_dice.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_24_dice.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="https://frank-zy-dou.github.io/projects/DICE/index.html">
+								<strong>DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image</strong>
+							</a>
+							<br>Qingxuan Wu, <strong>Zhiyang Dou#</strong>, Sirui Xu, Soshi Shimada, Chen Wang, Zhengming Yu, Yuan Liu, Cheng Lin, Zeyu Cao, Taku Komura, Vladislav Golyanik, Christian Theobalt, Wenping Wang, Lingjie Liu#.
+							<br>
+							<em> <b>ICLR 2025.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://frank-zy-dou.github.io/projects/DICE/index.html">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2406.17988">paper</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://github.com/Qingxuan-Wu/DICE">code</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(dice);">abstract</a>
+									<pre id="dice" class="invisible_text">Reconstructing 3D hand-face interactions with deformations from a single image is a challenging yet crucial task with broad applications in AR, VR, and gaming. The challenges stem from self-occlusions during single-view hand-face interactions, diverse spatial relationships between hands and face, complex deformations, and the ambiguity of the single-view setting. The first and only method for hand-face interaction recovery, Decaf, introduces a global fitting optimization guided by contact and deformation estimation networks trained on studio-collected data with 3D annotations. However, Decaf suffers from a time-consuming optimization process and limited generalization capability due to its reliance on 3D annotations of hand-face interaction data. To address these issues, we present DICE, the first end-to-end method for Deformation-aware hand-face Interaction reCovEry from a single image. DICE estimates the poses of hands and faces, contacts, and deformations simultaneously using a Transformer-based architecture. It features disentangling the regression of local deformation fields and global mesh vertex locations into two network branches, enhancing deformation and contact estimation for precise and robust hand-face mesh recovery. To improve generalizability, we propose a weakly-supervised training approach that augments the training set using in-the-wild images without 3D ground-truth annotations, employing the depths of 2D keypoints estimated by off-the-shelf models and adversarial priors of poses for supervision. Our experiments demonstrate that DICE achieves state-of-the-art performance on a standard benchmark and in-the-wild data in terms of accuracy and physical plausibility. Additionally, our method operates at an interactive rate (20 fps) on an Nvidia 4090 GPU, whereas Decaf requires more than 15 seconds for a single image. Our code will be publicly available upon publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+
+
+
+		<div class="row" style="margin-bottom: 1em;">
+					<div class="span2 offset2">
 							<a href="https://frank-zy-dou.github.io/figures/fig_cbil.png">
 								<img class="dropshadow pull-right" alt="" src="./figures/fig_cbil.png" width="200" height="120">
 							</a>
@@ -249,34 +281,65 @@
 
 
 
-			<div class="row" style="margin-bottom: 1em;">
+<div class="row" style="margin-bottom: 1em;">
 					<div class="span2 offset2">
-							<a href="https://frank-zy-dou.github.io/figures/fig_24_dice.png">
-								<img class="dropshadow pull-right" alt="" src="./figures/fig_24_dice.png" width="200" height="120">
+							<a href="https://frank-zy-dou.github.io/figures/fig_mvtokenflow.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_mvtokenflow.png" width="200" height="120">
 							</a>
 						</div>
 						<div class="span6">
-							<a href="https://frank-zy-dou.github.io/projects/DICE/index.html">
-								<strong>DICE: End-to-end Deformation Capture of Hand-Face Interactions from a Single Image</strong>
+							<a href="">
+								<strong>DMVTokenFlow: High-quality 4D Content Generation using Multiview Token Flow</strong>
 							</a>
-							<br>Qingxuan Wu, <strong>Zhiyang Dou#</strong>, Sirui Xu, Soshi Shimada, Chen Wang, Zhengming Yu, Yuan Liu, Cheng Lin, Zeyu Cao, Taku Komura, Vladislav Golyanik, Christian Theobalt, Wenping Wang, Lingjie Liu#.
+							<br>Hanzhuo Huang, Yuan Liu, Ge Zheng, Jiepeng Wang, <strong>Zhiyang Dou</strong>, Sibei Yang.
 							<br>
 							<em> <b>ICLR 2025.</b></em>
 							<br>
 <!--							<br>-->
 							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://frank-zy-dou.github.io/projects/DICE/index.html">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2406.17988">paper</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://github.com/Qingxuan-Wu/DICE">code</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://frank-zy-dou.github.io/projects/DICE/index.html">project page</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="https://openreview.net/pdf/26fc496d435560ed5ec469b64bc588136ac6e184.pdf">paper</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://github.com/Qingxuan-Wu/DICE">code</a></li>-->
 								<li>
 									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(dice);">abstract</a>
-									<pre id="dice" class="invisible_text">Reconstructing 3D hand-face interactions with deformations from a single image is a challenging yet crucial task with broad applications in AR, VR, and gaming. The challenges stem from self-occlusions during single-view hand-face interactions, diverse spatial relationships between hands and face, complex deformations, and the ambiguity of the single-view setting. The first and only method for hand-face interaction recovery, Decaf, introduces a global fitting optimization guided by contact and deformation estimation networks trained on studio-collected data with 3D annotations. However, Decaf suffers from a time-consuming optimization process and limited generalization capability due to its reliance on 3D annotations of hand-face interaction data. To address these issues, we present DICE, the first end-to-end method for Deformation-aware hand-face Interaction reCovEry from a single image. DICE estimates the poses of hands and faces, contacts, and deformations simultaneously using a Transformer-based architecture. It features disentangling the regression of local deformation fields and global mesh vertex locations into two network branches, enhancing deformation and contact estimation for precise and robust hand-face mesh recovery. To improve generalizability, we propose a weakly-supervised training approach that augments the training set using in-the-wild images without 3D ground-truth annotations, employing the depths of 2D keypoints estimated by off-the-shelf models and adversarial priors of poses for supervision. Our experiments demonstrate that DICE achieves state-of-the-art performance on a standard benchmark and in-the-wild data in terms of accuracy and physical plausibility. Additionally, our method operates at an interactive rate (20 fps) on an Nvidia 4090 GPU, whereas Decaf requires more than 15 seconds for a single image. Our code will be publicly available upon publication.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+									<a class="toggle_text_link" onclick="javascript:toggle(mvtokenflow);">abstract</a>
+									<pre id="mvtokenflow" class="invisible_text">=In this paper, we present MVTokenFlow for high-quality 4D content creation from monocular videos. Recent advancements in generative models such as video diffusion models and multiview diffusion models enable us to create videos or 3D models. However, extending these generative models for dynamic 4D content creation is still a challenging task that requires the generated content to be consistent spatially and temporally. To address this challenge, MVTokenFlow utilizes the multiview diffusion model to generate multiview images on different timesteps, which attains spatial consistency across different viewpoints and allows us to reconstruct a reasonable coarse 4D field. Then, MVTokenFlow further regenerates all the multiview images using the rendered 2D flows as guidance. The 2D flows effectively associate pixels from different timesteps and improve the temporal consistency by reusing tokens in the regeneration process. Finally, the regenerated images are spatiotemporally consistent and utilized to refine the coarse 4D field to get a high-quality 4D field. Experiments demonstrate the effectiveness of our design and show significantly improved quality than baseline methods.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
 								</li>
 							</ul>
 
 						</div>
 					</div>
+		<div class="row" style="margin-bottom: 1em;">
+					<div class="span2 offset2">
+							<a href="https://frank-zy-dou.github.io/figures/fig_city_anchor.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_city_anchor.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="">
+								<strong>CityAnchor: City-scale 3D Visual Grounding with Multi-modality LLMs</strong>
+							</a>
+							<br>Jinpeng Li, Haiping Wang, Jiabin chen, Yuan Liu, <strong>Zhiyang Dou</strong>, Yuexin Ma, Sibei Yang, Yuan Li, Wenping Wang, Zhen Dong, Bisheng Yang.
+							<br>
+							<em> <b>ICLR 2025.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+<!--								<li><em class="fa fa-file"></em> <a href="https://frank-zy-dou.github.io/projects/DICE/index.html">project page</a></li>-->
+								<li><em class="fa fa-file"></em> <a href="https://openreview.net/pdf?id=7nOl5W6xU4">paper</a></li>
+<!--								<li><em class="fa fa-file"></em> <a href="https://github.com/Qingxuan-Wu/DICE">code</a></li>-->
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(cityanchor);">abstract</a>
+									<pre id="cityanchor" class="invisible_text">In this paper, we present a 3D visual grounding method called CityAnchor for localizing an urban object in a city-scale point cloud. Recent developments in multiview reconstruction enable us to reconstruct city-scale point clouds but how to conduct visual grounding on such a large-scale urban point cloud remains an open problem. Previous 3D visual grounding system mainly concentrates on localizing an object in an image or a small-scale point cloud, which is not accurate and efficient enough to scale up to a city-scale point cloud. We address this problem with a multi-modality LLM which consists of two stages, a coarse localization and a fine-grained matching. Given the text descriptions, the coarse localization stage locates possible regions on a projected 2D map of the point cloud while the fine-grained matching stage accurately determines the most matched object in these possible regions. We conduct experiments on the CityRefer dataset and a new synthetic dataset annotated by us, both of which demonstrate our method can produce accurate 3D visual grounding on a city-scale 3D point cloud.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+
+						</div>
+					</div>
+
+
+
 
 
 		<div class="row" style="margin-bottom: 1em;">
