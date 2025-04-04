@@ -154,7 +154,33 @@
 
 						</div>
 					</div>
-
+<div class="row" style="margin-bottom: 2em;">
+					<div class="span2 offset2">
+							<a href="https://frank-zy-dou.github.io/figures/fig_align3r_24.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/fig_align3r_24.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="https://igl-hkust.github.io/Align3R.github.io/">
+								<strong>Align3R: Aligned Monocular Depth Estimation for Dynamic Videos</strong>
+							</a>
+							<br>
+							Jiahao Lu*, Tianyu Huang*, Peng Li, <strong>Zhiyang Dou</strong>, Cheng Lin, Zhiming Cui, Zhen Dong, Sai-Kit Yeung, Wenping Wang, Yuan Liu.
+							<br>
+							<em> <b>CVPR 2025 (Highlight).</b></em>
+							<br>
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://igl-hkust.github.io/Align3R.github.io/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2412.03079">paper</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://github.com/jiah-cloud/Align3R">code</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(align3r);">abstract</a>
+									<pre id="align3r" class="invisible_text">Recent developments in monocular depth estimation methods enable high-quality depth estimation of single-view images but fail to estimate consistent video depth across different frames. Recent works address this problem by applying a video diffusion model to generate video depth conditioned on the input video, which is training-expensive and can only produce scale-invariant depth values without camera poses. In this paper, we propose a novel video-depth estimation method called Align3R to estimate temporal consistent depth maps for a dynamic video. Our key idea is to utilize the recent DUSt3R model to align estimated monocular depth maps of different timesteps. First, we fine-tune the DUSt3R model with additional estimated monocular depth as inputs for the dynamic scenes. Then, we apply optimization to reconstruct both depth maps and camera poses. Extensive experiments demonstrate that Align3R estimates consistent video depth and camera poses for a monocular video with superior performance than baseline methods.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
+								</li>
+							</ul>
+						</div>
+					</div>
 
 		<div class="row" style="margin-bottom: 2em;">
 					<div class="span2 offset2">
@@ -220,33 +246,7 @@ This motivates us to marry the two by using an LLM-based pipeline to extract scr
 						</div>
 					</div>
 
-		<div class="row" style="margin-bottom: 2em;">
-					<div class="span2 offset2">
-							<a href="https://frank-zy-dou.github.io/figures/fig_align3r_24.png">
-								<img class="dropshadow pull-right" alt="" src="./figures/fig_align3r_24.png" width="200" height="120">
-							</a>
-						</div>
-						<div class="span6">
-							<a href="https://igl-hkust.github.io/Align3R.github.io/">
-								<strong>Align3R: Aligned Monocular Depth Estimation for Dynamic Videos</strong>
-							</a>
-							<br>
-							Jiahao Lu*, Tianyu Huang*, Peng Li, <strong>Zhiyang Dou</strong>, Cheng Lin, Zhiming Cui, Zhen Dong, Sai-Kit Yeung, Wenping Wang, Yuan Liu.
-							<br>
-							<em> <b>CVPR 2025 (Highlight).</b></em>
-							<br>
-							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://igl-hkust.github.io/Align3R.github.io/">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2412.03079">paper</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://github.com/jiah-cloud/Align3R">code</a></li>
-								<li>
-									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(align3r);">abstract</a>
-									<pre id="align3r" class="invisible_text">Recent developments in monocular depth estimation methods enable high-quality depth estimation of single-view images but fail to estimate consistent video depth across different frames. Recent works address this problem by applying a video diffusion model to generate video depth conditioned on the input video, which is training-expensive and can only produce scale-invariant depth values without camera poses. In this paper, we propose a novel video-depth estimation method called Align3R to estimate temporal consistent depth maps for a dynamic video. Our key idea is to utilize the recent DUSt3R model to align estimated monocular depth maps of different timesteps. First, we fine-tune the DUSt3R model with additional estimated monocular depth as inputs for the dynamic scenes. Then, we apply optimization to reconstruct both depth maps and camera poses. Extensive experiments demonstrate that Align3R estimates consistent video depth and camera poses for a monocular video with superior performance than baseline methods.</pre> <!-- put </pre> on this line to avoid new unwanted line breaks after bibtex -->
-								</li>
-							</ul>
-						</div>
-					</div>
+
 
 
 
