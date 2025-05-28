@@ -1,0 +1,315 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>MOSPA: Spatial Audio-Driven Human Motion Generation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="🎧MOSPA: Spatial Audio-Driven Human Motion Generation">
+	<meta name="citation_publication_date" content="2024">
+	<meta name="citation_conference_title" content="ECCV 2024">
+	<meta name="citation_pdf_url" content="">
+
+	<meta name="robots" content="index,follow">
+	<meta name="description"
+		content="Enabling virtual humans to dynamically and realistically respond to diverse auditory stimuli remains a key challenge in character animation, demanding the integration of perceptual modeling and motion synthesis. Despite its significance, this task remains largely unexplored. Most previous works have primarily focused on mapping modalities such as language, audio, and music to human motion generation. As of yet, these models typically overlook the impact of spatial features encoded in spatial audio signals on human motion. To bridge this gap and enable high-quality modeling of human movements in response to spatial audio, we introduce the Spatial Audio-Driven Human Motion (SAM) dataset, which contains diverse and high-quality spatial audio and motion data. For benchmarking, we develop a simple yet effective diffusion-based generative framework for human MOtion generation driven by SPatial Audio, termed MOSPA, which faithfully captures the relationship between body motion and spatial audio through an effective fusion mechanism. Once trained, MOSPA could generate diverse realistic human motions conditioned on varying spatial audio inputs. We present a comprehensive analysis of the proposed dataset and conduct extensive experiments for benchmarking, where our method achieves state-of-the-art performance on this task. Our model and dataset will be open-sourced upon acceptance. Please refer to our supplementary video for more details.">
+	<link rel="author" href="" />
+
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+
+
+
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+	<div id="content">
+		<div id="content-inner">
+			<div class="section logos" style="text-align:center">
+				<a href="https://www.cam.ac.uk/" target="_blank"><IMG src="./logos/Cambridge.png" height="66" border="0"></a>
+				</td>
+				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="68" border="0"></a>
+				</td>
+				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/SAIL.png" height="62" border="0"></a>
+				</td>
+				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="62" border="4"></a></td>
+
+				<a href="https://www.upenn.edu/" target="_blank"><IMG src="./logos/penn.png" height="66"
+						border="4"></a></td>
+			</div>
+
+			<div class="section head">
+
+<!--				Shuyang Xu, Zhiyang Dou, Mingyi Shi,
+Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Taku Komura-->
+
+				<h1>🎧MOSPA: Spatial Audio-Driven Human<br>Motion Generation</h1>
+				<div class="authors">
+					<a href="https://www.linkedin.com/in/shuyang-xu-56b0212aa/?originalSubdomain=hk" target="_blank">Shuyang Xu</a><sup> *,1</sup>&#160;&#160;
+					<a href="https://frank-zy-dou.github.io/" target="_blank">Zhiyang Dou</a><sup> *,†,1</sup>&#160;&#160;
+					<a href="https://rubbly.cn/" target="_blank">Mingyi Shi</a><sup> 1</sup>&#160;&#160;
+					<a href="https://liangpan99.github.io/" target="_blank">Liang Pan</a><sup> 1</sup>&#160;&#160;
+					<a href="https://scholar.google.com/citations?user=u2ydbP8AAAAJ&hl=en" target="_blank">Leo Ho</a><sup> 1</sup>&#160;&#160;
+					<a href="https://wangjingbo1219.github.io/" target="_blank">Jingbo Wang</a><sup> 2</sup>&#160;&#160;
+					<br>
+					<a href="https://liuyuan-pal.github.io/" target="_blank">Yuan Liu</a><sup> 3</sup>&#160;&#160;
+					<a href="https://clinplayer.github.io/" target="_blank">Cheng Lin</a><sup> 4</sup>&#160;&#160;
+					<a href="https://yuexinma.me/" target="_blank">Yuexin Ma</a><sup> 5</sup>&#160;&#160;
+					<a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Wenping Wang</a><sup> 6</sup>&#160;&#160;
+					<a href="https://www.cs.hku.hk/index.php/people/academic-staff/taku" target="_blank">Taku Komura</a><sup> 2</sup>&#160;&#160;
+				</div>
+
+<!--				<br>-->
+				<div class="affiliations">
+					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>&#160;&#160;
+					<sup>2</sup><a href="https://www.shlab.org.cn/" target="_blank">Shanghai AI Laboratory</a>&#160;&#160;<br>
+					<sup>3</sup><a href="https://hkust.edu.hk/" target="_blank">The Hong Kong University of Science and Technology</a>&#160;&#160;
+					<br>
+					<sup>4</sup><a href="https://www.must.edu.mo/index.html?locale=en_US" target="_blank">Macau University of Science and Technology</a>&#160;&#160;
+					<br>
+					<sup>5</sup><a href="https://www.shanghaitech.edu.cn/eng/" target="_blank">ShanghaiTech University</a>&#160;&#160;
+					<sup>6</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
+				</div>
+
+								<div class="authors"> ∗, † denote equal contributions and corresponding authors.</div>
+
+				<div class="venue">Arxiv 2025. </div>
+			</div>
+						<div class="section downloads">
+					<center>
+						<ul style="padding-left: 0">
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/abs/2312.02256"><img src="images/pdf.png"></a><br/>
+									<a href="https://arxiv.org/abs/2312.02256">Paper</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href="https://youtu.be/1SyCXbnol_g?si=atUuUP4eLbXQjixc"><img src="images/video.png"></a><br/>
+									<a href="https://youtu.be/1SyCXbnol_g?si=atUuUP4eLbXQjixc">Video</a>
+								</div>
+							</li><li class="grid">
+								<div class="griditem">
+									<a href="https://github.com/Frank-ZY-Dou/EMDM"><img src="images/data_ico.png"></a><br/>
+									<a href="https://github.com/Frank-ZY-Dou/EMDM">Code</a>
+								</div>
+							</li></ul>
+					</center>
+				</div>
+
+<!--			<div class="section abstract">-->
+<!--					<center>-->
+<!--						<strong>Please check out our <a href="https://youtu.be/Cgq6JbQ1VW4">video</a> for more details.</strong>-->
+<!--					</center>-->
+<!--			</div>-->
+			<div class="section downloads">
+				<center>
+						<iframe width="799" height="450" src="https://www.youtube.com/embed/1SyCXbnol_g?si=kKS7Vx31Yy1rh2IP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</center>
+			</div>
+
+			<div class="section abstract">
+				<h2>Abstract</h2><br>
+				<p>Enabling virtual humans to dynamically and realistically respond to diverse auditory stimuli remains a key challenge in character animation, demanding the integration of perceptual modeling and motion synthesis. Despite its significance, this task remains largely unexplored. Most previous works have primarily focused on mapping modalities such as language, audio, and music to human motion generation. As of yet, these models typically overlook the impact of spatial features encoded in spatial audio signals on human motion. To bridge this gap and enable high-quality modeling of human movements in response to spatial audio, we introduce the Spatial Audio-Driven Human Motion (SAM) dataset, which contains diverse and high-quality spatial audio and motion data. For benchmarking, we develop a simple yet effective diffusion-based generative framework for human MOtion generation driven by SPatial Audio, termed MOSPA, which faithfully captures the relationship between body motion and spatial audio through an effective fusion mechanism. Once trained, MOSPA could generate diverse realistic human motions conditioned on varying spatial audio inputs. We present a comprehensive analysis of the proposed dataset and conduct extensive experiments for benchmarking, where our method achieves state-of-the-art performance on this task. Our model and dataset will be open-sourced upon acceptance. Please refer to our supplementary video for more details.</p>
+				<br>
+				<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_teaser.png" style="width:80%; margin-bottom:8px">
+					</div>
+					<p>
+						EMDM produces high-quality human motion aligned with input conditions in a short runtime. The average run time of EMDM in (a) action-to-motion and (b) text-to-motion tasks is 0.02s and 0.05s per sequence, respectively. For reference, the corresponding times for MDM are 2.5s and 12.3s. We deepen the color of the character with respect to the time step of the sequence. (c) Overall comparison of the inference time costs on the HumanML3D, KIT, and HumanAct12 datasets. For ease of illustration, the Running Time is plotted with a log scale. We compare the running time per frame vs. the FID of SOTA methods.
+					</p>
+				</div>
+
+			</div>
+<!--			<br>-->
+
+
+			<div class="section abstract">
+				<h2>Framework</h2>
+								<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:90%; margin-bottom:20px">
+					</div>
+
+					</div>
+				</center>
+			<p>The overview of EMDM. During the training stage, we develop condition denoising diffusion GAN to capture the complex distribution of human body motion, allowing for a larger sampling step size. At the inference stage, we use the larger sampling step size for fast sampling of high-quality human motion according to the input condition.</p>
+
+			</div>
+			<br>
+
+<!--	-->
+
+
+
+
+			</div>
+			<div class="section abstract">
+				<h2>Comparisons on text-to-motion</h2><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m_humanml3d_tab.png" style="width:88%; margin-bottom:20px">
+					</div>
+						<p>Comparison of text-to-motion task on HumanML3D. The right arrow → means the closer to real motion, the better.</p>
+					</div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m_kit_tab.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>Comparison of text-to-motion task on KIT. The right arrow → means the closer to real motion, the better.</p>
+					</div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_t2m.png" style="width:95%; margin-bottom:20px">
+					</div>
+						<p>Qualitative comparison of the state-of-the-art methods in text-to-motion task. We visualize motion results and real references from six text prompts. EMDM achieves the fastest motion generation while delivering high-quality motions that closely align with the text inputs.</p>
+
+					</div>
+				</center>
+
+
+
+			</div>
+
+		<div class="section abstract">
+				<h2>Comparisons on action-to-motione</h2><br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_a2m_tab.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>Comparison of action-to-motion task on HumanAct12: FID_train indicating the evaluated splits. Accuracy (ACC) for action recognition. Diversity (DIV) and MModality (MM) for generated motion diversity w.r.t each action label.</p></div>
+				</center>
+				<br>
+				<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_a2m.png" style="width:50%; margin-bottom:20px">
+					</div>
+						<p>Qualitative comparison of the state-of-the-art methods on action-to-motion task.</p>
+					</div>
+				</center>
+
+		</div>
+
+		<div class="section abstract">
+
+			<h2>More Results</h2><br>
+			<h3>Text-to-Motion</h3>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_supp_more_t2m.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>More qualitative results of EMDM on the task of text-to-motion.</p></div>
+				</center>
+
+			<h3>Action-to-Motion</h3>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_supp_more_a2m.png" style="width:90%; margin-bottom:20px">
+					</div>
+						<p>More qualitative results of EMDM on the task of action-to-motion.</p>
+					</div>
+				</center>
+		</div>
+
+
+		<div class="section abstract">
+
+
+
+
+
+			<br>
+
+			<center>
+					<br>
+									<h2 align="center">Check out our paper for more details.</h3>
+				</center>
+			</div>
+			<div class="section list">
+				<h2>Citation</h2>
+				<div class="section bibtex">
+					<pre>@article{zhou2023emdm,
+  title={EMDM: Efficient Motion Diffusion Model for Fast, High-Quality Motion Generation},
+  author={Zhou, Wenyang and Dou, Zhiyang and Cao, Zeyu and Liao, Zhouyingcheng and Wang, Jingbo and Wang, Wenjia and Liu, Yuan and Komura, Taku and Wang, Wenping and Liu, Lingjie},
+  journal={arXiv preprint arXiv:2312.02256},
+  year={2023}
+}</pre>
+				</div>
+			</div>
+			
+		<!-- 	<div class="section list">
+				<h2>Related Links</h2>
+				<div class="row" style="margin-top:15px">
+				<li>Parts of <a href="https://github.com/Totoro97/NeuS" target="_blank">our PyTorch implementation</a> are taken from <a href="https://github.com/lioryariv/idr" target="_blank">IDR</a> and <a href="https://github.com/yenchenlin/nerf-pytorch" target="_blank">NeRF-pytorch</a>.
+				<li>Check the concurrent works of learning neural implicit surfaces: </br> 			
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2104.10078" target="_blank">UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction</a>, Oechsle et al. 2021 </br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://arxiv.org/abs/2106.12052" target="_blank">Volume Rendering of Neural Implicit Surfaces</a>, Yariv et al. 2021 
+				<li>Also check other works about neural scene representations and neural rendering from our group: </br> 
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://lingjie0206.github.io/papers/NSVF/" target="_blank">Neural Sparse Voxel Fields:</a>, Liu et al. 2020 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/" target="_blank">Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video</a>, Tretschk et al. 2021</br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://gvv.mpi-inf.mpg.de/projects/NeuralActor/" target="_blank">Neural Actor: Neural Free-view Synthesis of Human Actors with Pose Control</a>, Liu et al. 2021 </br> 	
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="https://liuyuan-pal.github.io/NeuRay/" target="_blank">Neural Rays for Occlusion-aware Image-based Rendering</a>, Liu et al. 2021. </br> 	
+				</div>
+			</div>
+			
+			<div class="section list">
+				<h2>Acknowledgements</h2>
+				<div class="row" style="margin-top:15px">
+				<p>We thank Michael Oechsle for providing the results of UNISURF. Christian Theobalt was supported by ERC Consolidator Grant 770784. Lingjie Liu was supported by Lise Meitner Postdoctoral Fellowship.</p> 
+				</div>
+			</div> -->
+			
+			
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length - 9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
