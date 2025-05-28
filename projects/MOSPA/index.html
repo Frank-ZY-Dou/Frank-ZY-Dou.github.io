@@ -46,16 +46,19 @@ MathJax.Hub.Config({
 	<div id="content">
 		<div id="content-inner">
 			<div class="section logos" style="text-align:center">
-				<a href="https://www.cam.ac.uk/" target="_blank"><IMG src="./logos/Cambridge.png" height="66" border="0"></a>
-				</td>
+
 				<a href="https://www.hku.hk/" target="_blank"><IMG src="./logos/Logo_HKU.png" height="68" border="0"></a>
 				</td>
 				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/SAIL.png" height="62" border="0"></a>
 				</td>
+				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/hkust_logo.png" height="66" border="0"></a>
+				</td>
+				<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/logo_must.png" height="66" border="0"></a>
+				</td>
+					<a href="https://www.shlab.org.cn/" target="_blank"><IMG src="./logos/logo_shanghaitech.png" height="66" border="0"></a>
+				</td>
 				<a href="https://www.tamu.edu/" target="_blank"><IMG src="./logos/Logo_TAMU.png" height="62" border="4"></a></td>
 
-				<a href="https://www.upenn.edu/" target="_blank"><IMG src="./logos/penn.png" height="66"
-						border="4"></a></td>
 			</div>
 
 			<div class="section head">
@@ -84,14 +87,13 @@ Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Ta
 					<sup>1</sup><a href="https://www.hku.hk/" target="_blank">The University of Hong Kong</a>&#160;&#160;
 					<sup>2</sup><a href="https://www.shlab.org.cn/" target="_blank">Shanghai AI Laboratory</a>&#160;&#160;<br>
 					<sup>3</sup><a href="https://hkust.edu.hk/" target="_blank">The Hong Kong University of Science and Technology</a>&#160;&#160;
-					<br>
 					<sup>4</sup><a href="https://www.must.edu.mo/index.html?locale=en_US" target="_blank">Macau University of Science and Technology</a>&#160;&#160;
 					<br>
 					<sup>5</sup><a href="https://www.shanghaitech.edu.cn/eng/" target="_blank">ShanghaiTech University</a>&#160;&#160;
 					<sup>6</sup><a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a>&#160;&#160;
 				</div>
 
-								<div class="authors"> ∗, † denote equal contributions and corresponding authors.</div>
+<div class="authors" style="font-size:14px;">∗, † denote equal contributions and corresponding authors.</div>
 
 				<div class="venue">Arxiv 2025. </div>
 			</div>
@@ -134,15 +136,59 @@ Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Ta
 				<br>
 				<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_teaser.png" style="width:80%; margin-bottom:8px">
+						<img class="thumbnail" src="figs/fig_teaser_new.png" style="width:80%; margin-bottom:8px">
 					</div>
-					<p>
-						EMDM produces high-quality human motion aligned with input conditions in a short runtime. The average run time of EMDM in (a) action-to-motion and (b) text-to-motion tasks is 0.02s and 0.05s per sequence, respectively. For reference, the corresponding times for MDM are 2.5s and 12.3s. We deepen the color of the character with respect to the time step of the sequence. (c) Overall comparison of the inference time costs on the HumanML3D, KIT, and HumanAct12 datasets. For ease of illustration, the Running Time is plotted with a log scale. We compare the running time per frame vs. the FID of SOTA methods.
-					</p>
+					<p>We introduce a novel human motion generation task centered on spatial audio-driven human motion synthesis. Top row: We curate a comprehensive dataset, SAM, including diverse spatial audio signals and high-quality 3D human motion pairs. Bottom row: We develop MOSPA, a simple yet effective generative model designed to produce high-quality, responsive motion driven by spatial audio. We note that the motion generation results are both realistic and responsive, effectively capturing both the spatial and semantic features of spatial audio inputs.					</p>
 				</div>
 
 			</div>
 <!--			<br>-->
+
+	<div class="section abstract">
+				<h2>SAM Dataset</h2>
+								<br>
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_tab_dataset.png" style="width:80%; margin-bottom:20px">
+					</div>
+
+					</div>
+				</center>
+			<p>
+				Statistics of the SAM dataset. The SAM dataset encompasses 27 common daily spatial audio scenarios, over 20 reaction types excluding the motion genres, and 49 reaction types. The number of subjects covered in SAM is 12, where 5 of them are female and the remaining 7 are male. It is also the first dataset to incorporate spatial audio information, annotated with Sound Source Location (SSL). The total duration of the dataset exceeds 30K seconds.
+
+			</p>
+
+
+				<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_db_motion.png" style="width:70%; margin-bottom:20px">
+					</div>
+
+					</div>
+				</center>
+			<p>
+Visualization of samples from SAM with expected motions annotated. Red dots indicate the actor’s trajectory, while the blue sphere represents the sound source. The SAM dataset ensures high diversity by encompassing a broad spectrum of audio types and varying sound source locations.
+			</p>
+
+
+			<center>
+					<div class="row" style="margin-bottom:5px">
+					<div class="col" style="text-align:center">
+						<img class="thumbnail" src="figs/fig_more_db.png" style="width:70%; margin-bottom:20px">
+					</div>
+
+					</div>
+			<p> Spatial audio-driven human motion data collection setup. Statistics of action duration in the dataset.</p>
+
+	</center>
+
+
+
+			</div>
+			<br>
 
 
 			<div class="section abstract">
@@ -151,13 +197,12 @@ Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Ta
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:90%; margin-bottom:20px">
+						<img class="thumbnail" src="figs/fig_pipeline.png" style="width:60%; margin-bottom:20px">
 					</div>
 
 					</div>
 				</center>
-			<p>The overview of EMDM. During the training stage, we develop condition denoising diffusion GAN to capture the complex distribution of human body motion, allowing for a larger sampling step size. At the inference stage, we use the larger sampling step size for fast sampling of high-quality human motion according to the input condition.</p>
-
+			<p>The framework of \name. We perform diffusion-based motion generation given spatial audio inputs. Specifically, Gaussian noise is added to the clean motion sample $\mathbf{x_0}$, generating a noisy motion vector $\mathbf{x_t}$, modeled as $q(\mathbf{x_t}|\mathbf{x_{t-1}})$. An encoder transformer then predicts the clean motion from the noisy motion $\mathbf{x_t}$, guided by extracted audio features $\mathbf{a}$, sound source location $\mathbf{s}$, motion genre $g$, and timestep $t$.</p>
 			</div>
 			<br>
 
@@ -168,7 +213,7 @@ Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Ta
 
 			</div>
 			<div class="section abstract">
-				<h2>Comparisons on text-to-motion</h2><br>
+				<h2>Benchmarking</h2><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
@@ -203,49 +248,31 @@ Liang Pan, Leo Ho, Jingbo Wang, Yuan Liu, Cheng Lin, Yuexin Ma, Wenping Wang, Ta
 
 			</div>
 
-		<div class="section abstract">
-				<h2>Comparisons on action-to-motione</h2><br>
+<div class="section abstract">
+			<h2>User Study</h2><br>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_a2m_tab.png" style="width:90%; margin-bottom:20px">
+						<br>
+						<img class="thumbnail" src="figs/fig_user_study.png" style="width:40%; margin-bottom:20px">
 					</div>
-						<p>Comparison of action-to-motion task on HumanAct12: FID_train indicating the evaluated splits. Accuracy (ACC) for action recognition. Diversity (DIV) and MModality (MM) for generated motion diversity w.r.t each action label.</p></div>
-				</center>
-				<br>
-				<br>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_a2m.png" style="width:50%; margin-bottom:20px">
-					</div>
-						<p>Qualitative comparison of the state-of-the-art methods on action-to-motion task.</p>
-					</div>
+						<p>User study results. MOSPA outperforms other methods in intent alignment, motion quality, and similarity to ground truth. The bar chart shows the vote distribution across methods.</p></div>
+
 				</center>
 
 		</div>
-
 		<div class="section abstract">
 
-			<h2>More Results</h2><br>
-			<h3>Text-to-Motion</h3>
+			<h2>Spatial Audio Driven Simulated Agent Control</h2>
 				<center>
 					<div class="row" style="margin-bottom:5px">
 					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_supp_more_t2m.png" style="width:90%; margin-bottom:20px">
+						<br>
+						<img class="thumbnail" src="figs/fig_user_study.png" style="width:40%; margin-bottom:20px">
 					</div>
-						<p>More qualitative results of EMDM on the task of text-to-motion.</p></div>
+						<p>User study results. MOSPA outperforms other methods in intent alignment, motion quality, and similarity to ground truth. The bar chart shows the vote distribution across methods.</p></div>
 				</center>
 
-			<h3>Action-to-Motion</h3>
-				<center>
-					<div class="row" style="margin-bottom:5px">
-					<div class="col" style="text-align:center">
-						<img class="thumbnail" src="figs/fig_supp_more_a2m.png" style="width:90%; margin-bottom:20px">
-					</div>
-						<p>More qualitative results of EMDM on the task of action-to-motion.</p>
-					</div>
-				</center>
 		</div>
 
 
