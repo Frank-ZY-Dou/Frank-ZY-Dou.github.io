@@ -604,7 +604,64 @@ I was selected as a Meshy Fellowship Finalist—thanks, <a href="https://www.mes
 					</div>
 	<br>
 
+<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/figures/25_mod_skill.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/25_mod_skill.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="https://yh2371.github.io/modskill/">
+								<strong>ModSkill: Physical Character Skill Modularization</strong>
+							</a>
+							<br>
+							Yiming Huang, <strong>Zhiyang Dou</strong>, Lingjie Liu.
+							<br>
+							<em> <b>Arxiv 2025.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://yh2371.github.io/modskill/">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/html/2502.14140v1">paper</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(modskill);">abstract</a>
+									<pre id="modskill" class="invisible_text">Human motion is highly diverse and dynamic, posing challenges for imitation learning algorithms that aim to generalize motor skills for controlling simulated characters. Previous methods typically rely on a universal full-body controller for tracking reference motion (tracking-based model) or a unified full-body skill embedding space (skill embedding). However, these approaches often struggle to generalize and scale to larger motion datasets. In this work, we introduce a novel skill learning framework, ModSkill, that decouples complex full-body skills into compositional, modular skills for independent body parts. Our framework features a skill modularization attention layer that processes policy observations into modular skill embeddings that guide low-level controllers for each body part. We also propose an Active Skill Learning approach with Generative Adaptive Sampling, using large motion generation models to adaptively enhance policy learning in challenging tracking scenarios. Our results show that this modularized skill learning framework, enhanced by generative sampling, outperforms existing methods in precise full-body motion tracking and enables reusable skill embeddings for diverse goal-driven tasks.</pre>
+								</li>
+							</ul>
 
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="span2" style="margin-bottom: 0em;">
+							<a href="https://frank-zy-dou.github.io/figures/25_coda.png">
+								<img class="dropshadow pull-right" alt="" src="./figures/25_coda.png" width="200" height="120">
+							</a>
+						</div>
+						<div class="span6">
+							<a href="https://phj128.github.io/page/CoDA/index.html">
+								<strong>CoDA: Coordinated Diffusion Noise Optimization for Whole-Body Manipulation of Articulated Objects</strong>
+							</a>
+							<br>
+							Huaijin Pi, Zhi Cen, <strong>Zhiyang Dou</strong>, Taku Komura.
+							<br>
+							<em> <b>Arxiv 2025.</b></em>
+							<br>
+<!--							<br>-->
+							<ul class="inline middot">
+								<li><em class="fa fa-file"></em> <a href="https://phj128.github.io/page/CoDA/index.html">project page</a></li>
+								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/abs/2505.21437">paper</a></li>
+								<li>
+									<em class="fa fa-bars"></em>
+									<a class="toggle_text_link" onclick="javascript:toggle(coda);">abstract</a>
+									<pre id="coda" class="invisible_text">Synthesizing whole-body manipulation of articulated objects, including body motion, hand motion, and object motion, is a critical yet challenging task with broad applications in virtual humans and robotics. The core challenges are twofold. First, achieving realistic whole-body motion requires tight coordination between the hands and the rest of the body, as their movements are interdependent during manipulation. Second, articulated object manipulation typically involves high degrees of freedom and demands higher precision, often requiring the fingers to be placed at specific regions to actuate movable parts. To address these challenges, we propose a novel coordinated diffusion noise optimization framework. Specifically, we perform noise-space optimization over three specialized diffusion models for the body, left hand, and right hand, each trained on its own motion dataset to improve generalization. Coordination naturally emerges through gradient flow along the human kinematic chain, allowing the global body posture to adapt in response to hand motion objectives with high fidelity. To further enhance precision in hand-object interaction, we adopt a unified representation based on basis point sets (BPS), where end-effector positions are encoded as distances to the same BPS used for object geometry. This unified representation captures fine-grained spatial relationships between the hand and articulated object parts, and the resulting trajectories serve as targets to guide the optimization of diffusion noise, producing highly accurate interaction motion. We conduct extensive experiments demonstrating that our method outperforms existing approaches in motion quality and physical plausibility, and enables various capabilities such as object pose control, simultaneous walking and manipulation, and whole-body generation from hand-only data.</pre>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+					<br>
 							<div class="row">
 						<div class="span2" style="margin-bottom: 0em;">
 							<a href="https://frank-zy-dou.github.io/figures/fig_tokenhsi.png">
@@ -790,35 +847,7 @@ This motivates us to marry the two by using an LLM-based pipeline to extract scr
 					</div>
 					<br>
 
-					<div class="row">
-						<div class="span2" style="margin-bottom: 0em;">
-							<a href="https://frank-zy-dou.github.io/figures/25_mod_skill.png">
-								<img class="dropshadow pull-right" alt="" src="./figures/25_mod_skill.png" width="200" height="120">
-							</a>
-						</div>
-						<div class="span6">
-							<a href="https://yh2371.github.io/modskill/">
-								<strong>ModSkill: Physical Character Skill Modularization</strong>
-							</a>
-							<br>
-							Yiming Huang, <strong>Zhiyang Dou</strong>, Lingjie Liu.
-							<br>
-							<em> <b>Arxiv 2025.</b></em>
-							<br>
-<!--							<br>-->
-							<ul class="inline middot">
-								<li><em class="fa fa-file"></em> <a href="https://yh2371.github.io/modskill/">project page</a></li>
-								<li><em class="fa fa-file"></em> <a href="https://arxiv.org/html/2502.14140v1">paper</a></li>
-								<li>
-									<em class="fa fa-bars"></em>
-									<a class="toggle_text_link" onclick="javascript:toggle(modskill);">abstract</a>
-									<pre id="modskill" class="invisible_text">Human motion is highly diverse and dynamic, posing challenges for imitation learning algorithms that aim to generalize motor skills for controlling simulated characters. Previous methods typically rely on a universal full-body controller for tracking reference motion (tracking-based model) or a unified full-body skill embedding space (skill embedding). However, these approaches often struggle to generalize and scale to larger motion datasets. In this work, we introduce a novel skill learning framework, ModSkill, that decouples complex full-body skills into compositional, modular skills for independent body parts. Our framework features a skill modularization attention layer that processes policy observations into modular skill embeddings that guide low-level controllers for each body part. We also propose an Active Skill Learning approach with Generative Adaptive Sampling, using large motion generation models to adaptively enhance policy learning in challenging tracking scenarios. Our results show that this modularized skill learning framework, enhanced by generative sampling, outperforms existing methods in precise full-body motion tracking and enables reusable skill embeddings for diverse goal-driven tasks.</pre>
-								</li>
-							</ul>
 
-						</div>
-					</div>
-					<br>
 
 
 
@@ -1709,11 +1738,15 @@ We introduce Coverage Axis++, a novel and efficient approach to 3D shape skeleto
 										<span class="li_data">Jun. 2025:</span><span class="li_content">From Static 3D Geometry to Dynamic 4D Contents: Analysis, Recovery, and Generation, VALSE.</span>
 									</li>
 									<li>
-										<span class="li_data">May. 2025:</span><span class="li_content">On Efficient, Controllable, and Physically Plausible Motion Synthesis, <a href="https://www.polyu.edu.hk/">The Hong Kong Polytechnic University</a>.</span>
+										<span class="li_data">May. 2025:</span><span class="li_content">Toward Fully Automated 4D Content Creation: Challenges and Future Directions, Stealth Startup.</span>
 									</li>
 									<li>
 										<span class="li_data">May. 2025:</span><span class="li_content">Principles and Practices for Efficient, Controllable, and Physically Plausible Motion Synthesis, <a href="https://www.mihoyo.com/en/">MiHoYo</a>.</span>
 									</li>
+									<li>
+										<span class="li_data">May. 2025:</span><span class="li_content">On Efficient, Controllable, and Physically Plausible Motion Synthesis, <a href="https://www.polyu.edu.hk/">The Hong Kong Polytechnic University</a>.</span>
+									</li>
+
 									<li>
 										<span class="li_data">May. 2025:</span><span class="li_content">On Efficient, Controllable, and Physically Plausible Motion Synthesis, Stealth Startup.</span>
 									</li>
